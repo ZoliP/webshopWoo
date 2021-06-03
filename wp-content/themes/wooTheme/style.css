@@ -6,6 +6,7 @@ Author: ZoliP
 Author URI: http://woocommerce.com 
 Template: storefront 
 */
-.site-branding h1 a {
-  color: red;
+
+body {
+  font-family: "Poppins", sans-serif;
 }
