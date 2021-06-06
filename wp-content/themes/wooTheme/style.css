@@ -10,3 +10,71 @@ Template: storefront
 body {
   font-family: "Poppins", sans-serif;
 }
+
+/* Header*/
+.site-header {
+  background-color: #000;
+}
+
+/* Menu items in header and cart items*/
+.main-navigation ul li a,
+ul.menu li a,
+.cart-contents {
+  color: #fff;
+}
+
+/* Menu items in header*/
+.main-navigation ul li a {
+  text-transform: uppercase;
+}
+
+/* Menu items in header*/
+.main-navigation ul li a:hover,
+.main-navigation ul li:hover > a,
+.site-title a:hover,
+.site-header ul.menu li.current-menu-item > a,
+a.cart-contents:hover,
+.site-header-cart .widget_shopping_cart a:hover,
+.site-header-cart:hover > li > a {
+  color: #c9e136;
+}
+
+/* Navigation menu and submenu for storefront*/
+.storefront-primary-navigation,
+.main-navigation ul.menu ul.sub-menu,
+.site-header-cart .widget_shopping_cart,
+.site-header-cart .widget_shopping_cart a,
+.site-header-cart > li > a,
+.site-header .product_list_widget li .quantity,
+.site-header-cart .widget_shopping_cart .widget_shopping_cart_content > p {
+  background-color: #1d1d1d;
+  color: #fff;
+}
+
+/* Menu items with submenus: down arrow hiding*/
+.main-navigation ul.menu > li.menu-item-has-children > a::after,
+.main-navigation ul.menu > li.page_item_has_children > a::after,
+.main-navigation ul.nav-menu > li.menu-item-has-children > a::after,
+.main-navigation ul.nav-menu > li.page_item_has_children > a::after {
+  display: none;
+}
+
+/* Search form in Header and other input elements*/
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea,
+.input-text {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ccd500;
+  font-weight: 300;
+  width: calc(100%-46px);
+  height: 40px;
+  font-size: 14px;
+  border-radius: 20px 0 0 20px;
+}
