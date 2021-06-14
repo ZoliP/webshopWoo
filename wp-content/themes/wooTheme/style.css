@@ -1,26 +1,71 @@
 /*
 Theme Name: WebshopWoo Child Theme
 Version: 1.0
-Description: Child theme for Woocommerce.
+Description: Storefront Child theme for Woocommerce.
 Author: ZoliP
 Author URI: http://woocommerce.com 
 Template: storefront 
 */
 
-body {
+body,
+button,
+input,
+textarea {
   font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f1f3f4;
+}
+
+a,
+a:focus,
+a:active,
+input[type="search"],
+button[type="submit"] {
+  outline: 0;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button,
+.widget a.button,
+.added_to_cart,
+.site-header-cart .widget_shopping_cart a:first-child.button {
+  background-color: #fc0c05;
+  border: none;
+  border-radius: 25px;
+  color: #ffffff;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
 }
 
 /* Header*/
 .site-header {
-  background-color: #000;
+  background-color: #000000;
+}
+
+.site-header .col-full {
+  display: flex;
+  align-items: center;
+  height: 76px;
+}
+
+.col-full {
+  padding: 0;
+}
+
+.col-full .site-branding,
+.col-full .site-search {
+  margin-bottom: 0;
 }
 
 /* Menu items in header and cart items*/
 .main-navigation ul li a,
 ul.menu li a,
 .cart-contents {
-  color: #fff;
+  color: #ffffff;
 }
 
 /* Menu items in header*/
@@ -34,7 +79,6 @@ ul.menu li a,
 .site-title a:hover,
 .site-header ul.menu li.current-menu-item > a,
 a.cart-contents:hover,
-.site-header-cart .widget_shopping_cart a:hover,
 .site-header-cart:hover > li > a {
   color: #c9e136;
 }
@@ -42,13 +86,23 @@ a.cart-contents:hover,
 /* Navigation menu and submenu for storefront*/
 .storefront-primary-navigation,
 .main-navigation ul.menu ul.sub-menu,
+.site-header-cart .widget_shopping_cart {
+  background-color: #1d1d1d;
+  color: #ffffff;
+}
+
+/*Items in the cart in Header*/
+.site-header-cart .widget_shopping_cart a:hover {
+  color: #1393f5;
+}
+
+/*Items in the cart in Header*/
+.site-header-cart .widget_shopping_cart .widget_shopping_cart_content > p,
 .site-header-cart .widget_shopping_cart,
 .site-header-cart .widget_shopping_cart a,
-.site-header-cart > li > a,
-.site-header .product_list_widget li .quantity,
-.site-header-cart .widget_shopping_cart .widget_shopping_cart_content > p {
-  background-color: #1d1d1d;
-  color: #fff;
+.site-header .product_list_widget li .quantity {
+  background-color: #ffffff;
+  color: #1d1d1d;
 }
 
 /* Menu items with submenus: down arrow hiding*/
@@ -59,16 +113,9 @@ a.cart-contents:hover,
   display: none;
 }
 
-/* Search form in Header and other input elements*/
-input[type="text"],
-input[type="number"],
-input[type="email"],
-input[type="tel"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-textarea,
-.input-text {
+/* Search form in Header*/
+.site-search .widget_product_search form input[type="search"] {
+  padding: 6px 4px 4px 24px;
   background-color: #000000;
   color: #ffffff;
   border: 1px solid #ccd500;
@@ -77,4 +124,54 @@ textarea,
   height: 40px;
   font-size: 14px;
   border-radius: 20px 0 0 20px;
+}
+
+/* Search icon before form*/
+.widget_product_search form::before {
+  display: none;
+}
+
+/* Search form input in Header*/
+input[type="search"]::placeholder {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+/* Logo div in Header*/
+.woocommerce-active .site-header .site-branding {
+  width: 25%;
+  margin-right: 0;
+}
+
+/* Search form div in Header*/
+.woocommerce-active .site-header .site-search {
+  width: 55%;
+  float: left;
+}
+
+/* Search form button in Header*/
+.widget_product_search form button[type="submit"] {
+  width: 42px;
+  height: 40px;
+  background-color: #ccd500;
+  border-radius: 0 20px 20px 0;
+  padding: 6px 12px 4px;
+  clip: unset;
+  clip-path: unset;
+  margin: 0;
+  left: unset;
+  opacity: 0.9;
+}
+
+.widget_product_search form button[type="submit"]:hover {
+  opacity: 1;
+}
+
+/*Icon on search button*/
+form button[type="submit"] i {
+  position: relative;
+  top: 2px;
+  left: 0;
+  font-size: 18px;
+  color: #191919;
 }
