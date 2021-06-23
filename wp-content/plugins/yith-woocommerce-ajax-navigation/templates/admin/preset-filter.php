@@ -43,12 +43,12 @@ if ( ! defined( 'YITH_WCAN' ) ) {
 			true
 		);
 		?>
-		<span class="show-on-hover delete material-icons">delete_outline</span>
-		<span class="show-on-hover clone material-icons">filter_none</span>
+		<span class="show-on-hover delete yith-icon-trash"></span>
+		<span class="show-on-hover clone yith-icon-edit"></span>
 	</div>
 	<div class="yith-toggle-content">
 		<?php
-		$fields = $filter->get_fields();
+		$fields = YITH_WCAN_Filter::get_fields();
 
 		if ( ! empty( $fields ) ) :
 			foreach ( $fields as $field_slug => $field ) :
@@ -67,7 +67,7 @@ if ( ! defined( 'YITH_WCAN' ) ) {
 				);
 
 				// special case for terms.
-				if ( 'terms' === $field_slug ) {
+				if ( 'term_ids' === $field_slug ) {
 					$field_args['options'] = $filter->get_terms( 'id=>name' );
 				}
 
@@ -77,7 +77,7 @@ if ( ! defined( 'YITH_WCAN' ) ) {
 					<?php yith_plugin_fw_get_field( $field_args, true ); ?>
 
 					<?php if ( ! empty( $field['desc'] ) ) : ?>
-						<span class="description"><?php echo esc_html( $field['desc'] ); ?></span>
+						<span class="description"><?php echo wp_kses_post( $field['desc'] ); ?></span>
 					<?php endif; ?>
 				</div>
 				<?php

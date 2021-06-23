@@ -39,13 +39,13 @@ if ( ! defined( 'YITH_WCAN' ) ) {
 			</span>
 		<?php endif; ?>
 
-		<?php if ( 'color' === $mode ) : ?>
+		<?php if ( 'color' === $mode && ! empty( $color_1 ) ) : ?>
 			<span class="term-color <?php echo ! empty( $color_2 ) ? 'bi-color' : 'single-color'; ?>">
 				<span class="color-swatch" style="background-color: <?php echo esc_attr( $color_1 ); ?>; border-color: <?php echo esc_attr( ! empty( $color_2 ) ? $color_2 : $color_1 ); ?>"></span>
 			</span>
 		<?php endif; ?>
 
-		<?php if( ! empty( $label ) ): ?>
+		<?php if ( ! empty( $label ) ) : ?>
 			<span class="term-label">
 				<?php echo esc_html( $label ); ?>
 				<?php echo $filter->render_term_count( $term, $count ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>

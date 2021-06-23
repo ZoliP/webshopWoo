@@ -21,6 +21,27 @@ if ( ! class_exists( 'YITH_WCAN_Query' ) ) {
 	 */
 	class YITH_WCAN_Query {
 		/**
+		 * Base name for queried-products transient
+		 *
+		 * @const string
+		 */
+		const QUERIED_PRODUCTS_TRANSIENT = 'yith_wcan_queried_products_';
+
+		/**
+		 * Base name for object-in-terms transient
+		 *
+		 * @const string
+		 */
+		const OBJECT_IN_TERMS_TRANSIENT = 'yith_wcan_object_in_terms_';
+
+		/**
+		 * Base name for products-in-stock transient
+		 *
+		 * @const string
+		 */
+		const PRODUCTS_IN_STOCK_TRANSIENT = 'yith_wcan_products_instock_';
+
+		/**
 		 * Query parameter added to any filtered page url
 		 *
 		 * @var string
@@ -475,7 +496,7 @@ if ( ! class_exists( 'YITH_WCAN_Query' ) ) {
 			} elseif ( ! $query->is_main_query() && $query->get( 'wc_query' ) ) {
 				// skip if we're already executing a special wc_query.
 				$result = false;
-			} elseif ( $query->get( 'yith_wcan_prefetch_cache' ) ) {
+			} elseif ( $query->get( 'yith_wcan_suppress_filters' ) ) {
 				// skip if we're prefetching products.
 				$result = false;
 			}
@@ -761,7 +782,7 @@ if ( ! class_exists( 'YITH_WCAN_Query' ) ) {
 		 * @return array|bool Query's post__in, or false when no limitation shall be applied.
 		 */
 		public function get_post_in( $post_in = array() ) {
-			return $post_in;
+			return apply_filters( 'yith_wcan_query_post_in', $post_in );
 		}
 
 		/**
@@ -1061,7 +1082,7 @@ if ( ! class_exists( 'YITH_WCAN_Query' ) ) {
 		 */
 		public function get_queried_products_transient_name() {
 			$cache_version = WC_Cache_Helper::get_transient_version( 'product' );
-			$cache_name    = "yith_wcan_queried_products_{$cache_version}";
+			$cache_name    = self::QUERIED_PRODUCTS_TRANSIENT . $cache_version;
 
 			// WPML support.
 			$current_lang = apply_filters( 'wpml_current_language', null );
@@ -1080,7 +1101,7 @@ if ( ! class_exists( 'YITH_WCAN_Query' ) ) {
 		 */
 		public function get_object_in_terms_transient_name() {
 			$cache_version = WC_Cache_Helper::get_transient_version( 'product' );
-			$cache_name    = "yith_wcan_object_in_terms_{$cache_version}";
+			$cache_name    = self::OBJECT_IN_TERMS_TRANSIENT . $cache_version;
 
 			return apply_filters( 'yith_wcan_object_in_terms_name', $cache_name );
 		}
@@ -1092,7 +1113,7 @@ if ( ! class_exists( 'YITH_WCAN_Query' ) ) {
 		 */
 		public function get_in_stock_products_transient_name() {
 			$cache_version = WC_Cache_Helper::get_transient_version( 'product' );
-			$cache_name    = "yith_wcan_products_instock_{$cache_version}";
+			$cache_name    = self::PRODUCTS_IN_STOCK_TRANSIENT . $cache_version;
 
 			// WPML support.
 			$current_lang = apply_filters( 'wpml_current_language', null );
@@ -1115,6 +1136,44 @@ if ( ! class_exists( 'YITH_WCAN_Query' ) ) {
 			delete_transient( $this->get_object_in_terms_transient_name() );
 
 			delete_transient( 'yith_wcan_exclude_from_catalog_product_ids' );
+		}
+
+		/**
+		 * Delete transient used to cache queried products
+		 *
+		 * @return void
+		 */
+		public function delete_expired_transients() {
+			global $wpdb;
+
+			$cache_version = WC_Cache_Helper::get_transient_version( 'product' );
+			$to_delete     = array(
+				self::QUERIED_PRODUCTS_TRANSIENT,
+				self::OBJECT_IN_TERMS_TRANSIENT,
+				self::PRODUCTS_IN_STOCK_TRANSIENT,
+			);
+
+			$query = "DELETE FROM {$wpdb->options} WHERE 1=1";
+			$args  = array();
+
+			$query .= ' AND ( ';
+			$first  = true;
+			foreach ( $to_delete as $transient_name ) {
+				if ( ! $first ) {
+					$query .= ' OR ';
+				}
+
+				$args[] = "%{$transient_name}%";
+
+				$query .= 'option_name LIKE %s';
+				$first  = false;
+			}
+			$query .= ')';
+
+			$query .= ' AND option_name NOT LIKE %s';
+			$args[] = "%{$cache_version}%";
+
+			$wpdb->query( $wpdb->prepare( $query, $args ) ); // phpcs:ignore WordPress.DB
 		}
 
 		/* === UTILS === */
@@ -1158,6 +1217,15 @@ if ( ! class_exists( 'YITH_WCAN_Query' ) ) {
 		}
 
 		/**
+		 * Retrieves list of ids of featured products
+		 *
+		 * @return array Array of product ids
+		 */
+		public function get_product_ids_featured() {
+			return wc_get_featured_product_ids();
+		}
+
+		/**
 		 * Merge sets of query vars together; when applicable, uses merge mode to merge parameters together
 		 *
 		 * @param array  $query_vars     Initial array of parameters.
@@ -1195,6 +1263,9 @@ if ( ! class_exists( 'YITH_WCAN_Query' ) ) {
 
 								$query_vars[ $key ] = implode( ',', array_unique( array_merge( $existing, $new ) ) );
 							}
+						} elseif ( is_array( $value ) ) {
+							$glue = 'and' === $merge_mode ? '+' : ',';
+							$query_vars[ $key ] = implode( $glue, array_merge( isset( $query_vars[ $key ] ) ? (array) $query_vars[ $key ] : array(), $value ) );
 						} else {
 							$query_vars[ $key ] = $value;
 						}
@@ -1247,6 +1318,13 @@ if ( ! class_exists( 'YITH_WCAN_Query' ) ) {
 							if ( empty( $query_vars[ $key ] ) ) {
 								unset( $query_vars[ $key ] );
 								unset( $query_vars[ "query_type_{$attribute}" ] );
+							}
+						} elseif ( is_array( $value ) ) {
+							$glue = 'and' === $merge_mode ? '+' : ',';
+							$query_vars[ $key ] = implode( $glue, array_diff( isset( $query_vars[ $key ] ) ? (array) $query_vars[ $key ] : array(), $value ) );
+
+							if ( empty( $query_vars[ $key ] ) ) {
+								unset( $query_vars[ $key ] );
 							}
 						} else {
 							unset( $query_vars[ $key ] );

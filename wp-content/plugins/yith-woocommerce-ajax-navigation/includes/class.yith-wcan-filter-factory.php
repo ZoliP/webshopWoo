@@ -75,6 +75,24 @@ if ( ! class_exists( 'YITH_WCAN_Filter_Factory' ) ) {
 		}
 
 		/**
+		 * Get supported designs
+		 *
+		 * @return array Array of supported designs (id=>name)
+		 */
+		public static function get_supported_designs() {
+			return apply_filters(
+				'yith_wcan_supported_filter_designs',
+				array(
+					'checkbox' => _x( 'Checkbox', '[Admin] Filter edit form', 'yith-woocommerce-ajax-navigation' ),
+					'select'   => _x( 'Select', '[Admin] Filter edit form', 'yith-woocommerce-ajax-navigation' ),
+					'text'     => _x( 'Text', '[Admin] Filter edit form', 'yith-woocommerce-ajax-navigation' ),
+					'color'    => _x( 'Color Swatches', '[Admin] Filter edit form', 'yith-woocommerce-ajax-navigation' ),
+					'label'    => _x( 'Label', '[Admin] Filter edit form', 'yith-woocommerce-ajax-navigation' ),
+				)
+			);
+		}
+
+		/**
 		 * Get all supported orders for products
 		 *
 		 * @return array Array of supported orders (id=>name)

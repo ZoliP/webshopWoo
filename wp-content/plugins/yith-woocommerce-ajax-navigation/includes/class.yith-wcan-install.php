@@ -123,6 +123,7 @@ if ( ! class_exists( 'YITH_WCAN_Install' ) ) {
 		public static function maybe_update_options() {
 			// do incremental upgrade.
 			version_compare( self::$_stored_version, '4.0.0', '<' ) && self::_do_400_upgrade();
+			version_compare( self::$_stored_version, '4.1.0', '<' ) && self::_do_410_upgrade();
 
 			// space for future revisions.
 
@@ -217,6 +218,19 @@ if ( ! class_exists( 'YITH_WCAN_Install' ) ) {
 			foreach ( $options_to_export as $option ) {
 				update_option( $option, yith_wcan_get_option( $option ) );
 			}
+
+			do_action( 'yith_wcan_did_400_upgrade' );
+		}
+
+		/**
+		 * Upgrade options to version 4.1.0
+		 *
+		 * Scratch method; nothing needs to be done on this version of the software.
+		 *
+		 * @return void.
+		 */
+		protected static function _do_410_upgrade() {
+			do_action( 'yith_wcan_did_410_upgrade' );
 		}
 
 		/**

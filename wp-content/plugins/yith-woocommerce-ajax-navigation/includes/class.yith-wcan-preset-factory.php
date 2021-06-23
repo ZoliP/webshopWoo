@@ -99,5 +99,19 @@ if ( ! class_exists( 'YITH_WCAN_Preset_Factory' ) ) {
 				return false;
 			}
 		}
+
+		/**
+		 * Returns an array of supported layouts for the preset
+		 *
+		 * @return array Array of supported layouts.
+		 */
+		public static function get_supported_layouts() {
+			return apply_filters(
+				'yith_wcan_supported_preset_layouts',
+				array(
+					'default' => _x( 'Default', '[Admin] Label in new preset page', 'yith-woocommerce-ajax-navigation' ),
+				)
+			);
+		}
 	}
 }

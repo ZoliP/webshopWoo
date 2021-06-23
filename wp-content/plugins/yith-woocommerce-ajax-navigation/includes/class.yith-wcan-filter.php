@@ -69,32 +69,7 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		public function __construct( $filter = array() ) {
 			$filter = wp_parse_args(
 				$filter,
-				array(
-					'id'                => '',
-					'preset_id'         => '',
-					'title'             => _x( 'New filter', '[Admin] Default filter title', 'yith-woocommerce-ajax-navigation' ),
-					'terms'             => array(),
-					'price_ranges'      => array(),
-					'filter_design'     => 'checkbox',
-					'column_number'     => 4,
-					'show_toggle'       => 'no',
-					'show_search'       => 'yes',
-					'toggle_style'      => 'opened',
-					'order_by'          => 'name',
-					'order'             => 'asc',
-					'show_count'        => 'no',
-					'hierarchical'      => 'no',
-					'multiple'          => 'no',
-					'relation'          => 'and',
-					'adoptive'          => 'hide',
-					'enabled'           => 'yes',
-					'price_slider_min'  => 0,
-					'price_slider_max'  => 100,
-					'price_slider_step' => 0.01,
-					'order_options'     => array( 'menu_order' ),
-					'show_stock_filter' => 'yes',
-					'show_sale_filter'  => 'yes',
-				)
+				$this->get_defaults()
 			);
 
 			// use setters to configure filter parameters; this will assure data sanitization.
@@ -125,6 +100,48 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		 */
 		public function __wakeup() {
 			$this->__construct( $this->data );
+		}
+
+		/**
+		 * Get filter defaults
+		 *
+		 * @return array Array of filter defaults.
+		 */
+		protected function get_defaults() {
+			return apply_filters(
+				'yith_wcan_filter_defaults',
+				array(
+					'id'                           => '',
+					'preset_id'                    => '',
+					'title'                        => _x( 'New filter', '[Admin] Default filter title', 'yith-woocommerce-ajax-navigation' ),
+					'customize_terms'              => 'yes',
+					'terms'                        => array(),
+					'price_ranges'                 => array(),
+					'filter_design'                => 'checkbox',
+					'label_position'               => 'below',
+					'column_number'                => 4,
+					'show_toggle'                  => 'no',
+					'show_search'                  => 'yes',
+					'toggle_style'                 => 'opened',
+					'order_by'                     => 'name',
+					'order'                        => 'asc',
+					'show_count'                   => 'no',
+					'hierarchical'                 => 'no',
+					'multiple'                     => 'no',
+					'relation'                     => 'and',
+					'adoptive'                     => 'hide',
+					'enabled'                      => 'yes',
+					'price_slider_design'          => 'slider',
+					'price_slider_adaptive_limits' => 'no',
+					'price_slider_min'             => 0,
+					'price_slider_max'             => 100,
+					'price_slider_step'            => 1,
+					'order_options'                => array( 'menu_order' ),
+					'show_stock_filter'            => 'yes',
+					'show_sale_filter'             => 'yes',
+					'show_featured_filter'         => 'no',
+				)
+			);
 		}
 
 		/* === GETTERS === */
@@ -235,13 +252,53 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		}
 
 		/**
+		 * Get use_all_terms property for the filter
+		 *
+		 * @param string $context Context of the operation.
+		 * @return string Yes or no.
+		 */
+		public function get_use_all_terms( $context = 'view' ) {
+			return $this->get_prop( 'use_all_terms', $context );
+		}
+
+		/**
+		 * Check if we should use all existing terms for this filter
+		 *
+		 * @param string $context Context of the operation.
+		 * @return bool Whether all terms should be retrieved or not.
+		 */
+		public function use_all_terms( $context = 'view' ) {
+			return 'yes' === $this->get_use_all_terms( $context );
+		}
+
+		/**
+		 * Get customize_terms property
+		 *
+		 * @param string $context Context of the operation.
+		 * @return string Yes or no.
+		 */
+		public function get_customize_terms( $context = 'view' ) {
+			return $this->get_prop( 'customize_terms', $context );
+		}
+
+		/**
+		 * Should use custom terms options?
+		 *
+		 * @param string $context Context of the operation.
+		 * @return bool Whether to use terms options or not.
+		 */
+		public function customize_terms( $context = 'view' ) {
+			return apply_filters( 'yith_wcan_filter_customize_terms_options', 'yes' === $this->get_prop( 'customize_terms', $context ), $this );
+		}
+
+		/**
 		 * Check whether filter has any term
 		 *
 		 * @param string $context Context of the operation.
 		 * @return bool Whether filter has any term
 		 */
 		public function has_terms( $context = 'view' ) {
-			return ! ! $this->get_terms();
+			return ! ! $this->get_terms( 'ids', $context );
 		}
 
 		/**
@@ -270,6 +327,22 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		}
 
 		/**
+		 * Return default term options
+		 *
+		 * @return array Default term options:
+		 */
+		public function get_default_term_options() {
+			return array(
+				'label'   => '',
+				'tooltip' => '',
+				'color_1' => '',
+				'color_2' => '',
+				'image'   => '',
+				'mode'    => 'color',
+			);
+		}
+
+		/**
 		 * Get terms for the filter
 		 *
 		 * @param string $fields Type of item to return.
@@ -277,11 +350,23 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		 * @return array Array of term ids for current filter.
 		 */
 		public function get_terms( $fields = 'ids', $context = 'view' ) {
-			$terms = $this->get_prop( 'terms', $context );
-
+			$terms    = $this->get_prop( 'terms', $context );
 			$term_ids = array_keys( $terms ? $terms : array() );
+			$taxonomy = $this->get_taxonomy( $context );
+
+			if ( ! $taxonomy ) {
+				return array();
+			}
 
 			switch ( $fields ) {
+				default:
+					if ( ! $this->use_all_terms() ) {
+						return $term_ids;
+					}
+
+					$fields = 'ids';
+
+					// explicitly fallback to next cases.
 				case 'all':
 				case 'all_with_object_id':
 				case 'tt_ids':
@@ -291,18 +376,16 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 				case 'id=>parent':
 				case 'id=>name':
 				case 'id=>slug':
-					$taxonomy = $this->get_taxonomy( $context );
-
-					if ( ! $taxonomy ) {
-						return array();
-					}
-
 					$terms = get_terms(
-						array(
-							'taxonomy' => $taxonomy,
-							'include' => $term_ids,
-							'fields' => $fields,
-							'hide_empty' => false,
+						array_merge(
+							array(
+								'taxonomy' => $taxonomy,
+								'fields' => $fields,
+								'hide_empty' => false,
+							),
+							$this->use_all_terms() ? array() : array(
+								'include' => $term_ids,
+							)
 						)
 					);
 
@@ -312,10 +395,41 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 
 					return $terms;
 				case 'id=>options':
-					return $terms;
-				default:
-					return $term_ids;
+					if ( ! $this->use_all_terms() ) {
+						return $terms;
+					} else {
+						$term_ids = get_terms(
+							array(
+								'taxonomy' => $taxonomy,
+								'fields' => 'ids',
+								'hide_empty' => false,
+							)
+						);
+
+						if ( ! $term_ids || is_wp_error( $term_ids ) ) {
+							return array();
+						}
+
+						$terms = array();
+						$default_term_options = $this->get_default_term_options();
+
+						foreach ( $term_ids as $term_id ) {
+							$terms[ $term_id ] = $default_term_options;
+						}
+
+						return $terms;
+					}
 			}
+		}
+
+		/**
+		 * Returns an array of IDs for the selected terms
+		 *
+		 * @param string $context Context of the operation.
+		 * @return array Array of term ids for current filter.
+		 */
+		public function get_term_ids( $context = 'view' ) {
+			return $this->get_terms( 'ids', $context );
 		}
 
 		/**
@@ -336,6 +450,16 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		 */
 		public function get_filter_design( $context = 'view' ) {
 			return $this->get_prop( 'filter_design', $context );
+		}
+
+		/**
+		 * Get label position
+		 *
+		 * @param string $context Context of the operation.
+		 * @return string Position of the label (below/right/hide).
+		 */
+		public function get_label_position( $context = 'view' ) {
+			return $this->get_prop( 'label_position', $context );
 		}
 
 		/**
@@ -365,7 +489,7 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		 * @return string Whether filter is collapsable or not.
 		 */
 		public function is_collapsable( $context = 'view' ) {
-			return 'yes' === $this->get_prop( 'show_toggle', $context );
+			return 'yes' === $this->get_prop( 'show_toggle', $context ) || 'horizontal' === $this->get_preset()->get_layout();
 		}
 
 		/**
@@ -395,6 +519,12 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		 * @return string Toggle style.
 		 */
 		public function get_toggle_style( $context = 'view' ) {
+			$preset = $this->get_preset();
+
+			if ( $preset && 'horizontal' === $preset->get_layout() ) {
+				return 'closed';
+			}
+
 			return $this->get_prop( 'toggle_style', $context );
 		}
 
@@ -523,6 +653,36 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		}
 
 		/**
+		 * Returns the slider design
+		 *
+		 * @param string $context Context of the operation.
+		 * @return string Slider/Fields or both.
+		 */
+		public function get_price_slider_design( $context = 'view' ) {
+			return $this->get_prop( 'price_slider_design', $context );
+		}
+
+		/**
+		 * Get price_slider_adaptive_limits property
+		 *
+		 * @param string $context Context of the operation.
+		 * @return string Yes or no.
+		 */
+		public function get_price_slider_adaptive_limits( $context = 'view' ) {
+			return $this->get_prop( 'price_slider_adaptive_limits', $context );
+		}
+
+		/**
+		 * Should use adaptive limits for price slider?
+		 *
+		 * @param string $context Context of the operation.
+		 * @return string Whether to use adaptive limits for price slider or not.
+		 */
+		public function use_price_slider_adaptive_limits( $context = 'view' ) {
+			return 'yes' === $this->get_price_slider_adaptive_limits( $context );
+		}
+
+		/**
 		 * Retrieves minimum value for price slider filter
 		 *
 		 * @param string $context Context of the operation.
@@ -583,6 +743,16 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		}
 
 		/**
+		 * Get show_featured_filter property
+		 *
+		 * @param string $context Context of the operation.
+		 * @return string Yes or no.
+		 */
+		public function get_show_featured_filter( $context = 'view' ) {
+			return $this->get_prop( 'show_featured_filter', $context );
+		}
+
+		/**
 		 * Checks whether In Stock filter needs to be shown
 		 *
 		 * @param string $context Context of the operation.
@@ -600,6 +770,16 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		 */
 		public function show_sale_filter( $context = 'view' ) {
 			return 'yes' === $this->get_prop( 'show_sale_filter', $context );
+		}
+
+		/**
+		 * Checks whether Featured filter needs to be shown
+		 *
+		 * @param string $context Context of the operation.
+		 * @return bool Whether filter needs to be shown
+		 */
+		public function show_featured_filter( $context = 'view' ) {
+			return 'yes' === $this->get_prop( 'show_featured_filter', $context );
 		}
 
 		/**
@@ -625,6 +805,10 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 
 			if ( 'tax' === $this->get_type() && $this->is_hierarchical() ) {
 				$additional_classes[] = 'hierarchical';
+			}
+
+			if ( 'tax' === $this->get_type() ) {
+				$additional_classes[] = $this->get_filter_design() . '-design';
 			}
 
 			if ( ! $this->get_title() ) {
@@ -680,7 +864,7 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		 *
 		 * @return array Array of fields
 		 */
-		public function get_fields() {
+		public static function get_fields() {
 			return include( YITH_WCAN_DIR . 'plugin-options/filter-options.php' );
 		}
 
@@ -750,27 +934,56 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		}
 
 		/**
+		 * Set use_all_terms property for the filter
+		 *
+		 * @param string $use_all_terms Yes or no.
+		 */
+		public function set_use_all_terms( $use_all_terms ) {
+			$use_all_terms = yith_plugin_fw_is_true( $use_all_terms ) ? 'yes' : 'no';
+
+			$this->set_prop( 'use_all_terms', $use_all_terms );
+		}
+
+		/**
+		 * Set customize_terms property
+		 *
+		 * @param string $customize_terms Yes or no.
+		 */
+		public function set_customize_terms( $customize_terms ) {
+			$customize_terms = yith_plugin_fw_is_true( $customize_terms ) ? 'yes' : 'no';
+
+			$this->set_prop( 'customize_terms', $customize_terms );
+		}
+
+		/**
 		 * Set terms for current filter
 		 *
-		 * @param array $terms An array of terms options, with the following format: term_id=>options.
+		 * @param array $terms An array of terms options, with the following format: term_id=>options; alternatively an array of term ids can be passed
+		 *                     In this case, default options will apply for each term.
 		 */
 		public function set_terms( $terms ) {
 			$new_terms = array();
 
+			$default_term_options = $this->get_default_term_options();
+
 			// sanitize array of options.
 			if ( ! empty( $terms ) ) {
-				foreach ( $terms as $term_id => $options ) {
-					$new_terms[ (int) $term_id ] = wp_parse_args(
-						$options,
-						array(
-							'label' => '',
-							'tooltip' => '',
-							'color_1' => '',
-							'color_2' => '',
-							'image' => '',
-							'mode' => 'color',
-						)
-					);
+				foreach ( $terms as $index => $value ) {
+					if ( is_array( $value ) ) {
+						$term_id = $index;
+						$options = $value;
+
+						$new_terms[ (int) $term_id ] = wp_parse_args(
+							$options,
+							$default_term_options
+						);
+					} elseif ( is_numeric( $value ) ) {
+						$term_id = $value;
+
+						$new_terms[ (int) $term_id ] = $default_term_options;
+					} else {
+						continue;
+					}
 				}
 			}
 
@@ -797,6 +1010,25 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 			}
 
 			$this->set_prop( 'filter_design', $filter_design );
+		}
+
+		/**
+		 * Set label position
+		 *
+		 * @param string $label_position Lbale position.
+		 */
+		public function set_label_position( string $label_position ) {
+			$supported_positions = array(
+				'below',
+				'right',
+				'hide',
+			);
+
+			if ( ! in_array( $label_position, $supported_positions ) ) {
+				return;
+			}
+
+			$this->set_prop( 'label_position', $label_position );
 		}
 
 		/**
@@ -859,6 +1091,7 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 				'slug',
 				'count',
 				'term_order',
+				'include',
 			);
 
 			if ( ! in_array( $order_by, $supported_orders ) ) {
@@ -1002,6 +1235,30 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		}
 
 		/**
+		 * Set price slider design property
+		 *
+		 * @param string $design Slider/Fields or both; if none of them, fallbacks to slider.
+		 */
+		public function set_price_slider_design( $design ) {
+			if ( ! in_array( $design, array( 'slider', 'fields', 'both' ) ) ) {
+				$design = 'slider';
+			}
+
+			$this->set_prop( 'price_slider_design', $design );
+		}
+
+		/**
+		 * Set price_slider_adaptive_limits property
+		 *
+		 * @param string $price_slider_adaptive_limits Yes or no.
+		 */
+		public function set_price_slider_adaptive_limits( $price_slider_adaptive_limits ) {
+			$price_slider_adaptive_limits = yith_plugin_fw_is_true( $price_slider_adaptive_limits ) ? 'yes' : 'no';
+
+			$this->set_prop( 'price_slider_adaptive_limits', $price_slider_adaptive_limits );
+		}
+
+		/**
 		 * Set minimum value for price slider filter
 		 *
 		 * @param float $min Minimum slider value.
@@ -1071,6 +1328,17 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 		}
 
 		/**
+		 * Set whether we should show Featured filter
+		 *
+		 * @param string $show_featured Yes or no.
+		 */
+		public function set_show_featured_filter( $show_featured ) {
+			$show_on_sale = yith_plugin_fw_is_true( $show_featured ) ? 'yes' : 'no';
+
+			$this->set_prop( 'show_featured_filter', $show_featured );
+		}
+
+		/**
 		 * Set filter as enabled
 		 *
 		 * @return void
@@ -1124,7 +1392,7 @@ if ( ! class_exists( 'YITH_WCAN_Filter' ) ) {
 
 			if ( $this->is_collapsable() ) {
 				$additional_classes[] = 'collapsable';
-				$additional_classes[] = $this->is_active() ? 'opened' : $this->get_toggle_style();
+				$additional_classes[] = ( $this->is_active() && 'horizontal' !== $this->get_preset()->get_layout() ) ? 'opened' : $this->get_toggle_style();
 			}
 
 			$additional_classes = implode( ' ', apply_filters( 'yith_wcan_filter_title_classes', $additional_classes, $this ) );

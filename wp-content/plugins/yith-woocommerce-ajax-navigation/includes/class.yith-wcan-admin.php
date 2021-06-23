@@ -108,12 +108,15 @@ if ( ! class_exists( 'YITH_WCAN_Admin' ) ) {
 						'confirm_delete' => _x( 'Are you sure you want to delete this item?', '[Admin] Confirm filter delete message', 'yith-woocommerce-ajax-navigation' ),
 						// translators: 1. Number of items that will be added.
 						'confirm_add_all_terms' => _x( 'Are you sure you want to proceed? This operation will add %s items', '[Admin] Confirm add all terms message', 'yith-woocommerce-ajax-navigation' ),
+						'filter_title_required' => _x( '"Filter title" is a required field', '[Admin] Error message', 'yith-woocommerce-ajax-navigation' ),
 					),
 					'labels' => array(
 						'no_title' => _x( '&lt; no title &gt;', '[Admin] Message shown when filter has empty title', 'yith-woocommerce-ajax-navigation' ),
 						'upload_media' => _x( 'Select media you want to use', '[Admin] Media library title, when selecting images', 'yith-woocommerce-ajax-navigation' ),
 						'confirm_media' => _x( 'Use this media', '[Admin] Media library confirm button, when selecting images', 'yith-woocommerce-ajax-navigation' ),
 					),
+					'yith_wccl_enabled' => defined( 'YITH_WCCL' ),
+					'supported_designs' => YITH_WCAN_Filter_Factory::get_supported_designs(),
 				)
 			);
 		}
@@ -191,7 +194,7 @@ if ( ! class_exists( 'YITH_WCAN_Admin' ) ) {
 			$args = array(
 				'create_menu_page'   => true,
 				'parent_slug'        => '',
-				'page_title'         => _x( 'Ajax Product Filter', '[Admin] Menu title', 'yith-woocommerce-ajax-navigation' ),
+				'page_title'         => 'WooCommerce Ajax Product Filter',
 				'menu_title'         => _x( 'Ajax Product Filter', '[Admin] Menu title', 'yith-woocommerce-ajax-navigation' ),
 				'plugin_description' => _x( 'It allows your users to find the product they are looking for as quickly as possible.', '[Admin] Plugin description', 'yith-woocommerce-ajax-navigation' ),
 				'capability'         => apply_filters( 'yith_wcan_panel_capability', 'manage_woocommerce' ),
@@ -203,6 +206,23 @@ if ( ! class_exists( 'YITH_WCAN_Admin' ) ) {
 				'plugin_slug'        => YITH_WCAN_SLUG,
 				'plugin-url'         => YITH_WCAN_URL,
 				'page'               => $this->_panel_page,
+				'help_tab'           => array(
+					'main_video' => array(
+						'desc' => _x( 'Check this video to learn how to <b>create a filter preset and show it on the shop page:</b>', '[HELP TAB] Video title', 'yith-woocommerce-ajax-navigation' ),
+						'url'  => array(
+							'en' => 'https://www.youtube.com/embed/o-ZhSVR4HvU',
+							'it' => 'https://www.youtube.com/embed/cgQo2Cxux4M',
+							'es' => 'https://www.youtube.com/embed/KGnJW_zUBRY',
+						),
+					),
+					'playlists' => array(
+						'en' => 'https://www.youtube.com/watch?v=icXC7Ei4K7g&list=PLDriKG-6905lqqHc9JR5RJ3vhBn5ktdcj',
+						'it' => 'https://www.youtube.com/watch?v=QwRkPQFeGOM&list=PL9c19edGMs08ouyniO98Q8S_pr4pHZPqb',
+						'es' => 'https://www.youtube.com/watch?v=7kX7nxBD2BA&list=PL9Ka3j92PYJOyeFNJRdW9oLPkhfyrXmL1',
+					),
+					'hc_url'    => 'https://support.yithemes.com/hc/en-us/categories/360003474618-YITH-WOOCOMMERCE-AJAX-PRODUCT-FILTER',
+					'doc_url'   => 'https://docs.yithemes.com/yith-woocommerce-ajax-product-filter/',
+				),
 			);
 
 			$this->_panel = new YIT_Plugin_Panel_WooCommerce( $args );
@@ -359,7 +379,7 @@ if ( ! class_exists( 'YITH_WCAN_Admin' ) ) {
 		 */
 		public function filter_terms_field( $field ) {
 			$id = isset( $field['index'] ) ? $field['index'] : 0;
-			$terms = isset( $field['value'] ) ? $field['value'] : array();
+			$terms = isset( $field['value'] ) && $field['filter']->customize_terms() ? $field['value'] : array();
 			$taxonomy = ! empty( $field['filter'] ) ? $field['filter']->get_taxonomy() : '';
 
 			include( YITH_WCAN_DIR . 'templates/admin/preset-filter-terms.php' );

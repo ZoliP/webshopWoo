@@ -27,6 +27,7 @@ if ( ! class_exists( 'YITH_WCAN_Preset_Data_Store' ) ) {
 			'_selector' => 'selector',
 			'_enabled'  => 'enabled',
 			'_filters'  => 'filters',
+			'_layout'   => 'layout',
 		);
 
 		/**

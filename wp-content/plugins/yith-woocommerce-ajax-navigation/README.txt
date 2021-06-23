@@ -4,7 +4,7 @@ Contributors: yithemes
 Tags: woocommerce ajax product filter download, woocommerce, widget, ajax, ajax filtered nav, ajax navigation, ajax filtered navigation, woocommerce layered navigation, woocommerce layered nav, product filter, product filters, ajax product filter, woocommerce ajax product filter, woocommerce filters, sidebar filter, sidebar ajax filter, ajax price filter, price filter, product sorting, woocommerce filter, taxonomy filter, attribute filter, attributes filter, woocommerce product sort, ajax sort, woocommerce ajax product filter, advanced product filters, ajax product filters, filters, woocommerce ajax product filters, woocommerce product filters, woocommerce product filters, category filter, attribute filters, woocommerce products filter, woocommerce price filter, yit, yith, yithemes
 Requires at least: 5.3
 Tested up to: 5.7
-Stable tag: 4.0.4
+Stable tag: 4.1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,27 @@ If none of the previous listed actions helps you solve the problem, then, submit
 14. Gutenberg block
 
 == Changelog ==
+
+= 4.1.0 - Released on 18 June 2021 =
+
+* New: support for WooCommerce 5.4
+* New: auto-populate taxonomy filters
+* New: support for YITH WooCommerce Color and Label Variations
+* New: support for Hello Elementor theme
+* New: automatically use term image, when available
+* New: option to choose where to show term labels in color/label layouts
+* New: added cron to delete transient with the old cache version
+* Update: YITH plugin framework
+* Tweak: changed name of the flag used to suppress filters query processing
+* Tweak: use svg instead of text for x icon in filters
+* Tweak: improved compatibility with Porto theme
+* Fix: issue with query-vars processing, causing orderby option to break
+* Fix: avoid possible JS error Cannot use in operator to search in null
+* Fix: multiple selection for categories, tags and brands does not work on OR mode in old widgets
+* Fix: avoid filters overwriting after new page is loaded (index overriding)
+* Dev: use babel to make scripts work on older browsers/devices
+* Dev: added trigger yith_wcan_preset_initialized
+* Dev: added new yith_wcan_query_post_in filter, to programmatically change products used by our plugin
 
 = 4.0.4 - Released on 18 May 2021 =
 

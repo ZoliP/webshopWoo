@@ -547,7 +547,7 @@ if ( ! class_exists( 'YITH_WCAN_Frontend' ) ) {
 				'query_param'           => YITH_WCAN_Query()->get_query_param(),
 				'supported_taxonomies'  => array_keys( YITH_WCAN_Query()->get_supported_taxonomies() ),
 				'content'               => apply_filters( 'yith_wcan_content_selector', '#content' ),
-				'change_browser_url'    => true,
+				'change_browser_url'    => in_array( yith_wcan_get_option( 'yith_wcan_change_browser_url', 'yes' ), array( 'yes', 'custom' ) ),
 				'instant_filters'       => true,
 				'ajax_filters'          => true,
 				'show_clear_filter'     => false,
@@ -579,6 +579,7 @@ if ( ! class_exists( 'YITH_WCAN_Frontend' ) ) {
 						// translators: 1. Number of items to show.
 						'show_more' => _x( 'Show %d more', '[FRONTEND] Show more link on terms dropdown', 'yith-woocommerce-ajax-navigation' ),
 						'close' => _x( 'Close', '[FRONTEND] Alt text for modal close button on mobile', 'yith-woocommerce-ajax-navigation' ),
+						'save' => _x( 'Save', '[FRONTEND] Label for filter button, on horizontal layout', 'yith-woocommerce-ajax-navigation' ),
 						'show_results' => _x( 'Show results', '[FRONTEND] Label for filter button, on mobile modal', 'yith-woocommerce-ajax-navigation' ),
 						'clear_selection' => _x( 'Clear', '[FRONTEND] Label for clear selection link, that appears above filter after selection', 'yith-woocommerce-ajax-navigation' ),
 						'clear_all_selections' => _x( 'Clear All', '[FRONTEND] Label for clear selection link, that appears above filter after selection', 'yith-woocommerce-ajax-navigation' ),

@@ -34,7 +34,7 @@ if ( ! class_exists( 'YITH_WCAN_Filter_Tax' ) ) {
 		 * @return bool Whether current filter is active.
 		 */
 		public function is_active() {
-			return apply_filters( 'yith_wcan_is_filter_active', YITH_WCAN_Query()->is_filtered_by($this->get_taxonomy() ), $this );
+			return apply_filters( 'yith_wcan_is_filter_active', YITH_WCAN_Query()->is_filtered_by( $this->get_taxonomy() ), $this );
 		}
 
 		/**
@@ -95,9 +95,11 @@ if ( ! class_exists( 'YITH_WCAN_Filter_Tax' ) ) {
 		public function render_item( $term, $term_options = array() ) {
 			$design = $this->get_filter_design();
 			$default_callback = "render_item_{$design}";
+			$customize_terms = $this->customize_terms();
+			$taxonomy = $this->get_taxonomy();
 
 			if ( ! $term instanceof WP_Term ) {
-				$term = get_term( $term, $this->get_taxonomy() );
+				$term = get_term( $term, $taxonomy );
 			}
 
 			if ( ! $term || is_wp_error( $term ) ) {
@@ -132,11 +134,34 @@ if ( ! class_exists( 'YITH_WCAN_Filter_Tax' ) ) {
 				$term_options['additional_classes'][] = 'disabled';
 			}
 
+			// if we're using terms' default option, override any custom setting user may have entered.
+			if ( ! $customize_terms ) {
+				$term_options['label']   = $term->name;
+				$term_options['tooltip'] = '';
+				$term_options['color_1'] = '';
+				$term_options['color_2'] = '';
+				$term_options['image']   = get_term_meta( $term->term_id, apply_filters( 'yith_wcan_tax_filter_default_image_meta', 'thumbnail_id', $taxonomy ), true );
+				$term_options['mode']    = ! ! $term_options['image'] ? 'image' : 'color';
+			}
+
 			// allow third party dev change attributes for the item.
 			$term_options = apply_filters( 'yith_wcan_tax_filter_item_args', $term_options, $term->term_id, $this );
 
+			// specific filtering for attributes.
+			if ( 0 === strpos( $taxonomy, 'pa_' ) && ! $customize_terms ) {
+				$term_options = apply_filters( 'yith_wcan_attribute_filter_item_args', $term_options, $term->term_id, $this );
+			}
+
+			if ( 'color' === $term_options['mode'] && empty( $term_options['color_1'] ) ) {
+				$term_options['additional_classes'][] = 'no-color';
+			}
+
+			if ( 'image' === $term_options['mode'] && empty( $term_options['image'] ) ) {
+				$term_options['additional_classes'][] = 'no-image';
+			}
+
 			// implode additional classes.
-			$term_options['additional_classes'] = implode( ' ', $term_options['additional_classes'] );
+			$term_options['additional_classes'] = implode( ' ', apply_filters( 'yith_wcan_filter_tax_additional_item_classes', $term_options['additional_classes'] ) );
 
 			if ( method_exists( $this, $default_callback ) ) {
 				$item = $this->{$default_callback}( $term, $term_options );
@@ -199,9 +224,11 @@ if ( ! class_exists( 'YITH_WCAN_Filter_Tax' ) ) {
 		 * @return string Item HTML template.
 		 */
 		public function render_item_label( $term, $term_options ) {
-			$columns = $this->get_column_number();
+			$columns        = $this->get_column_number();
+			$label_position = $this->get_label_position();
 
 			$term_options['additional_classes'] .= $term_options['image'] ? " with-image filter-has-{$columns}-column" : '';
+			$term_options['additional_classes'] .= " label-{$label_position}";
 
 			return $this->render_generic_item( 'label', $term, $term_options );
 		}
@@ -214,9 +241,11 @@ if ( ! class_exists( 'YITH_WCAN_Filter_Tax' ) ) {
 		 * @return string Item HTML template.
 		 */
 		public function render_item_color( $term, $term_options ) {
-			$columns = $this->get_column_number();
+			$columns        = $this->get_column_number();
+			$label_position = $this->get_label_position();
 
 			$term_options['additional_classes'] .= " filter-has-{$columns}-column";
+			$term_options['additional_classes'] .= " label-{$label_position}";
 
 			return $this->render_generic_item( 'color', $term, $term_options );
 		}
@@ -332,15 +361,19 @@ if ( ! class_exists( 'YITH_WCAN_Filter_Tax' ) ) {
 			$sorted_terms = get_terms(
 				array_merge(
 					array(
-						'taxonomy' => $this->get_taxonomy(),
-						'include'  => array_keys( $terms ),
-						'order'    => $this->get_order(),
-						'number'   => apply_filters( 'yith_wcan_filter_tax_term_limit', 0 ),
-						'fields'   => 'ids',
+						'taxonomy'   => $this->get_taxonomy(),
+						'order'      => $this->get_order(),
+						'number'     => apply_filters( 'yith_wcan_filter_tax_term_limit', 0 ),
+						'fields'     => 'ids',
 						'hide_empty' => $hide_empty,
+						'orderby'    => $this->get_order_by(),
+					),
+					$this->use_all_terms() ? array() : array(
+						'include'  => array_keys( $terms ),
 					),
 					'term_order' === $this->get_order_by() ? array(
-						'orderby'  => 'include',
+						'orderby'  => 'meta_value_num',
+						'meta_key' => 'order',
 					) : array(
 						'orderby' => $this->get_order_by(),
 					),
@@ -350,11 +383,11 @@ if ( ! class_exists( 'YITH_WCAN_Filter_Tax' ) ) {
 
 			if ( ! empty( $sorted_terms ) ) {
 				foreach ( $sorted_terms as $term_id ) {
-					if ( ! isset( $terms[ $term_id ] ) ) {
+					if ( ! isset( $terms[ $term_id ] ) && ! $this->use_all_terms() ) {
 						continue;
 					}
 
-					$term = $terms[ $term_id ];
+					$term = isset( $terms[ $term_id ] ) ? $terms[ $term_id ] : $this->get_default_term_options();
 
 					// set hierarchical data.
 					$children_result = $this->_get_term_children( $term_id );

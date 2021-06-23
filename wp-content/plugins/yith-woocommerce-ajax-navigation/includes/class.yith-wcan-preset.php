@@ -77,6 +77,7 @@ if ( ! class_exists( 'YITH_WCAN_Preset' ) ) {
 			$this->data = array(
 				'title'    => apply_filters( 'yith_wcan_default_preset_title', '' ),
 				'slug'     => apply_filters( 'yith_wcan_default_preset_slug', '' ),
+				'layout'   => 'default',
 				'selector' => '',
 				'filters'  => array(),
 				'enabled'  => true,
@@ -146,6 +147,18 @@ if ( ! class_exists( 'YITH_WCAN_Preset' ) ) {
 		}
 
 		/**
+		 * Get preset slug
+		 *
+		 * @param string $context Context of the operation.
+		 *
+		 * @return string Preset slug
+		 * @author Antonio La Rocca <antonio.larocca@yithemes.com>
+		 */
+		public function get_layout( $context = 'view' ) {
+			return $this->get_prop( 'layout', $context );
+		}
+
+		/**
 		 * Get preset selector
 		 *
 		 * @param string $context Context of the operation.
@@ -181,6 +194,12 @@ if ( ! class_exists( 'YITH_WCAN_Preset' ) ) {
 				$additional_classes[] = 'custom-style';
 			}
 
+			$layout = $this->get_layout();
+
+			if ( 'default' !== $layout ) {
+				$additional_classes[] = $layout;
+			}
+
 			if ( ! yith_wcan_get_option( 'yith_wcan_filters_title', '' ) ) {
 				$additional_classes[] = 'no-title';
 			}
@@ -203,6 +222,15 @@ if ( ! class_exists( 'YITH_WCAN_Preset' ) ) {
 			return $this->post;
 		}
 
+		/**
+		 * Return an array of supported fields
+		 *
+		 * @return array Array of fields
+		 */
+		public static function get_fields() {
+			return include( YITH_WCAN_DIR . 'plugin-options/preset-options.php' );
+		}
+
 		/* === SETTERS === */
 
 		/**
@@ -223,6 +251,18 @@ if ( ! class_exists( 'YITH_WCAN_Preset' ) ) {
 		 */
 		public function set_slug( $slug ) {
 			$this->slug = $slug;
+		}
+
+		/**
+		 * Set preset layout
+		 *
+		 * @param string $layout Filter preset layout.
+		 * @author Antonio La Rocca <antonio.larocca@yithemes.com>
+		 */
+		public function set_layout( $layout ) {
+			$layout = in_array( $layout, array_keys( YITH_WCAN_Preset_Factory::get_supported_layouts() ) ) ? $layout : 'default';
+
+			$this->set_prop( 'layout', $layout );
 		}
 
 		/**

@@ -998,7 +998,7 @@ if ( ! function_exists( 'yith_wcan_get_rating_html' ) ) {
 		$template .= '<div class="star-rating" role="img" aria-label="' . esc_attr( $label ) . '">';
 		$template .= wc_get_star_rating_html( $rating );
 		$template .= '</div>';
-		$template .= sprintf( '%d %s', $rating, _nx( 'star', 'stars', $rating, '[FRONTEND] Star rating template', 'yith-woocommerce-ajax-navigation' ) );
+		$template .= esc_html( sprintf( '%d %s', $rating, _nx( 'star', 'stars', $rating, '[FRONTEND] Star rating template', 'yith-woocommerce-ajax-navigation' ) ) );
 
 		return $template;
 	}

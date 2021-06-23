@@ -129,7 +129,7 @@ if ( ! class_exists( 'YITH_WCAN_Filter_Presets_Table' ) ) {
 		 */
 		public function action_edit( $item ) {
 			echo sprintf(
-				'<a class="show-on-hover edit" href="%s" title="%s"><i class="material-icons">edit</i></a>',
+				'<a class="show-on-hover edit" href="%s" title="%s"><i class="yith-icon yith-icon-edit"></i></a>',
 				esc_url( $item->get_admin_edit_url() ),
 				esc_html_x( 'Edit this preset', '[Admin] Preset edit action label', 'yith-woocommerce-ajax-navigation' )
 			);
@@ -142,7 +142,7 @@ if ( ! class_exists( 'YITH_WCAN_Filter_Presets_Table' ) ) {
 		 */
 		public function action_clone( $item ) {
 			echo sprintf(
-				'<a class="show-on-hover clone" href="%s" title="%s"><i class="material-icons">filter_none</i></a>',
+				'<a class="show-on-hover clone" href="%s" title="%s"><i class="yith-icon yith-icon-clone"></i></a>',
 				esc_url( $item->get_admin_clone_url() ),
 				esc_html_x( 'Clone this preset', '[Admin] Preset clone action label', 'yith-woocommerce-ajax-navigation' )
 			);
@@ -155,7 +155,7 @@ if ( ! class_exists( 'YITH_WCAN_Filter_Presets_Table' ) ) {
 		 */
 		public function action_delete( $item ) {
 			echo sprintf(
-				'<a class="show-on-hover delete" href="%s" title="%s" onclick="return confirm(\'%s\');"><i class="material-icons">delete_outline</i></a>',
+				'<a class="show-on-hover delete" href="%s" title="%s" onclick="return confirm(\'%s\');"><i class="yith-icon yith-icon-trash"></i></a>',
 				esc_url( $item->get_admin_delete_url() ),
 				esc_attr_x( 'Delete this preset', '[Admin] Preset delete action label', 'yith-woocommerce-ajax-navigation' ),
 				esc_attr_x( 'Are you sure you want to delete this preset?', '[Admin] Preset delete confirm label', 'yith-woocommerce-ajax-navigation' )

@@ -18,6 +18,7 @@ body {
   background-color: #f1f3f4;
 }
 
+/*Links*/
 a,
 a:focus,
 a:active,
@@ -26,6 +27,7 @@ button[type="submit"] {
   outline: 0;
 }
 
+/*Buttons, inputs*/
 button,
 input[type="button"],
 input[type="reset"],
@@ -36,7 +38,7 @@ input[type="submit"],
 .site-header-cart .widget_shopping_cart a:first-child.button {
   background-color: #fc0c05;
   border: none;
-  border-radius: 25px;
+  border-radius: 1.5625rem;
   color: #ffffff;
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
 }
@@ -44,8 +46,17 @@ input[type="submit"],
 /* Header*/
 .site-header {
   background-color: #000000;
+  border-bottom: none;
 }
 
+/* Header*/
+.home.blog .site-header,
+.home.page:not(.page-template-template-homepage) .site-header,
+.home.post-type-archive-product .site-header {
+  margin-bottom: 0;
+}
+
+/* Header*/
 .site-header .col-full {
   display: flex;
   align-items: center;
@@ -91,12 +102,12 @@ a.cart-contents:hover,
   color: #ffffff;
 }
 
-/*Items in the cart in Header*/
+/*Items in the cart in header*/
 .site-header-cart .widget_shopping_cart a:hover {
   color: #1393f5;
 }
 
-/*Items in the cart in Header*/
+/*Items in the cart in header*/
 .site-header-cart .widget_shopping_cart .widget_shopping_cart_content > p,
 .site-header-cart .widget_shopping_cart,
 .site-header-cart .widget_shopping_cart a,
@@ -113,7 +124,7 @@ a.cart-contents:hover,
   display: none;
 }
 
-/* Search form in Header*/
+/* Search form in header*/
 .site-search .widget_product_search form input[type="search"] {
   padding: 6px 4px 4px 24px;
   background-color: #000000;
@@ -122,16 +133,16 @@ a.cart-contents:hover,
   font-weight: 300;
   width: calc(100%-46px);
   height: 40px;
-  font-size: 14px;
-  border-radius: 20px 0 0 20px;
+  font-size: 0.875rem;
+  border-radius: 1.25rem 0 0 1.25rem;
 }
 
-/* Search icon before form*/
+/* Search icon before form storefront template*/
 .widget_product_search form::before {
   display: none;
 }
 
-/* Search form input in Header*/
+/* Search form input in header*/
 input[type="search"]::placeholder {
   color: #ffffff;
   opacity: 0.8;
@@ -143,23 +154,24 @@ input[type="search"]::placeholder {
   margin-right: 0;
 }
 
-/* Search form div in Header*/
+/* Search form div in header*/
 .woocommerce-active .site-header .site-search {
   width: 75%;
   float: left;
 }
 
+/* Search form in header*/
 .widget_product_search form {
   width: 90%;
   padding-left: 10%;
 }
 
-/* Search form button in Header*/
+/* Search form button in header*/
 .widget_product_search form button[type="submit"] {
   width: 42px;
   height: 40px;
   background-color: #ccd500;
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 1.25rem 1.25rem 0;
   padding: 6px 12px 4px;
   clip: unset;
   clip-path: unset;
@@ -168,11 +180,12 @@ input[type="search"]::placeholder {
   opacity: 0.9;
 }
 
+/* Search form button in header*/
 .widget_product_search form button[type="submit"]:hover {
   opacity: 1;
 }
 
-/*Icon on search button*/
+/*Icon on search button in header*/
 form button[type="submit"] i {
   position: relative;
   top: 2px;
@@ -181,14 +194,15 @@ form button[type="submit"] i {
   color: #191919;
 }
 
+/*Cart and bagde icon in header*/
 .site-header-cart .cart-contents {
   padding: 0;
 }
 
 /* Cart icon in header*/
 .site-header-cart .cart-contents::after {
-  width: 2em;
-  height: 2em;
+  width: 2rem;
+  height: 2rem;
   content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="-35 0 512 512.00102" width="32px"><path d="m443.054688 495.171875-38.914063-370.574219c-.816406-7.757812-7.355469-13.648437-15.15625-13.648437h-73.140625v-16.675781c0-51.980469-42.292969-94.273438-94.273438-94.273438-51.984374 0-94.277343 42.292969-94.277343 94.273438v16.675781h-73.140625c-7.800782 0-14.339844 5.890625-15.15625 13.648437l-38.9140628 370.574219c-.4492192 4.292969.9453128 8.578125 3.8320308 11.789063 2.890626 3.207031 7.007813 5.039062 11.324219 5.039062h412.65625c4.320313 0 8.4375-1.832031 11.324219-5.039062 2.894531-3.210938 4.285156-7.496094 3.835938-11.789063zm-285.285157-400.898437c0-35.175782 28.621094-63.796876 63.800781-63.796876 35.175782 0 63.796876 28.621094 63.796876 63.796876v16.675781h-127.597657zm-125.609375 387.25 35.714844-340.097657h59.417969v33.582031c0 8.414063 6.824219 15.238282 15.238281 15.238282s15.238281-6.824219 15.238281-15.238282v-33.582031h127.597657v33.582031c0 8.414063 6.824218 15.238282 15.238281 15.238282 8.414062 0 15.238281-6.824219 15.238281-15.238282v-33.582031h59.417969l35.714843 340.097657zm0 0"/></svg>') !important;
   filter: invert(100%) sepia(3%) saturate(2096%) hue-rotate(207deg)
     brightness(116%) contrast(100%);
@@ -200,6 +214,7 @@ form button[type="submit"] i {
     brightness(94%) contrast(107%);
 }
 
+/* Cart badge with shopping quantity*/
 .site-header-cart .cart-contents .count {
   position: absolute;
   top: -6px;
@@ -212,6 +227,206 @@ form button[type="submit"] i {
   background-color: #ed0016;
   color: #ffffff;
   text-align: center;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 1.4;
+}
+
+/* Sales banner in header and countdown*/
+.header-widget-region .col-full {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Sales banner in header and countdown*/
+.header-widget-region {
+  background-color: #00abdf;
+}
+
+.header-widget-region .widget {
+  padding: 0.5rem;
+}
+
+/*Sales bagde*/
+.gallery {
+  margin-bottom: 0;
+  box-shadow: -16px 4px 6px 6px rgb(0 0 0 / 20%);
+}
+
+/* Sales banner in header and countdown*/
+.col-full::before,
+.col-full::after {
+  content: unset;
+}
+
+/*Countdown timer*/
+.CountDownTimer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*Countdown timer title*/
+.header-widget-region .widget .widget-title {
+  font-size: 1.25rem;
+  letter-spacing: -0.02rem;
+  color: #ffffff;
+  padding: 7px;
+  text-shadow: 1px 1px 0px #000000;
+}
+
+/*Countdown dashboard*/
+.naboo-countdown {
+  background: none !important;
+  padding: 0 !important;
+}
+
+/*Countdown dashboard*/
+.naboo-dashboard {
+  margin-top: -3px !important;
+}
+
+/*Digits distance*/
+.naboo-dash {
+  padding: 5px 10px !important;
+}
+
+/* Background of the digits*/
+.naboo-dash {
+  background-color: #000000;
+  height: 40px !important;
+  width: 40px !important;
+  border-radius: 40px !important;
+}
+
+/*Countdown dashboard titles (Days, Hours, Minutes, Seconds)*/
+.naboo-dash_title {
+  -webkit-transform: initial !important;
+  font-size: 0.625rem !important;
+  line-height: 1.375rem !important;
+  font-weight: 300 !important;
+  text-transform: uppercase !important;
+  margin-top: 35px !important;
+  margin-left: -10px !important;
+  width: 40px !important;
+}
+
+/*Countdown digits*/
+.naboo-digit {
+  font-size: 1.25rem !important;
+  line-height: unset !important;
+}
+
+/*Footer*/
+.site-footer {
+  background-color: #ffffff;
+  padding-top: 3.4375rem;
+}
+
+/*Footer before: Social icons*/
+.footer-before {
+  background-color: #1d1d1d;
+  color: #ffffff;
+  padding: 0.625rem 0;
+}
+
+/*Footer before: Social icons*/
+.footer-before ul {
+  list-style: none;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*Footer before: Social icons*/
+.footer-before ul li a {
+  color: #ffffff;
+  padding: 5px;
+}
+
+/*Footer before: Social icons*/
+.footer-before ul li a:hover {
+  color: #326ad1;
+}
+
+/*Footer widgets*/
+.footer-widgets {
+  padding-top: 0;
+}
+
+/*Footer widgets*/
+.site-footer h1,
+.site-footer h2,
+.site-footer h3,
+.site-footer h4,
+.site-footer h5,
+.site-footer h6,
+.site-footer .widget .widget-title,
+.site-footer .widget .widgettitle {
+  color: #191919;
+}
+
+/*Footer widgets title */
+.widget .widget-title,
+.widget .widgettitle {
+  padding-bottom: 0.8125rem;
+  margin-bottom: 0;
+  border-bottom: none;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.04rem;
+}
+
+/*Footer AJUTOR section */
+#custom_html-2 .textwidget ul li a,
+#custom_html-3 .textwidget a {
+  text-decoration: none;
+  padding: 3px 0;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+/*Footer AJUTOR section */
+#custom_html-2 .textwidget ul li a:hover,
+#custom_html-3 .textwidget a:hover {
+  color: #2879fe;
+}
+
+/*Footer DESPRE, CONTACT text */
+.widget .textwidget p {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 300;
+  letter-spacing: -0.02rem;
+}
+
+/*Footer widgets*/
+.widget {
+  margin: 0;
+}
+
+/*The weekly programm in CONTACTATI-NE section in Footer */
+#text-3 .textwidget p:nth-child(n + 3):nth-child(-n + 6) {
+  margin: 0;
+}
+/* Breadcrumb Home icon*/
+.woocommerce-breadcrumb a:first-of-type::before {
+  content: none;
+}
+
+/* Breadcrumb Home */
+.woocommerce-breadcrumb {
+  padding: 4px 0;
+  font-size: 0.75rem;
+  letter-spacing: -0.2px;
+}
+
+/* Breadcrumb Home */
+.woocommerce-breadcrumb a {
+  text-decoration: none;
+}
+
+/* Breadcrumb Home */
+.woocommerce-breadcrumb a:hover {
+  color: #2879fe;
 }

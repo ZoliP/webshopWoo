@@ -163,7 +163,7 @@ if ( ! class_exists( 'YITH_WCAN' ) ) {
 			// basic cli support.
 			if ( defined( 'WP_CLI' ) && WP_CLI ) {
 				file_exists( YITH_WCAN_DIR . 'includes/wp-cli/class.yith-wcan-cli-commands.php' ) && require_once YITH_WCAN_DIR . 'includes/wp-cli/class.yith-wcan-cli-commands.php';
-				file_exists( YITH_WCAN_DIR . 'tests/wp-cli/class.yith-wcan-cli-test-commands.php' ) && require_once YITH_WCAN_DIR . 'tests/wp-cli/class.yith-wcan-cli-test-commands.php';
+				file_exists( YITH_WCAN_DIR . 'tools/wp-cli/class.yith-wcan-cli-test-commands.php' ) && require_once YITH_WCAN_DIR . 'tools/wp-cli/class.yith-wcan-cli-test-commands.php';
 			}
 		}
 
@@ -224,10 +224,10 @@ if ( ! class_exists( 'YITH_WCAN' ) ) {
 		 */
 		public function load_compatibilities() {
 			// include theme compatibility, if any.
-			$this->load_theme_compatibility();
+			add_action( 'after_setup_theme', array( $this, 'load_theme_compatibility' ) );
 
 			// include compatibilities for installed plugins.
-			$this->load_plugin_compatibilities();
+			add_action( 'init', array( $this, 'load_plugin_compatibilities' ) );
 		}
 
 		/**
@@ -239,7 +239,7 @@ if ( ! class_exists( 'YITH_WCAN' ) ) {
 		 */
 		public function load_theme_compatibility() {
 			$theme = strtolower( wp_get_theme()->Name );
-			$theme = str_replace( '-child', '', $theme );
+			$theme = str_replace( array( ' ', '-child' ), array( '-', '' ), $theme );
 
 			$compatibility_path = YITH_WCAN_INC . "compatibility/themes/{$theme}/{$theme}.php";
 
@@ -361,6 +361,9 @@ if ( ! class_exists( 'YITH_WCAN' ) ) {
 					),
 					'wpml' => array(
 						'check' => array( 'class_exists', array( 'Sitepress' ) ),
+					),
+					'yith-woocommerce-booking' => array(
+						'check' => array( 'class_exists', array( 'YITH_WCBK' ) ),
 					),
 				);
 			}

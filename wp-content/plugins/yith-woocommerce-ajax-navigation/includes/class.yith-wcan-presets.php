@@ -218,6 +218,10 @@ if ( ! class_exists( 'YITH_WCAN_Presets' ) ) {
 				$preset->set_title( $title );
 			}
 
+			// retrieve preset layout and save it.
+			$layout = isset( $_POST['preset_layout'] ) && in_array( $_POST['preset_layout'], array_keys( YITH_WCAN_Preset_Factory::get_supported_layouts() ), true ) ? sanitize_text_field( wp_unslash( $_POST['preset_layout'] ) ) : 'default';
+			$preset->set_layout( $layout );
+
 			// process filters and save them.
 			if ( ! empty( $_POST['filters'] ) ) {
 				$filters = $_POST['filters']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
@@ -610,10 +614,17 @@ if ( ! class_exists( 'YITH_WCAN_Presets' ) ) {
 			$filter['multiple'] = isset( $filter['multiple'] ) ? 'yes' : 'no';
 			$filter['show_stock_filter'] = isset( $filter['show_stock_filter'] ) ? 'yes' : 'no';
 			$filter['show_sale_filter'] = isset( $filter['show_sale_filter'] ) ? 'yes' : 'no';
+			$filter['show_featured_filter'] = isset( $filter['show_featured_filter'] ) ? 'yes' : 'no';
+			$filter['customize_terms'] = isset( $filter['customize_terms'] ) ? 'yes' : 'no';
 
 			if ( isset( $filter['terms_order'] ) ) {
 				$filter['terms'] = $this->_get_sorted_terms( $filter['terms'], array_map( 'intval', $filter['terms_order'] ) );
 				unset( $filter['terms_order'] );
+			}
+
+			// address the case in which we're not using custom term options.
+			if ( empty( $filter['terms'] ) && ! empty( $filter['term_ids'] ) ) {
+				$filter['terms'] = $filter['term_ids'];
 			}
 
 			// use set methods of YITH_WCAN_Filter object to clean submitted data.
