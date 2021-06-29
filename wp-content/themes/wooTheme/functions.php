@@ -34,6 +34,7 @@ function zoltan_woocommerce_theme_support(){
 add_action( 'after_setup_theme', 'zoltan_woocommerce_theme_support' );
 
 
+/* Copied from themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php */
 /* Modify cart in Header */
 if ( ! function_exists( 'storefront_cart_link' ) ) {
 	/**
@@ -60,9 +61,33 @@ if ( ! function_exists( 'storefront_cart_link' ) ) {
 }
 
 
+/*Copied from plugins/woocommerce/includes/wc-template-functions.php*/
+if ( ! function_exists( 'woocommerce_widget_shopping_cart_button_view_cart' ) ) {
+	
+	/**
+	 * Output the view cart button.
+	 */
+	function woocommerce_widget_shopping_cart_button_view_cart() {
+		echo '<a href="' . esc_url( wc_get_cart_url() ) . '" class="button wc-forward">' . esc_html__( 'VEZI COS', 'woocommerce' ) . '</a>';
+	}
+}
+
+
+/*Advanced Woo Search*/
+function zoltan_advanced_woo_search(){
+	//copied from the Advanced Woo Search documentation
+	 if ( function_exists( 'aws_get_search_form' ) ) { aws_get_search_form(); } 
+}
+
+add_action( 'storefront_header', 'zoltan_advanced_woo_search', 40 );
+
+
 /* Move cart in Header from AFTER NAVIGATION to AFTER SEARCH */
 function remove_actions_parent_theme(){
+	remove_action( 'storefront_header', 'storefront_product_search', 40 );
 	remove_action( 'storefront_header', 'storefront_header_cart', 60 );
+	/*Remove Check Out button from cart widget*/
+	remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
 };
 
 add_action( 'init', 'remove_actions_parent_theme', 1 );
@@ -90,14 +115,13 @@ function zoltan_before_footer(){
 add_action( 'storefront_before_footer', 'zoltan_before_footer');
 
 
-/* Change Home text to PhoneProtectors*/
+/* Change the breadcrumb home text from 'Home' to PhoneProtectors */
  function zoltan_change_breadcrumb_home_text() {
- 	// Change the breadcrumb home text from 'Home' to 'SuperStore'
 	
  	return array(
  		'delimiter' => ' &#47; ',
- 		'wrap_before' => '<div class="col-full"><nav class="woocommerce-breadcrumb" aria-label="breadcrumbs">',
- 		'wrap_after'  => '</nav></div>',
+ 		'wrap_before' => '<div class="col-full"><div class="col-full"><nav class="woocommerce-breadcrumb" aria-label="breadcrumbs">',
+ 		'wrap_after'  => '</nav></div></div>',
  		'before'      => '',
  		'after'       => '',
  		'home' => 'PhoneProtectors'

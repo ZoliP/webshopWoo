@@ -15,16 +15,18 @@ textarea {
 }
 
 body {
-  background-color: #f1f3f4;
+  background-color: #ffffff;
 }
 
-/*Links*/
-a,
+/*Links, inputs, buttons, teaxareas border */
 a:focus,
-a:active,
 input[type="search"],
-button[type="submit"] {
-  outline: 0;
+button[type="submit"],
+input:focus,
+textarea:focus,
+button:focus,
+a:hover {
+  outline: unset;
 }
 
 /*Buttons, inputs*/
@@ -124,8 +126,13 @@ a.cart-contents:hover,
   display: none;
 }
 
+/* Logo div in Header*/
+.woocommerce-active .site-header .site-branding {
+  width: 25%;
+}
+
 /* Search form in header*/
-.site-search .widget_product_search form input[type="search"] {
+.aws-container form input[type="search"] {
   padding: 6px 4px 4px 24px;
   background-color: #000000;
   color: #ffffff;
@@ -134,12 +141,7 @@ a.cart-contents:hover,
   width: calc(100%-46px);
   height: 40px;
   font-size: 0.875rem;
-  border-radius: 1.25rem 0 0 1.25rem;
-}
-
-/* Search icon before form storefront template*/
-.widget_product_search form::before {
-  display: none;
+  border-radius: 1.25rem 0 0 1.25rem !important;
 }
 
 /* Search form input in header*/
@@ -148,40 +150,37 @@ input[type="search"]::placeholder {
   opacity: 0.8;
 }
 
-/* Logo div in Header*/
-.woocommerce-active .site-header .site-branding {
-  width: 25%;
-  margin-right: 0;
-}
-
 /* Search form div in header*/
-.woocommerce-active .site-header .site-search {
+.aws-container {
   width: 75%;
   float: left;
 }
 
 /* Search form in header*/
-.widget_product_search form {
-  width: 90%;
-  padding-left: 10%;
+.aws-container .aws-search-form {
+  height: 40px;
+  margin-bottom: 0;
+}
+
+/* Search form in header*/
+.aws-container form input[type="search"]:focus {
+  background-color: #000000;
 }
 
 /* Search form button in header*/
-.widget_product_search form button[type="submit"] {
+.aws-container .aws-search-form .aws-form-btn {
   width: 42px;
   height: 40px;
   background-color: #ccd500;
-  border-radius: 0 1.25rem 1.25rem 0;
-  padding: 6px 12px 4px;
-  clip: unset;
-  clip-path: unset;
+  border-radius: 0 1.25rem 1.25rem 0 !important;
+  border: none;
   margin: 0;
-  left: unset;
   opacity: 0.9;
 }
 
 /* Search form button in header*/
-.widget_product_search form button[type="submit"]:hover {
+.aws-container .aws-search-form .aws-form-btn:hover {
+  background-color: #ccd500;
   opacity: 1;
 }
 
@@ -194,6 +193,44 @@ form button[type="submit"] i {
   color: #191919;
 }
 
+/*Quick search rezult*/
+.aws-search-result {
+  border-color: #ccd500 !important;
+  border-radius: 1.25rem !important;
+}
+
+/*Quick search rezult scroll bar*/
+.aws-search-result ul::-webkit-scrollbar-track {
+  border-radius: 0 1.25rem 1.25rem 0 !important;
+  background-color: #ccd500 !important;
+}
+
+/*Quick search rezult scroll bar*/
+.aws-search-result ul::-webkit-scrollbar {
+  border-radius: 0 1.25rem 1.25rem 0 !important;
+  width: 1.25rem;
+}
+
+/*Quick search rezult scroll bar*/
+.aws-search-result ul::-webkit-scrollbar-thumb {
+  border-radius: 0 1.25rem 1.25rem 0 !important;
+  background-color: #ffffff !important;
+}
+
+/*Quick search rezult item*/
+.aws-search-result ul li {
+  border-bottom-color: #ccd500 !important;
+}
+
+/*Quick search rezult first item*/
+.aws-search-result ul li:first-child {
+  border-radius: 1.25rem 0 0 0;
+}
+
+/*Quick search rezult 'mai multe' button*/
+.aws-search-result ul li:last-child {
+  border-radius: 0 0 0 1.25rem;
+}
 /*Cart and bagde icon in header*/
 .site-header-cart .cart-contents {
   padding: 0;
@@ -231,6 +268,18 @@ form button[type="submit"] i {
   line-height: 1.4;
 }
 
+/*Cart widget buttons arrow in header*/
+.wc-forward::after,
+.woocommerce-Button--next::after {
+  width: 1rem;
+  height: 1.375rem;
+  font-size: 0.875em;
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 512 512" width="16px"><path d="m256 512c-68.378906 0-132.667969-26.628906-181.019531-74.980469-48.351563-48.351562-74.980469-112.640625-74.980469-181.019531s26.628906-132.667969 74.980469-181.019531c48.351562-48.351563 112.640625-74.980469 181.019531-74.980469s132.667969 26.628906 181.019531 74.980469c48.351563 48.351562 74.980469 112.640625 74.980469 181.019531s-26.628906 132.667969-74.980469 181.019531c-48.351562 48.351563-112.640625 74.980469-181.019531 74.980469zm0-472c-119.101562 0-216 96.898438-216 216s96.898438 216 216 216 216-96.898438 216-216-96.898438-216-216-216zm104.285156 216-138.285156-138.285156-28.285156 28.285156 110 110-110 110 28.285156 28.285156zm0 0"/></svg>');
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(176deg)
+    brightness(111%) contrast(101%);
+  /* line-height: 1.375rem; */
+}
+
 /* Sales banner in header and countdown*/
 .header-widget-region .col-full {
   display: flex;
@@ -242,11 +291,12 @@ form button[type="submit"] i {
   background-color: #00abdf;
 }
 
+/* Sales banner in header and countdown*/
 .header-widget-region .widget {
   padding: 0.5rem;
 }
 
-/*Sales bagde*/
+/*Red Sales bagde on the left*/
 .gallery {
   margin-bottom: 0;
   box-shadow: -16px 4px 6px 6px rgb(0 0 0 / 20%);
@@ -313,6 +363,101 @@ form button[type="submit"] i {
 .naboo-digit {
   font-size: 1.25rem !important;
   line-height: unset !important;
+}
+
+/*Sidebar Filters title*/
+.yith-wcan-filter .filter-title {
+  font-size: 0.875rem;
+}
+
+/*Sidebar filter input field*/
+.yith-wcan-filters .yith-wcan-filter .yith-wcan-dropdown {
+  border-color: #2879fe;
+  border-radius: 1.25rem;
+  padding: 0 15px;
+}
+
+/*Sidebar dropbox filter */
+.yith-wcan-filters .yith-wcan-filter .yith-wcan-dropdown.open,
+.yith-wcan-filters .yith-wcan-filter .yith-wcan-dropdown .dropdown-wrapper {
+  border-color: #2879fe;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 7px 0 #2879fe;
+  padding: 0 15px;
+}
+
+/*Sidebar dropbox filters list */
+.yith-wcan-filters
+  .yith-wcan-filter
+  .yith-wcan-dropdown
+  .dropdown-wrapper
+  .matching-items {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/*Sidebar dropbox filters list */
+.yith-wcan-filters .yith-wcan-filter .filter-items .filter-item {
+  line-height: unset !important;
+}
+
+/*Sidebar filter items*/
+.yith-wcan-filters .yith-wcan-filter .filter-items .filter-item > a,
+.yith-wcan-filters .yith-wcan-filter .filter-items .filter-item > label > a {
+  color: #000000 !important;
+}
+
+/*Sidebar filter items*/
+.yith-wcan-filters .yith-wcan-filter .filter-items .filter-item > a:hover,
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item
+  > label
+  > a:hover {
+  color: #2879fe !important;
+}
+
+/*Sidebar color filter border after selection*/
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item.active.color
+  .term-color,
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item.active.color
+  .term-image {
+  border: unset !important;
+}
+
+/*Sidebar color filter border on hover*/
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item.color
+  .term-color:hover {
+  border: unset !important;
+}
+
+/*Sidebar color filter close cross icon*/
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item.active.color:not(.no-color):not(.no-image):not(.label-right)
+  > a:after {
+  background-color: #2879fe;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" id="bold" enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512"><g><path d="m9.707 19.121c-.187.188-.442.293-.707.293s-.52-.105-.707-.293l-5.646-5.647c-.586-.586-.586-1.536 0-2.121l.707-.707c.586-.586 1.535-.586 2.121 0l3.525 3.525 9.525-9.525c.586-.586 1.536-.586 2.121 0l.707.707c.586.586.586 1.536 0 2.121z"/></g></svg>');
+  filter: invert(100%) sepia(12%) saturate(7451%) hue-rotate(210deg)
+    brightness(113%) contrast(112%);
+  right: -10px;
+  top: 0;
+}
+
+/* Site content*/
+.site-content {
+  margin-top: 32px;
 }
 
 /*Footer*/
@@ -408,6 +553,13 @@ form button[type="submit"] i {
 /*The weekly programm in CONTACTATI-NE section in Footer */
 #text-3 .textwidget p:nth-child(n + 3):nth-child(-n + 6) {
   margin: 0;
+}
+
+/* Breadcrumb background*/
+body .site > .col-full {
+  background-color: #eef0f4;
+  max-width: 100%;
+  line-height: 1.375rem;
 }
 /* Breadcrumb Home icon*/
 .woocommerce-breadcrumb a:first-of-type::before {

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-06-18 13:59:56+0000\n"
+"PO-Revision-Date: 2021-06-25 09:25:35+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -827,6 +827,11 @@ msgstr "Te invităm să-ți împărtășești experiența"
 msgid "I don't know how to get a date from a %s"
 msgstr "Nu știu cum să obțin o dată din %s"
 
+#. translators: 1: Link URL
+#: includes/admin/views/html-admin-page-reports.php:18
+msgid "With the release of WooCommerce 4.0, these reports are being replaced. There is a new and better Analytics section available for users running WordPress 5.3+. Head on over to the <a href=\"%1$s\">WooCommerce Analytics</a> or learn more about the new experience in the <a href=\"https://docs.woocommerce.com/document/woocommerce-analytics/\" target=\"_blank\">WooCommerce Analytics documentation</a>."
+msgstr "Odată cu lansarea WooCommerce 4.0, aceste rapoarte au fost înlocuite. Este disponibilă o secțiune Analitice nouă și mai bună pentru utilizatorii care rulează cu WordPress 5.3 sau o cu versiune ulterioară. Mergi la <a href=\"%1$s\">WooCommerce Analytics</a> sau află mai multe despre noua experiență în <a href=\"https://docs.woocommerce.com/document/woocommerce-analytics/\" target=\"_blank\">documentația despre WooCommerce Analytics</a>."
+
 #: includes/admin/settings/class-wc-settings-emails.php:209
 msgid "Receive email notifications with additional guidance to complete the basic store setup and helpful insights"
 msgstr "Primești notificări prin email cu îndrumări suplimentare despre cum să finalizezi inițializarea de bază a magazinului și alte informații utile"
@@ -870,11 +875,6 @@ msgstr "Valverde"
 #: i18n/states.php:335
 msgid "Santiago Rodríguez"
 msgstr "Santiago Rodríguez"
-
-#. translators: 1: Link URL
-#: includes/admin/views/html-admin-page-reports.php:18
-msgid "With the release of WooCommerce 4.0, these reports are being replaced. There is a new and better Analytics section available for users running WordPress 5.3+. Head on over to the <a href=\"%1$s\">WooCommerce Analytics</a> or learn more about the new experience in the <a href=\"https://docs.woocommerce.com/document/woocommerce-analytics/\" target=\"_blank\">WooCommerce Analytics documentation</a>."
-msgstr "Odată cu lansarea WooCommerce 4.0, aceste rapoarte au fost înlocuite. Este disponibilă o secțiune Analitice nouă și mai bună pentru utilizatorii care rulează cu WordPress 5.3 sau o cu versiune ulterioară. Mergi la <a href=\"%1$s\">WooCommerce Analytics</a> sau află mai multe despre noua experiență în <a href=\"https://docs.woocommerce.com/document/woocommerce-analytics/\" target=\"_blank\">documentația despre WooCommerce Analytics</a>."
 
 #: i18n/states.php:334
 msgid "Santiago"
@@ -976,13 +976,13 @@ msgstr "Distrito Nacional"
 msgid "Department"
 msgstr "Departament"
 
-#: includes/admin/plugin-updates/views/html-notice-untested-extensions-modal.php:44
-msgid "We strongly recommend creating a backup of your site before updating."
-msgstr "Recomandăm insistent să faci o copie de siguranță a sitului înainte de actualizare."
-
 #: includes/admin/plugin-updates/views/html-notice-untested-extensions-modal.php:21
 msgid "Are you sure you're ready?"
 msgstr "Sigur ești gata?"
+
+#: includes/admin/plugin-updates/views/html-notice-untested-extensions-modal.php:44
+msgid "We strongly recommend creating a backup of your site before updating."
+msgstr "Recomandăm insistent să faci o copie de siguranță a site-ului înainte de actualizare."
 
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/CartItemSchema.php:293
 msgid "Whether the product is visible in the catalog"
@@ -1038,10 +1038,6 @@ msgstr "Limitează setul de rezultate la comenzi care au customer_type specifica
 msgid "Alias for customer_type (deprecated)."
 msgstr "Alias pentru customer_type (învechit)."
 
-#: packages/woocommerce-admin/src/API/Products.php:56
-msgid "The date the last order for this product was placed, in the site's timezone."
-msgstr "Data la care a fost plasată ultima comandă pentru acest produs, în fusul orar al sitului."
-
 #: packages/woocommerce-admin/src/Notes/FilterByProductVariationsInReports.php:36
 msgid "One of the most awaited features has just arrived! You can now have insights into each product variation in the orders and products reports."
 msgstr "Una dintre cele mai așteptate funcționalități este disponibilă! Acum poți avea informații despre fiecare variație a unui produs în rapoartele pentru comenzi și produse."
@@ -1081,6 +1077,10 @@ msgstr "Îți mulțumim pentru impresii!"
 #: i18n/states.php:644
 msgid "Ladakh"
 msgstr "Ladakh"
+
+#: packages/woocommerce-admin/src/API/Products.php:56
+msgid "The date the last order for this product was placed, in the site's timezone."
+msgstr "Data la care a fost plasată ultima comandă pentru acest produs, în fusul orar al site-ului."
 
 #: packages/woocommerce-admin/src/Notes/NavigationFeedbackFollowUp.php:54
 msgid "Share your thoughts on the new WooCommerce navigation"
@@ -2891,10 +2891,6 @@ msgstr "ID categorie"
 msgid "Tag slug"
 msgstr "Descriptor etichetă"
 
-#: packages/woocommerce-admin/src/Notes/CustomizeStoreWithBlocks.php:70
-msgid "With our blocks, you can select and display products, categories, filters, and more virtually anywhere on your site — no need to use shortcodes or edit lines of code. Learn more about how to use each one of them."
-msgstr "Cu blocurile noastre, poți selecta și afișa produse, categorii, filtre și altele oriunde pe situl tău - nu trebuie să folosești scurtcoduri sau să editezi linii de cod. Află mai multe despre cum să le folosești, pe fiecare în parte."
-
 #: packages/woocommerce-admin/src/API/Reports/Orders/Stats/Controller.php:210
 msgid "Total distinct customers."
 msgstr "Total clienți distincți."
@@ -2918,6 +2914,10 @@ msgstr "Listă cu categorii, dacă este cazul."
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/ProductSchema.php:220
 msgid "List of tags, if applicable."
 msgstr "Listă cu etichete, dacă este cazul."
+
+#: packages/woocommerce-admin/src/Notes/CustomizeStoreWithBlocks.php:70
+msgid "With our blocks, you can select and display products, categories, filters, and more virtually anywhere on your site — no need to use shortcodes or edit lines of code. Learn more about how to use each one of them."
+msgstr "Cu blocurile noastre, poți selecta și afișa produse, categorii, filtre și altele oriunde pe site-ul tău - nu trebuie să folosești scurt-coduri sau să editezi linii de cod. Află mai multe despre cum să le folosești, pe fiecare în parte."
 
 #: packages/woocommerce-admin/src/Notes/LaunchChecklist.php:48
 msgid "Ready to launch your store?"
@@ -3130,10 +3130,6 @@ msgstr "Adresa curentă de livrare setată pentru client."
 msgid "List of applied cart coupons."
 msgstr "Listă cu cupoanele aplicate la coșuri."
 
-#: packages/woocommerce-blocks/src/StoreApi/Schemas/CheckoutSchema.php:152
-msgid "A URL to redirect the customer after checkout. This could be, for example, a link to the payment processors website."
-msgstr "Un URL pentru a redirecționa clienții după finalizare. Ar putea fi, de exemplu, o legătură la situl web al procesoarelor de plăți."
-
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/CartSchema.php:203
 msgid "Cart total amounts provided using the smallest unit of the currency."
 msgstr "Sume totale pentru coșurile furnizate folosind cea mai mică unitate de monedă."
@@ -3275,6 +3271,10 @@ msgstr "Linii cu impozite aplicate pentru produse și livrare."
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/CartSchema.php:175
 msgid "True if the cart needs payment. False for carts with only free products and no shipping costs."
 msgstr "Dacă este setat la „true”, coșul are nevoie de livrare. Setat la „false” pentru coșurile care au numai produse gratuite și fără costuri de livrare."
+
+#: packages/woocommerce-blocks/src/StoreApi/Schemas/CheckoutSchema.php:152
+msgid "A URL to redirect the customer after checkout. This could be, for example, a link to the payment processors website."
+msgstr "Un URL pentru a redirecționa clienții după finalizare. Ar putea fi, de exemplu, o legătură la site-ul web al procesoarelor de plăți."
 
 #: packages/woocommerce-blocks/src/StoreApi/Routes/ProductReviews.php:212
 msgid "Limit result set to reviews from specific product IDs."
@@ -3612,10 +3612,6 @@ msgstr "Acest tutorial video te va ajuta să parcurgi procesul de adăugare a pr
 msgid "Do you need help with adding your first product?"
 msgstr "Ai nevoie de ajutor pentru adăugarea primului produs?"
 
-#: packages/woocommerce-admin/src/Notes/OnlineClothingStore.php:82
-msgid "Starting a fashion website is exciting but it may seem overwhelming as well. In this article, we'll walk you through the setup process, teach you to create successful product listings, and show you how to market to your ideal audience."
-msgstr "Crearea unui sit de modă este o idee interesantă, dar poate fi totodată o acțiune copleșitoare. În acest articol, vom parcurge procesul de inițializare, te învățăm cum să creezi afișări de produse care să aibă succes și îți arătăm cum să lansezi pe piață produsele pentru publicul tău."
-
 #: packages/woocommerce-admin/src/Notes/CouponPageMoved.php:73
 msgid "Coupon management has moved!"
 msgstr "Administrarea cupoanelor a fost mutată!"
@@ -3623,6 +3619,10 @@ msgstr "Administrarea cupoanelor a fost mutată!"
 #: packages/woocommerce-admin/src/Notes/OnlineClothingStore.php:81
 msgid "Start your online clothing store"
 msgstr "Lansează-ți magazinul online de îmbrăcăminte"
+
+#: packages/woocommerce-admin/src/Notes/OnlineClothingStore.php:82
+msgid "Starting a fashion website is exciting but it may seem overwhelming as well. In this article, we'll walk you through the setup process, teach you to create successful product listings, and show you how to market to your ideal audience."
+msgstr "Crearea unui site de modă este o idee interesantă, dar poate fi totodată o acțiune copleșitoare. În acest articol, vom parcurge procesul de inițializare, te învățăm cum să creezi afișări de produse care să aibă succes și îți arătăm cum să lansezi pe piață produsele pentru publicul tău."
 
 #: packages/woocommerce-admin/src/Notes/StartDropshippingBusiness.php:67
 msgid "Are you considering starting a dropshipping business?"
@@ -4214,7 +4214,7 @@ msgstr "Prima pagină este punctul de intrare cel mai important în magazinul t�
 
 #: packages/woocommerce-admin/src/Notes/WooCommercePayments.php:104
 msgid "Securely accept credit and debit cards on your site. Manage transactions without leaving your WordPress dashboard. Only with <strong>WooCommerce Payments</strong>."
-msgstr "Accepți în siguranță carduri de credit și debit pe situl tău. Administrezi tranzacțiile fără a părăsi panoul de control WordPress. Numai cu modulul <strong>WooCommerce Payments</strong>."
+msgstr "Accepți în siguranță carduri de credit și debit pe site-ul tău. Administrezi tranzacțiile fără a părăsi panoul de control WordPress. Numai cu modulul <strong>WooCommerce Payments</strong>."
 
 #: packages/woocommerce-admin/src/Notes/WooCommercePayments.php:102
 msgid "Try the new way to get paid"
@@ -4882,10 +4882,6 @@ msgstr "Sari peste importul datelor pentru comenzile existente."
 msgid "Number of days to import."
 msgstr "Număr de zile pentru import."
 
-#: packages/woocommerce-admin/src/API/Reports/Orders/Controller.php:185
-msgid "Date the order was created, in the site's timezone."
-msgstr "Data la care a fost creată comanda, în fusul orar al sitului."
-
 #. translators: 1: numeric product quantity, 2: name of product
 #: packages/woocommerce-admin/src/API/Reports/Orders/Controller.php:500
 msgid "%1$s× %2$s"
@@ -4976,6 +4972,10 @@ msgstr "Valoare medie per comandă."
 msgid "Human readable segment label, either product or variation name."
 msgstr "Etichetă segment care poate fi citită de oameni, fie produs, fie nume variație."
 
+#: packages/woocommerce-admin/src/API/Reports/Orders/Controller.php:185
+msgid "Date the order was created, in the site's timezone."
+msgstr "Data la care a fost creată comanda, în fusul orar al site-ului."
+
 #: packages/woocommerce-admin/src/API/Reports/Taxes/Controller.php:175
 #: packages/woocommerce-admin/src/API/Reports/Customers/Controller.php:248
 msgid "Country / Region."
@@ -5038,10 +5038,6 @@ msgstr "Limitează răspunsul la obiecte care au ID-urile de utilizator specific
 #: packages/woocommerce-admin/src/API/Reports/Downloads/Controller.php:184
 msgid "The date of the download, as GMT."
 msgstr "Data descărcării (GMT)."
-
-#: packages/woocommerce-admin/src/API/Reports/Downloads/Controller.php:178
-msgid "The date of the download, in the site's timezone."
-msgstr "Data descărcării, în fusul orar al sitului."
 
 #: packages/woocommerce-admin/src/API/Reports/Downloads/Controller.php:373
 #: packages/woocommerce-admin/src/API/Reports/Downloads/Stats/Controller.php:363
@@ -5290,6 +5286,10 @@ msgstr "Prag de inventariere produse pentru stocuri mici."
 #: packages/woocommerce-admin/dist/chunks/dashboard-charts.js:1
 msgid "Order #"
 msgstr "Comanda nr."
+
+#: packages/woocommerce-admin/src/API/Reports/Downloads/Controller.php:178
+msgid "The date of the download, in the site's timezone."
+msgstr "Data descărcării, în fusul orar al site-ului."
 
 #: packages/woocommerce-admin/src/API/Reports/Revenue/Stats/Controller.php:451
 #: packages/woocommerce-admin/dist/chunks/analytics-report-revenue.js:1
@@ -5557,26 +5557,6 @@ msgstr "Data la care începe raportul (GMT)."
 msgid "The date the report end, as GMT."
 msgstr "Data la care se termină raportul (GMT)."
 
-#: packages/woocommerce-admin/src/API/Reports/Coupons/Stats/Controller.php:236
-#: packages/woocommerce-admin/src/API/Reports/Revenue/Stats/Controller.php:322
-#: packages/woocommerce-admin/src/API/Reports/Taxes/Stats/Controller.php:273
-#: packages/woocommerce-admin/src/API/Reports/Variations/Stats/Controller.php:254
-#: packages/woocommerce-admin/src/API/Reports/Downloads/Stats/Controller.php:193
-#: packages/woocommerce-admin/src/API/Reports/Orders/Stats/Controller.php:297
-#: packages/woocommerce-admin/src/API/Reports/Products/Stats/Controller.php:257
-msgid "The date the report end, in the site's timezone."
-msgstr "Data la care se termină raportul, în fusul orar al sitului."
-
-#: packages/woocommerce-admin/src/API/Reports/Coupons/Stats/Controller.php:224
-#: packages/woocommerce-admin/src/API/Reports/Revenue/Stats/Controller.php:310
-#: packages/woocommerce-admin/src/API/Reports/Taxes/Stats/Controller.php:261
-#: packages/woocommerce-admin/src/API/Reports/Variations/Stats/Controller.php:242
-#: packages/woocommerce-admin/src/API/Reports/Downloads/Stats/Controller.php:181
-#: packages/woocommerce-admin/src/API/Reports/Orders/Stats/Controller.php:285
-#: packages/woocommerce-admin/src/API/Reports/Products/Stats/Controller.php:245
-msgid "The date the report start, in the site's timezone."
-msgstr "Data la care începe raportul, în fusul orar al sitului."
-
 #: packages/woocommerce-admin/src/API/Reports/Coupons/Stats/Controller.php:217
 #: packages/woocommerce-admin/src/API/Reports/Revenue/Stats/Controller.php:303
 #: packages/woocommerce-admin/src/API/Reports/Taxes/Stats/Controller.php:254
@@ -5597,22 +5577,6 @@ msgstr "Tipul de interval."
 msgid "Reports data grouped by intervals."
 msgstr "Raportează datele grupate pe intervale."
 
-#: packages/woocommerce-admin/src/API/Reports/Coupons/Stats/Controller.php:183
-#: packages/woocommerce-admin/src/API/Reports/Coupons/Stats/Controller.php:248
-#: packages/woocommerce-admin/src/API/Reports/Revenue/Stats/Controller.php:264
-#: packages/woocommerce-admin/src/API/Reports/Revenue/Stats/Controller.php:334
-#: packages/woocommerce-admin/src/API/Reports/Taxes/Stats/Controller.php:220
-#: packages/woocommerce-admin/src/API/Reports/Taxes/Stats/Controller.php:285
-#: packages/woocommerce-admin/src/API/Reports/Variations/Stats/Controller.php:201
-#: packages/woocommerce-admin/src/API/Reports/Variations/Stats/Controller.php:266
-#: packages/woocommerce-admin/src/API/Reports/Downloads/Stats/Controller.php:205
-#: packages/woocommerce-admin/src/API/Reports/Orders/Stats/Controller.php:239
-#: packages/woocommerce-admin/src/API/Reports/Orders/Stats/Controller.php:309
-#: packages/woocommerce-admin/src/API/Reports/Products/Stats/Controller.php:204
-#: packages/woocommerce-admin/src/API/Reports/Products/Stats/Controller.php:269
-msgid "Interval subtotals."
-msgstr "Sub-total intervale."
-
 #: packages/woocommerce-admin/src/API/Reports/Coupons/Stats/Controller.php:177
 #: packages/woocommerce-admin/src/API/Reports/Revenue/Stats/Controller.php:258
 #: packages/woocommerce-admin/src/API/Reports/Taxes/Stats/Controller.php:214
@@ -5630,6 +5594,22 @@ msgstr "Identificator segment."
 #: packages/woocommerce-admin/src/API/Reports/Products/Stats/Controller.php:183
 msgid "Reports data grouped by segment condition."
 msgstr "Raportează datele grupate după condiția segmentului."
+
+#: packages/woocommerce-admin/src/API/Reports/Coupons/Stats/Controller.php:183
+#: packages/woocommerce-admin/src/API/Reports/Coupons/Stats/Controller.php:248
+#: packages/woocommerce-admin/src/API/Reports/Revenue/Stats/Controller.php:264
+#: packages/woocommerce-admin/src/API/Reports/Revenue/Stats/Controller.php:334
+#: packages/woocommerce-admin/src/API/Reports/Taxes/Stats/Controller.php:220
+#: packages/woocommerce-admin/src/API/Reports/Taxes/Stats/Controller.php:285
+#: packages/woocommerce-admin/src/API/Reports/Variations/Stats/Controller.php:201
+#: packages/woocommerce-admin/src/API/Reports/Variations/Stats/Controller.php:266
+#: packages/woocommerce-admin/src/API/Reports/Downloads/Stats/Controller.php:205
+#: packages/woocommerce-admin/src/API/Reports/Orders/Stats/Controller.php:239
+#: packages/woocommerce-admin/src/API/Reports/Orders/Stats/Controller.php:309
+#: packages/woocommerce-admin/src/API/Reports/Products/Stats/Controller.php:204
+#: packages/woocommerce-admin/src/API/Reports/Products/Stats/Controller.php:269
+msgid "Interval subtotals."
+msgstr "Sub-total intervale."
 
 #: packages/woocommerce-admin/src/API/Reports/Revenue/Stats/Controller.php:189
 #: packages/woocommerce-admin/src/API/Reports/Orders/Stats/Controller.php:204
@@ -5676,10 +5656,6 @@ msgstr "Vânzări nete"
 msgid "Items Sold"
 msgstr "Articole vândute"
 
-#: packages/woocommerce-admin/src/API/Coupons.php:34
-msgid "Limit results to coupons with codes matching a given string."
-msgstr "Limitează setul de rezultate la cupoane cu coduri care se potrivesc cu un șir de caractere dat."
-
 #: packages/woocommerce-admin/src/API/Reports/Coupons/Stats/Controller.php:202
 #: packages/woocommerce-admin/src/API/Reports/Revenue/Stats/Controller.php:288
 #: packages/woocommerce-admin/src/API/Reports/Taxes/Stats/Controller.php:239
@@ -5691,6 +5667,10 @@ msgstr "Limitează setul de rezultate la cupoane cu coduri care se potrivesc cu 
 #: packages/woocommerce-admin/src/API/Reports/Customers/Stats/Controller.php:164
 msgid "Totals data."
 msgstr "Total date."
+
+#: packages/woocommerce-admin/src/API/Coupons.php:34
+msgid "Limit results to coupons with codes matching a given string."
+msgstr "Limitează setul de rezultate la cupoane cu coduri care se potrivesc cu un șir de caractere dat."
 
 #: packages/woocommerce-admin/src/API/Leaderboards.php:526
 msgid "Table cell value."
@@ -5781,6 +5761,26 @@ msgstr "ID unic pentru notă."
 #: packages/woocommerce-admin/src/API/Reports/Export/Controller.php:81
 msgid "When true, email a link to download the export to the requesting user."
 msgstr "Când este setat la „true”, trimite utilizatorului solicitant un email cu o legătură pentru a descărca exportul."
+
+#: packages/woocommerce-admin/src/API/Reports/Coupons/Stats/Controller.php:236
+#: packages/woocommerce-admin/src/API/Reports/Revenue/Stats/Controller.php:322
+#: packages/woocommerce-admin/src/API/Reports/Taxes/Stats/Controller.php:273
+#: packages/woocommerce-admin/src/API/Reports/Variations/Stats/Controller.php:254
+#: packages/woocommerce-admin/src/API/Reports/Downloads/Stats/Controller.php:193
+#: packages/woocommerce-admin/src/API/Reports/Orders/Stats/Controller.php:297
+#: packages/woocommerce-admin/src/API/Reports/Products/Stats/Controller.php:257
+msgid "The date the report end, in the site's timezone."
+msgstr "Data la care se termină raportul, în fusul orar al site-ului."
+
+#: packages/woocommerce-admin/src/API/Reports/Coupons/Stats/Controller.php:224
+#: packages/woocommerce-admin/src/API/Reports/Revenue/Stats/Controller.php:310
+#: packages/woocommerce-admin/src/API/Reports/Taxes/Stats/Controller.php:261
+#: packages/woocommerce-admin/src/API/Reports/Variations/Stats/Controller.php:242
+#: packages/woocommerce-admin/src/API/Reports/Downloads/Stats/Controller.php:181
+#: packages/woocommerce-admin/src/API/Reports/Orders/Stats/Controller.php:285
+#: packages/woocommerce-admin/src/API/Reports/Products/Stats/Controller.php:245
+msgid "The date the report start, in the site's timezone."
+msgstr "Data la care începe raportul, în fusul orar al site-ului."
 
 #: packages/woocommerce-admin/src/Notes/DeactivatePlugin.php:41
 msgid "Your current version of WooCommerce Admin is outdated and a newer version is included with WooCommerce.  We recommend deactivating the plugin and using the stable version included with WooCommerce."
@@ -5912,10 +5912,6 @@ msgstr "Stare instalare temă."
 msgid "Specified file failed upload test."
 msgstr "Fișierul specificat a eșuat la testul de încărcare."
 
-#: packages/woocommerce-admin/src/API/Themes.php:62
-msgid "Sorry, you are not allowed to install themes on this site."
-msgstr "Regret, nu ai voie să instalezi teme pe acest sit."
-
 #: packages/woocommerce-admin/src/API/Orders.php:36
 msgid "Limit result set to orders matching part of an order number."
 msgstr "Limitează setul de rezultate la comenzi care se potrivesc cu o parte dintr-un număr de comandă."
@@ -5954,6 +5950,10 @@ msgstr "Preferințele fanilor"
 #: packages/woocommerce-admin/src/API/OnboardingTasks.php:505
 msgid "Homepage created"
 msgstr "Am creat prima pagină"
+
+#: packages/woocommerce-admin/src/API/Themes.php:62
+msgid "Sorry, you are not allowed to install themes on this site."
+msgstr "Regret, nu ai voie să instalezi teme pe acest site."
 
 #: packages/woocommerce-admin/src/Notes/DeactivatePlugin.php:40
 msgid "Deactivate old WooCommerce Admin version"
@@ -6376,10 +6376,6 @@ msgstr "Pachet de administrare WooCommerce"
 msgid "Unable to detect the Action Scheduler package."
 msgstr "Nu pot detecta pachetul Programator de acțiuni."
 
-#: includes/admin/views/html-admin-page-status-report.php:109
-msgid "Action Scheduler package running on your site."
-msgstr "Pachetul Programator de acțiuni rulează pe situl tău."
-
 #: includes/admin/views/html-admin-page-status-report.php:108
 msgid "Action Scheduler package"
 msgstr "Pachet Programator de acțiuni"
@@ -6387,10 +6383,6 @@ msgstr "Pachet Programator de acțiuni"
 #: includes/admin/views/html-admin-page-status-report.php:102
 msgid "Unable to detect the Blocks package."
 msgstr "Nu pot detecta pachetul Blocuri."
-
-#: includes/admin/views/html-admin-page-status-report.php:89
-msgid "The WooCommerce Blocks package running on your site."
-msgstr "Pachetul Blocuri WooCommerce rulează pe situl tău."
 
 #: includes/admin/views/html-admin-page-status-report.php:88
 msgid "WooCommerce Blocks package"
@@ -6417,10 +6409,6 @@ msgstr "Nume fișier"
 msgid "Redirect only (Insecure)"
 msgstr "Numai redirecționare (nesigur)"
 
-#: includes/admin/views/html-admin-page-status-report.php:129
-msgid "The WooCommerce Admin package running on your site."
-msgstr "Pachetul WooCommerce Admin rulează pe situl tău."
-
 #: includes/admin/views/html-admin-page-status-report.php:170
 msgid "Unable to detect the WC Admin package."
 msgstr "Nu pot detecta pachetul WooCommerce Admin."
@@ -6439,6 +6427,18 @@ msgstr "Dacă folosești metoda de descărcare X-Accel-Redirect împreună cu se
 #: includes/admin/settings/class-wc-settings-products.php:281
 msgid "Not required if your download directory is protected. <a href='%s'>See this guide</a> for more details. Files already uploaded will not be affected."
 msgstr "Nu este necesar dacă directorul tău de descărcare este protejat. Pentru mai multe detalii, <a href='%s'>vezi acest ghid</a>. Nu vor fi afectate fișierele deja încărcate."
+
+#: includes/admin/views/html-admin-page-status-report.php:129
+msgid "The WooCommerce Admin package running on your site."
+msgstr "Pachetul WooCommerce Admin rulează pe site-ul tău."
+
+#: includes/admin/views/html-admin-page-status-report.php:109
+msgid "Action Scheduler package running on your site."
+msgstr "Pachetul Programator de acțiuni rulează pe site-ul tău."
+
+#: includes/admin/views/html-admin-page-status-report.php:89
+msgid "The WooCommerce Blocks package running on your site."
+msgstr "Pachetul Blocuri WooCommerce rulează pe site-ul tău."
 
 #: includes/admin/notes/class-wc-notes-run-db-update.php:242
 msgid "WooCommerce database update done"
@@ -6988,10 +6988,6 @@ msgstr "Costurile de livrare sunt calculate în timpul finalizării comenzii."
 msgid "Amount of reviews that the product has."
 msgstr "Numărul de recenzii pe care le are produsul."
 
-#: packages/woocommerce-blocks/src/StoreApi/Schemas/ProductReviewSchema.php:66
-msgid "The date the review was created, in the site's timezone in human-readable format."
-msgstr "Data creării recenziei, în fusul orar al sitului, în formatul care poate fi citit de oameni."
-
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/ProductReviewSchema.php:85
 msgid "Name of the product that the review belongs to."
 msgstr "Numele produsului căruia îi aparține recenzia."
@@ -7008,6 +7004,10 @@ msgstr "Imaginea produsului căruia îi aparține recenzia."
 #: includes/wccom-site/class-wc-wccom-site-installer-requirements-check.php:37
 msgid "Server requirements not met, missing requirement(s): %s."
 msgstr "Cerințele serverului nu sunt îndeplinite, lipsesc cerințele: %s."
+
+#: packages/woocommerce-blocks/src/StoreApi/Schemas/ProductReviewSchema.php:66
+msgid "The date the review was created, in the site's timezone in human-readable format."
+msgstr "Data creării recenziei, în fusul orar al site-ului, în formatul care poate fi citit de oameni."
 
 #: i18n/states.php:1734
 msgid "Midway Atoll"
@@ -7742,10 +7742,6 @@ msgstr "Date: %1$.2f MO + Index: %2$.2f MO + Motor %3$s"
 msgid "Unable to detect the REST API package."
 msgstr "Nu pot detecta pachetul REST API."
 
-#: includes/admin/views/html-admin-page-status-report.php:74
-msgid "The WooCommerce REST API package running on your site."
-msgstr "Pachetul REST API WooCommerce rulează pe situl tău."
-
 #: includes/admin/views/html-admin-page-status-report.php:73
 msgid "WooCommerce REST API package"
 msgstr "Pachet REST API WooCommerce"
@@ -7770,6 +7766,10 @@ msgstr "Felicitări pentru vânzări."
 #: includes/emails/class-wc-email-customer-invoice.php:115
 msgid "Thanks for using {site_url}!"
 msgstr "Îți mulțumim că folosești {site_url}!"
+
+#: includes/admin/views/html-admin-page-status-report.php:74
+msgid "The WooCommerce REST API package running on your site."
+msgstr "Pachetul REST API WooCommerce rulează pe site-ul tău."
 
 #: includes/class-wc-countries.php:1363
 msgid "Town / Village"
@@ -8125,10 +8125,6 @@ msgstr "Înlătură, la cerere, datele personale din comenzi"
 msgid "Inactive plugins"
 msgstr "Module inactive"
 
-#: includes/admin/views/html-admin-page-status-report.php:63
-msgid "Site address (URL)"
-msgstr "Adresă sit (URL)"
-
 #: includes/admin/views/html-admin-page-status-report.php:58
 msgid "WordPress address (URL)"
 msgstr "Adresă WordPress (URL)"
@@ -8163,7 +8159,11 @@ msgstr "Adaugă o opțiune în ecranul comenzi pentru înlăturarea în masă a 
 
 #: includes/admin/views/html-admin-page-status-report.php:804
 msgid "Is your site connected to WooCommerce.com?"
-msgstr "Situl tău este conectat la WooCommerce.com?"
+msgstr "Site-ul tău este conectat la WooCommerce.com?"
+
+#: includes/admin/views/html-admin-page-status-report.php:63
+msgid "Site address (URL)"
+msgstr "Adresă site (URL)"
 
 #: includes/admin/marketplace-suggestions/templates/html-product-data-extensions.php:27
 #: includes/admin/class-wc-admin-assets.php:476
@@ -8693,6 +8693,19 @@ msgstr "Grupul „%s” nu există."
 msgid "Unable to claim actions. Database error."
 msgstr "Nu pot să revendic acțiuni. Eroare la baza de date."
 
+#. translators: %s: action ID
+#: packages/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:457
+#: packages/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:468
+#: packages/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:495
+#: packages/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:773
+#: packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:458
+#: packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:548
+#: packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:580
+#: packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:777
+#: packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:819
+msgid "Unidentified action %s"
+msgstr "Acțiune %s neidentificată"
+
 #: packages/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:62
 msgid "Unable to save action."
 msgstr "Nu pot salva acțiunea."
@@ -8730,19 +8743,6 @@ msgstr "acțiune începută"
 #: packages/action-scheduler/classes/data-stores/ActionScheduler_DBLogger.php:134
 msgid "action canceled"
 msgstr "acțiune anulată"
-
-#. translators: %s: action ID
-#: packages/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:457
-#: packages/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:468
-#: packages/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:495
-#: packages/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:773
-#: packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:458
-#: packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:548
-#: packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:580
-#: packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:777
-#: packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:819
-msgid "Unidentified action %s"
-msgstr "Acțiune %s neidentificată"
 
 #: packages/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:72
 msgid "action created"
@@ -9827,12 +9827,6 @@ msgstr "Nicio pagină setată"
 msgid "Highlight required fields with an asterisk"
 msgstr "Evidențiază câmpurile obligatorii cu un asterisc"
 
-#. translators: %s terms and conditions page name and link
-#: includes/customizer/class-wc-shop-customizer.php:734
-#: includes/wc-template-functions.php:833
-msgid "I have read and agree to the website %s"
-msgstr "Am citit și sunt de acord cu %s sitului web"
-
 #: includes/customizer/class-wc-shop-customizer.php:712
 msgid "Required"
 msgstr "Obligatoriu"
@@ -9873,6 +9867,12 @@ msgstr "Aceste opțiuni îți permit să modifici aspectul finalizării comenzil
 msgid "Take payments in person via BACS. More commonly known as direct bank/wire transfer."
 msgstr "Accepți plăți personale prin transfer bancar (BACS). Numit frecvent transfer bancar direct/electronic."
 
+#. translators: %s terms and conditions page name and link
+#: includes/customizer/class-wc-shop-customizer.php:734
+#: includes/wc-template-functions.php:833
+msgid "I have read and agree to the website %s"
+msgstr "Am citit și sunt de acord cu %s site-ului web"
+
 #: includes/class-wc-privacy.php:124
 msgid "In this subsection you should list which third party payment processors you’re using to take payments on your store since these may handle customer data. We’ve included PayPal as an example, but you should remove this if you’re not using PayPal."
 msgstr "În această secțiune ar trebui să afișezi ce procesoare de plată terțe folosești pentru a accepta plăți în magazinul tău, deoarece ele pot gestiona datele clienților. Am inclus PayPal, ca exemplu, dar ar trebui să-l înlături dacă nu-l folosești și să adaugi altele."
@@ -9889,6 +9889,10 @@ msgstr "Partajăm informații cu părți terțe care ne ajută să asigurăm com
 msgid "We will also store comments or reviews, if you choose to leave them."
 msgstr "De asemenea, vom stoca comentarii sau recenzii, dacă alegi să le lași."
 
+#: includes/class-wc-privacy.php:108
+msgid "We generally store information about you for as long as we need the information for the purposes for which we collect and use it, and we are not legally required to continue to keep it. For example, we will store order information for XXX years for tax and accounting purposes. This includes your name, email address and billing and shipping addresses."
+msgstr "În general, stocăm informații despre tine atât timp cât avem nevoie de ele în scopurile pentru care le colectăm și le folosim, dar nu le mai păstrăm în continuare dacă nu suntem obligați din punct de vedere legal. De exemplu, vom stoca informațiile despre comenzi timp de XX ani, în scopuri fiscale și contabile. Ele includ numele, adresa de email și adresele de facturare și de livrare."
+
 #: includes/class-wc-privacy.php:110
 msgid "Who on our team has access"
 msgstr "Cine are acces din echipa noastră"
@@ -9904,10 +9908,6 @@ msgstr "Informații despre comenzi, precum ce s-a cumpărat, când s-a cumpărat
 #: includes/class-wc-privacy.php:117
 msgid "What we share with others"
 msgstr "Ce partajăm cu alții"
-
-#: includes/class-wc-privacy.php:108
-msgid "We generally store information about you for as long as we need the information for the purposes for which we collect and use it, and we are not legally required to continue to keep it. For example, we will store order information for XXX years for tax and accounting purposes. This includes your name, email address and billing and shipping addresses."
-msgstr "În general, stocăm informații despre tine atât timp cât avem nevoie de ele în scopurile pentru care le colectăm și le folosim, dar nu le mai păstrăm în continuare dacă nu suntem obligați din punct de vedere legal. De exemplu, vom stoca informațiile despre comenzi timp de XX ani, în scopuri fiscale și contabile. Ele includ numele, adresa de email și adresele de facturare și de livrare."
 
 #: includes/class-wc-privacy.php:116
 msgid "Our team members have access to this information to help fulfill orders, process refunds and support you."
@@ -9959,7 +9959,7 @@ msgstr "Notă: poate vrei să dai mai multe detalii despre politica folosirii co
 
 #: includes/class-wc-privacy.php:93
 msgid "We’ll also use cookies to keep track of cart contents while you’re browsing our site."
-msgstr "De asemenea, vom folosi cookie-uri pentru a-ți urmări conținutul coșului în timp ce navighezi pe situl nostru."
+msgstr "De asemenea, vom folosi cookie-uri pentru a-ți urmări conținutul coșului în timp ce navighezi pe site-ul nostru."
 
 #: includes/class-wc-privacy.php:91
 msgid "Shipping address: we’ll ask you to enter this so we can, for instance, estimate shipping before you place an order, and send you the order!"
@@ -9973,10 +9973,6 @@ msgstr "Locație, adresă IP și tip de navigator: le vom folosi în diverse sco
 msgid "Products you’ve viewed:  we’ll use this to, for example, show you products you’ve recently viewed"
 msgstr "Produse pe care le-ai văzut: vom folosi asta pentru a-ți arăta, de exemplu, produsele pe care le-ai vizualizat recent"
 
-#: includes/class-wc-privacy.php:87
-msgid "While you visit our site, we’ll track:"
-msgstr "În timp ce ne vizitezi situl, vom urmări:"
-
 #: includes/class-wc-privacy.php:86
 msgid "What we collect and store"
 msgstr "Ce colectăm și stocăm"
@@ -9988,6 +9984,10 @@ msgstr "Colectăm informații despre tine în timpul procesului de finalizare a 
 #: includes/class-wc-privacy.php:83
 msgid "This sample language includes the basics around what personal data your store may be collecting, storing and sharing, as well as who may have access to that data. Depending on what settings are enabled and which additional plugins are used, the specific information shared by your store will vary. We recommend consulting with a lawyer when deciding what information to disclose on your privacy policy."
 msgstr "Această manieră de exprimare include elementele de bază privind ce date personale poate colecta, stoca și partaja magazinul tău, precum și cine poate avea acces la aceste date. Informațiile specifice care sunt afișate în magazinul tău vor varia în funcție de ce setări sunt activate și ce module suplimentare sunt folosite. Recomandăm să consulți un avocat când decizi ce informații divulgi în politica ta de confidențialitate."
+
+#: includes/class-wc-privacy.php:87
+msgid "While you visit our site, we’ll track:"
+msgstr "În timp ce ne vizitezi site-ul, vom urmări:"
 
 #: includes/class-wc-privacy-exporters.php:426
 msgid "Token"
@@ -10154,11 +10154,6 @@ msgstr "Numele clientului pentru comandă"
 msgid "URL to edit the order"
 msgstr "URL pentru a edita comanda"
 
-#. translators: %s: documentation URL
-#: includes/admin/views/html-notice-secure-connection.php:18
-msgid "Your store does not appear to be using a secure connection. We highly recommend serving your entire website over an HTTPS connection to help keep customer data secure. <a href=\"%s\">Learn more here.</a>"
-msgstr "Se pare că magazinul tău nu folosește o conexiune securizată. Recomandăm cu prisosință să folosești pe întregul sit web o conexiune HTTPS pentru a păstra în siguranță datele despre clienți. <a href=\"%s\">Află mai multe aici.</a>"
-
 #: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2336
 msgid "Limit result set to products with a specific attribute. Use the taxonomy name/attribute slug."
 msgstr "Limitează setul de rezultate la produse cu un anumit atribut. Folosește descriptorul nume/atribut pentru taxonomie."
@@ -10275,6 +10270,11 @@ msgstr "Evenimentul actualizează starea a eșuat."
 msgid "Display name"
 msgstr "Nume de afișat"
 
+#. translators: %s: documentation URL
+#: includes/admin/views/html-notice-secure-connection.php:18
+msgid "Your store does not appear to be using a secure connection. We highly recommend serving your entire website over an HTTPS connection to help keep customer data secure. <a href=\"%s\">Learn more here.</a>"
+msgstr "Se pare că magazinul tău nu folosește o conexiune securizată. Recomandăm cu prisosință să folosești pe întregul site web o conexiune HTTPS pentru a păstra în siguranță datele despre clienți. <a href=\"%s\">Află mai multe aici.</a>"
+
 #: includes/admin/views/html-admin-page-status-report.php:812
 msgid "WooCommerce pages"
 msgstr "Pagini WooCommerce"
@@ -10314,10 +10314,6 @@ msgstr "Mod depanare WordPress"
 #: includes/admin/views/html-admin-page-status-report.php:223
 msgid "WordPress memory limit"
 msgstr "Limită de memorie WordPress"
-
-#: includes/admin/views/html-admin-page-status-report.php:218
-msgid "WordPress multisite"
-msgstr "Multi-sit WordPress"
 
 #. Translators: %1$s: Current version, %2$s: New version
 #: includes/admin/views/html-admin-page-status-report.php:210
@@ -10407,12 +10403,9 @@ msgstr "Păstrează comenzile finalizate"
 msgid "Retain completed orders for a specified duration before anonymizing the personal data within them."
 msgstr "Păstrează comenzile finalizate pentru o durată de timp specificată înainte de a face anonime datele personale cuprinse în ele."
 
-#. translators: %s privacy policy page name and link
-#: includes/admin/settings/class-wc-settings-accounts.php:160
-#: includes/customizer/class-wc-shop-customizer.php:746
-#: includes/wc-template-functions.php:849
-msgid "Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our %s."
-msgstr "Datele personale vor fi folosite pentru a procesa comanda, pentru a-ți susține experiența pe acest sit web și pentru alte scopuri descrise în %s."
+#: includes/admin/views/html-admin-page-status-report.php:218
+msgid "WordPress multisite"
+msgstr "Multi-site WordPress"
 
 #: includes/admin/settings/class-wc-settings-accounts.php:157
 #: includes/customizer/class-wc-shop-customizer.php:818
@@ -10422,12 +10415,6 @@ msgstr "Opțional, poți adăuga un text despre politica de confidențialitate a
 #: includes/admin/settings/class-wc-settings-accounts.php:156
 msgid "Checkout privacy policy"
 msgstr "Politică de confidențialitate la finalizare"
-
-#. translators: %s privacy policy page name and link
-#: includes/admin/settings/class-wc-settings-accounts.php:150
-#: includes/wc-template-functions.php:853
-msgid "Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our %s."
-msgstr "Datele personale vor fi folosite pentru a-ți susține experiența pe acest sit web, pentru a administra accesul la contul tău și pentru alte scopuri descrise în %s."
 
 #: includes/admin/settings/class-wc-settings-accounts.php:147
 msgid "Optionally add some text about your store privacy policy to show on account registration forms."
@@ -10523,14 +10510,27 @@ msgstr "Înlătură datele personale"
 msgid "privacy page"
 msgstr "pagină de confidențialitate"
 
-#. translators: %s: privacy page link.
-#: includes/admin/settings/class-wc-settings-accounts.php:142
-msgid "This section controls the display of your website privacy policy. The privacy notices below will not show up unless a %s is set."
-msgstr "Această secțiune controlează afișarea politicii de confidențialitate a sitului tău web. Informațiile despre confidențialitate de mai jos nu vor apărea decât dacă este setată mai întâi o %s."
-
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:270
 msgid "List of allowed billing emails to check against when an order is placed. Separate email addresses with commas. You can also use an asterisk (*) to match parts of an email. For example \"*@gmail.com\" would match all gmail addresses."
 msgstr "Lista emailurilor permise la facturare pentru a verifica când este plasată o comandă. Separă adresele de email cu virgule. Poți folosi și un asterisc (*) pentru a potrivi părți dintr-un email. De exemplu, „*@gmail.com” înseamnă toate adresele Gmail."
+
+#. translators: %s privacy policy page name and link
+#: includes/admin/settings/class-wc-settings-accounts.php:160
+#: includes/customizer/class-wc-shop-customizer.php:746
+#: includes/wc-template-functions.php:849
+msgid "Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our %s."
+msgstr "Datele personale vor fi folosite pentru a procesa comanda, pentru a-ți susține experiența pe acest site web și pentru alte scopuri descrise în %s."
+
+#. translators: %s privacy policy page name and link
+#: includes/admin/settings/class-wc-settings-accounts.php:150
+#: includes/wc-template-functions.php:853
+msgid "Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our %s."
+msgstr "Datele personale vor fi folosite pentru a-ți susține experiența pe acest site web, pentru a administra accesul la contul tău și pentru alte scopuri descrise în %s."
+
+#. translators: %s: privacy page link.
+#: includes/admin/settings/class-wc-settings-accounts.php:142
+msgid "This section controls the display of your website privacy policy. The privacy notices below will not show up unless a %s is set."
+msgstr "Această secțiune controlează afișarea politicii de confidențialitate a site-ului tău web. Informațiile despre confidențialitate de mai jos nu vor apărea decât dacă este setată mai întâi o %s."
 
 #: includes/admin/class-wc-admin-setup-wizard.php:2296
 msgid "View &amp; Customize"
@@ -10616,11 +10616,6 @@ msgstr "Recomandat pentru toate magazinele WooCommerce"
 msgid "The PayFast extension for WooCommerce enables you to accept payments by Credit Card and EFT via one of South Africa’s most popular payment gateways. No setup fees or monthly subscription costs."
 msgstr "Extensia PayFast pentru WooCommerce îți permite să accepți plăți printr-un card de credit și EFT via una dintre cele mai populare gateway-uri de plată din Africa de Sud. Fără taxe de instalare sau costuri lunare pentru abonament."
 
-#: includes/admin/class-wc-admin-setup-wizard.php:1495
-#: packages/woocommerce-admin/dist/chunks/6.js:1
-msgid "The eWAY extension for WooCommerce allows you to take credit card payments directly on your store without redirecting your customers to a third party site to make payment."
-msgstr "Extensia eWAY pentru WooCommerce îți permite să accepți plăți cu carduri de credit direct în magazinul tău, fără a-ți redirecționa clienții la un sit terț pentru a face plata."
-
 #: includes/admin/class-wc-admin-setup-wizard.php:842
 msgid "The following plugins will be installed and activated for you:"
 msgstr "Vor fi instalate și activate pentru tine următoarele module:"
@@ -10654,6 +10649,11 @@ msgstr "Klarna Payments pentru WooCommerce"
 #: packages/woocommerce-blocks/build/vendors.js:6
 msgid "Klarna Checkout for WooCommerce"
 msgstr "Klarna Checkout pentru WooCommerce"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1495
+#: packages/woocommerce-admin/dist/chunks/6.js:1
+msgid "The eWAY extension for WooCommerce allows you to take credit card payments directly on your store without redirecting your customers to a third party site to make payment."
+msgstr "Extensia eWAY pentru WooCommerce îți permite să accepți plăți cu carduri de credit direct în magazinul tău, fără a-ți redirecționa clienții la un site terț pentru a face plata."
 
 #: i18n/states.php:966
 msgid "Lofa"
@@ -11389,7 +11389,7 @@ msgstr "Vezi produsele din grupul &bdquo;%s&rdquo;"
 
 #: includes/customizer/class-wc-shop-customizer.php:329
 msgid "If enabled, this text will be shown site-wide. You can use it to show events or promotions to visitors!"
-msgstr "Dacă este activată, acest text va fi afișat pe întreg situl. Îl poți folosi pentru a afișa vizitatorilor evenimente sau promoții!"
+msgstr "Dacă activezi, acest text va fi afișat pe întreg site-ul. Îl poți folosi pentru a afișa vizitatorilor evenimente sau promoții!"
 
 #: includes/class-wc-customer-download.php:299
 msgid "Invalid permission ID."
@@ -12300,11 +12300,11 @@ msgstr "Ești gata să începi vânzarea!"
 
 #: includes/admin/class-wc-admin-setup-wizard.php:2184
 msgid "Your site might be on a private network. Jetpack can only connect to public sites. Please make sure your site is visible over the internet, and then try connecting again 🙏."
-msgstr "Situl poate fi într-o rețea privată. Jetpack se poate conecta numai la situri publice. Te rog asigură-te că situl tău este vizibil pe internet și apoi încearcă din nou conectarea 🙏."
+msgstr "Site-ul poate fi într-o rețea privată. Jetpack se poate conecta numai la site-uri publice. Te rog asigură-te că site-ul tău este vizibil pe internet și apoi încearcă din nou conectarea 🙏."
 
 #: includes/admin/class-wc-admin-setup-wizard.php:2183
 msgid "Sorry! We couldn't contact Jetpack just now 😭. Please make sure that your site is visible over the internet, and that it accepts incoming and outgoing requests via curl. You can also try to connect to Jetpack again, and if you run into any more issues, please contact support."
-msgstr "Regretăm! N-am putut conecta Jetpack acum 😭. Te rog asigură-te că situl tău este vizibil pe internet și că acceptă cereri de intrare și ieșire prin curl. De asemenea, poți încerca să te conectezi din nou la Jetpack și dacă întâmpini alte probleme, te rog contactează suportul."
+msgstr "Regretăm! Nu am putut conecta Jetpack acum 😭. Te rog asigură-te că site-ul tău este vizibil pe internet și că acceptă cereri de intrare și ieșire prin curl. De asemenea, poți încerca să te conectezi din nou la Jetpack și dacă întâmpini alte probleme, te rog contactează suportul."
 
 #: includes/admin/class-wc-admin-setup-wizard.php:2182
 msgid "Sorry! We tried, but we couldn't install Jetpack for you 😭. Please go to the Plugins tab to install it, and finish setting up your store."
@@ -12355,10 +12355,6 @@ msgstr "Conectează-ți magazinul la Jetpack"
 msgid "Connect your store to Jetpack to enable extra features"
 msgstr "Conectează-ți magazinul la Jetpack pentru a activa funcționalități suplimentare"
 
-#: includes/admin/class-wc-admin-setup-wizard.php:2113
-msgid "By connecting your site you agree to our fascinating <a href=\"%1$s\" target=\"_blank\">Terms of Service</a> and to <a href=\"%2$s\" target=\"_blank\">share details</a> with WordPress.com"
-msgstr "Prin conectarea sitului tău ești de acord cu fascinanții noștri <a href=\"%1$s\" target=\"_blank\">termeni de utilizare ai serviciului</a> și să <a href=\"%2$s\" target=\"_blank\">partajezi detalii</a> cu WordPress.com"
-
 #: includes/admin/class-wc-admin-setup-wizard.php:2138
 msgid "Better security"
 msgstr "Securitate mai bună"
@@ -12382,6 +12378,10 @@ msgstr "Regret, nu ți-am putut conecta magazinul la Jetpack"
 #: includes/admin/class-wc-admin-setup-wizard.php:2012
 msgid "payment setup, automated taxes and discounted shipping labels"
 msgstr "inițializare plată, taxe automate și etichete de livrare cu reducere"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:2113
+msgid "By connecting your site you agree to our fascinating <a href=\"%1$s\" target=\"_blank\">Terms of Service</a> and to <a href=\"%2$s\" target=\"_blank\">share details</a> with WordPress.com"
+msgstr "Prin conectarea site-ului tău ești de acord cu fascinanții noștri <a href=\"%1$s\" target=\"_blank\">termeni de utilizare ai serviciului</a> și să <a href=\"%2$s\" target=\"_blank\">partajezi detalii</a> cu WordPress.com"
 
 #: includes/admin/class-wc-admin-setup-wizard.php:1424
 msgid "Stripe email address"
@@ -12852,10 +12852,6 @@ msgstr "Activează recenzii produs"
 msgid "The URL of your %s page (along with the Page ID)."
 msgstr "URL-ul paginii tale %s (împreună cu ID-ul paginii)."
 
-#: includes/admin/views/html-admin-page-status-report.php:64
-msgid "The homepage URL of your site."
-msgstr "URL-ul primei pagini a sitului tău."
-
 #: includes/admin/views/html-admin-page-product-export.php:94
 msgid "Generate CSV"
 msgstr "Generează CSV"
@@ -12928,6 +12924,10 @@ msgstr "Exportă produsele într-un fișier CSV"
 #: includes/admin/settings/class-wc-settings-products.php:433
 msgid "Enable star rating on reviews"
 msgstr "Activează evaluarea pe stele în recenzii"
+
+#: includes/admin/views/html-admin-page-status-report.php:64
+msgid "The homepage URL of your site."
+msgstr "URL-ul primei pagini a site-ului tău."
 
 #: includes/admin/helper/views/html-main.php:97
 #: includes/admin/helper/views/html-main.php:99
@@ -13237,11 +13237,6 @@ msgstr "Actualizează"
 msgid "Subscription: Unlimited"
 msgstr "Abonament: nelimitat"
 
-#. translators: %1$d: sites active, %2$d max sites active
-#: includes/admin/helper/views/html-main.php:90
-msgid "Subscription: Using %1$d of %2$d sites available"
-msgstr "Abonament: folosirea a %1$d din %2$d situri disponibile"
-
 #: includes/admin/helper/views/html-main.php:77
 msgid "Expires on:"
 msgstr "Expiră pe:"
@@ -13359,6 +13354,11 @@ msgstr "Tip de fișier invalid. Importatorul suportă formatele de fișier CSV �
 #: includes/admin/importers/views/html-product-csv-import-form.php:15
 msgid "This tool allows you to import (or merge) product data to your store from a CSV or TXT file."
 msgstr "Acest instrument îți permite să imporți (sau să îmbini) datele produselor în magazinul tău dintr-un fișier CSV sau TXT."
+
+#. translators: %1$d: sites active, %2$d max sites active
+#: includes/admin/helper/views/html-main.php:90
+msgid "Subscription: Using %1$d of %2$d sites available"
+msgstr "Abonament: folosesc %1$d din %2$d site-uri disponibile"
 
 #: includes/admin/helper/class-wc-helper.php:262
 msgid "This subscription is expiring soon. Please <strong>renew</strong> to continue receiving updates and support."
@@ -14748,10 +14748,6 @@ msgstr "Limitează setul de rezultate la produse bazate pe un preț maxim."
 msgid "Limit result set to products based on a minimum price."
 msgstr "Limitează setul de rezultate la produse bazate pe un preț minim."
 
-#: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:106
-msgid "Site URL."
-msgstr "URL sit."
-
 #: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:179
 msgid "PHP post max size."
 msgstr "Dimensiune maximă articol PHP."
@@ -14786,10 +14782,6 @@ msgstr "Titlu metodă de livrare."
 #: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:99
 msgid "Home URL."
 msgstr "URL prima pagină."
-
-#: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:137
-msgid "Is WordPress multisite?"
-msgstr "Este WordPress multi-sit?"
 
 #: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-zones-v2-controller.php:54
 #: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-zone-locations-v2-controller.php:29
@@ -14962,6 +14954,14 @@ msgstr "Metodele de livrare nu pot fi aruncate la gunoi."
 msgid "Limit result set to products on sale."
 msgstr "Limitează setul de rezultate la produse cu reduceri."
 
+#: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:137
+msgid "Is WordPress multisite?"
+msgstr "Este WordPress multi-site?"
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:106
+msgid "Site URL."
+msgstr "URL site."
+
 #: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2312
 #: packages/woocommerce-blocks/src/StoreApi/Routes/Products.php:251
 msgid "Limit result set to featured products."
@@ -15011,22 +15011,6 @@ msgstr "O descriere care poate fi citită de oameni pentru setarea folosită în
 #: includes/rest-api/Controllers/Version2/class-wc-rest-payment-gateways-v2-controller.php:406
 msgid "A human readable label for the setting used in interfaces."
 msgstr "O etichetă care poate fi citită de oameni pentru setarea folosită în interfețe."
-
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:474
-#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:847
-#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1773
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:702
-msgid "Start date of sale price, in the site's timezone."
-msgstr "Data de începere a prețului de vânzare, în fusul orar al sitului."
-
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:484
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:489
-#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:857
-#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:862
-#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1783
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:712
-msgid "End date of sale price, in the site's timezone."
-msgstr "Data de încheiere a prețului de vânzare, în fusul orar al sitului."
 
 #: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1297
 #: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2222
@@ -15170,6 +15154,22 @@ msgstr "Data de începere a prețului de vânzare (GMT)."
 msgid "The date the order was completed, as GMT."
 msgstr "Data la care comanda a fost finalizată (GMT)."
 
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:484
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:489
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:857
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:862
+#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1783
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:712
+msgid "End date of sale price, in the site's timezone."
+msgstr "Data de încheiere pentru vânzările cu reduceri, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:474
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:847
+#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1773
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:702
+msgid "Start date of sale price, in the site's timezone."
+msgstr "Data de începere pentru vânzările cu reduceri, în fusul orar al site-ului."
+
 #: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:747
 #: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1327
 #: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:284
@@ -15286,10 +15286,6 @@ msgstr "Când este setat la „true”, API gateway-ului de plată este folosit 
 msgid "From %1$s to %2$s"
 msgstr "De la %1$s la %2$s"
 
-#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:387
-msgid "The date the coupon expires, in the site's timezone."
-msgstr "Data la care expiră cuponul, în fusul orar al sitului."
-
 #. translators: %s: amount of errors
 #: includes/class-wc-rest-authentication.php:314
 msgid "Missing OAuth parameter %s"
@@ -15319,6 +15315,10 @@ msgstr "Data la care cuponul a fost modificat ultima dată (GMT)."
 #: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:466
 msgid "If true, the coupon can only be used individually. Other applied coupons will be removed from the cart."
 msgstr "Dacă este setat la „true”, cuponul poate fi folosit doar individual. Celelalte cupoane aplicate vor fi înlăturate din coș."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:387
+msgid "The date the coupon expires, in the site's timezone."
+msgstr "Data la care expiră cuponul, în fusul orar al site-ului."
 
 #: includes/admin/views/html-bulk-edit-product.php:26
 #: includes/admin/views/html-bulk-edit-product.php:50
@@ -17149,10 +17149,6 @@ msgstr "Odată dezactivată, această metodă veche nu va mai fi disponibilă."
 msgid "Lets you charge a fixed rate for shipping."
 msgstr "Îți permite să percepi o taxă fixă pentru livrare."
 
-#: includes/shipping/legacy-flat-rate/class-wc-shipping-legacy-flat-rate.php:35
-msgid "Flat rate (legacy)"
-msgstr "Forfetar (vechi)"
-
 #. translators: %s: Admin shipping settings URL
 #: includes/shipping/legacy-free-shipping/class-wc-shipping-legacy-free-shipping.php:46
 #: includes/shipping/legacy-local-pickup/class-wc-shipping-legacy-local-pickup.php:30
@@ -17161,6 +17157,10 @@ msgstr "Forfetar (vechi)"
 #: includes/shipping/legacy-flat-rate/class-wc-shipping-legacy-flat-rate.php:37
 msgid "This method is deprecated in 2.6.0 and will be removed in future versions - we recommend disabling it and instead setting up a new rate within your <a href=\"%s\">Shipping zones</a>."
 msgstr "Această metodă este învechită începând cu versiunea 2.6.0 și o vom elimina în versiunile viitoare - recomandăm s-o dezactivezi și să inițializezi în schimb o taxă nouă în <a href=\"%s\">zonele de livrare</a>."
+
+#: includes/shipping/legacy-flat-rate/class-wc-shipping-legacy-flat-rate.php:35
+msgid "Flat rate (legacy)"
+msgstr "Forfetar (vechi)"
 
 #: includes/class-wc-download-handler.php:624
 msgid "Go to shop"
@@ -17214,16 +17214,6 @@ msgstr "Această metodă de plată a fost setată cu succes ca implicită."
 msgid "The delivery duration, in seconds."
 msgstr "Durata de livrare, în secunde."
 
-#: includes/rest-api/Controllers/Version3/class-wc-rest-report-orders-totals-controller.php:105
-#: includes/rest-api/Controllers/Version3/class-wc-rest-report-coupons-totals-controller.php:121
-#: includes/rest-api/Controllers/Version3/class-wc-rest-report-customers-totals-controller.php:132
-#: includes/rest-api/Controllers/Version3/class-wc-rest-report-products-totals-controller.php:111
-#: includes/rest-api/Controllers/Version3/class-wc-rest-report-reviews-totals-controller.php:110
-#: includes/rest-api/Controllers/Version1/class-wc-rest-reports-v1-controller.php:157
-#: packages/woocommerce-admin/src/API/Reports/Controller.php:266
-msgid "An alphanumeric identifier for the resource."
-msgstr "Un identificator alfanumeric pentru resursă."
-
 #: includes/class-wc-checkout.php:851
 msgid "Please enter an address to continue."
 msgstr "Te rog introdu o adresă pentru a continua."
@@ -17235,6 +17225,16 @@ msgstr "Inserează în produs"
 #: includes/class-wc-post-types.php:340
 msgid "Uploaded to this product"
 msgstr "Încărcat în acest produs"
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-report-orders-totals-controller.php:105
+#: includes/rest-api/Controllers/Version3/class-wc-rest-report-coupons-totals-controller.php:121
+#: includes/rest-api/Controllers/Version3/class-wc-rest-report-customers-totals-controller.php:132
+#: includes/rest-api/Controllers/Version3/class-wc-rest-report-products-totals-controller.php:111
+#: includes/rest-api/Controllers/Version3/class-wc-rest-report-reviews-totals-controller.php:110
+#: includes/rest-api/Controllers/Version1/class-wc-rest-reports-v1-controller.php:157
+#: packages/woocommerce-admin/src/API/Reports/Controller.php:266
+msgid "An alphanumeric identifier for the resource."
+msgstr "Un identificator alfanumeric pentru resursă."
 
 #: includes/class-wc-post-types.php:342
 msgid "Products navigation"
@@ -17285,11 +17285,6 @@ msgstr "Înapoi la emailuri"
 #: includes/rest-api/Controllers/Version1/class-wc-rest-webhooks-v1-controller.php:754
 msgid "Limit result set to webhooks assigned a specific status."
 msgstr "Limitează setul de rezultate la cârlige web atribuite unei anumite stări."
-
-#: includes/rest-api/Controllers/Version2/class-wc-rest-webhooks-v2-controller.php:166
-#: includes/rest-api/Controllers/Version1/class-wc-rest-webhooks-v1-controller.php:677
-msgid "The date the webhook was last modified, in the site's timezone."
-msgstr "Data la care cârligul web a fost modificat ultima dată, în fusul orar al sitului."
 
 #: includes/rest-api/Controllers/Version2/class-wc-rest-webhooks-v2-controller.php:121
 #: includes/rest-api/Controllers/Version1/class-wc-rest-webhooks-v1-controller.php:638
@@ -17424,11 +17419,6 @@ msgstr "Comandă suspendată"
 msgid "Products list"
 msgstr "Listă de produse"
 
-#: includes/rest-api/Controllers/Version2/class-wc-rest-webhooks-v2-controller.php:154
-#: includes/rest-api/Controllers/Version1/class-wc-rest-webhooks-v1-controller.php:671
-msgid "The date the webhook was created, in the site's timezone."
-msgstr "Data la care a fost creat cârligul web, în fusul orar al sitului."
-
 #: includes/rest-api/Controllers/Version2/class-wc-rest-webhook-deliveries-v2-controller.php:95
 #: includes/rest-api/Controllers/Version1/class-wc-rest-webhook-deliveries-v1-controller.php:251
 msgid "Request headers."
@@ -17451,11 +17441,6 @@ msgstr "URL-ul unde este livrată sarcina de plată a cârligului web."
 #: includes/rest-api/Controllers/Version1/class-wc-rest-webhooks-v1-controller.php:650
 msgid "WooCommerce action names associated with the webhook."
 msgstr "Numele acțiunilor WooCommerce asociate cu cârligul web."
-
-#: includes/rest-api/Controllers/Version2/class-wc-rest-webhook-deliveries-v2-controller.php:137
-#: includes/rest-api/Controllers/Version1/class-wc-rest-webhook-deliveries-v1-controller.php:293
-msgid "The date the webhook delivery was logged, in the site's timezone."
-msgstr "Data la care livrarea cârligului web a fost înregistrată, în fusul orar al sitului."
 
 #: includes/rest-api/Controllers/Version2/class-wc-rest-webhook-deliveries-v2-controller.php:122
 #: includes/rest-api/Controllers/Version1/class-wc-rest-webhook-deliveries-v1-controller.php:278
@@ -17484,6 +17469,21 @@ msgstr "Cod județ (regiune, provincie, stat)."
 #: includes/emails/class-wc-email-customer-on-hold-order.php:33
 msgid "This is an order notification sent to customers containing order details after an order is placed on-hold."
 msgstr "Aceasta este o notificare la comanda trimisă clienților și conține detalii despre comandă după ce o comandă este plasată în așteptare."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-webhooks-v2-controller.php:166
+#: includes/rest-api/Controllers/Version1/class-wc-rest-webhooks-v1-controller.php:677
+msgid "The date the webhook was last modified, in the site's timezone."
+msgstr "Data la care cârligul web a fost modificat ultima dată, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-webhooks-v2-controller.php:154
+#: includes/rest-api/Controllers/Version1/class-wc-rest-webhooks-v1-controller.php:671
+msgid "The date the webhook was created, in the site's timezone."
+msgstr "Data la care a fost creat cârligul web, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-webhook-deliveries-v2-controller.php:137
+#: includes/rest-api/Controllers/Version1/class-wc-rest-webhook-deliveries-v1-controller.php:293
+msgid "The date the webhook delivery was logged, in the site's timezone."
+msgstr "Data la care a fost înregistrată livrarea cârligului web, în fusul orar al site-ului."
 
 #: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:717
 #: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1234
@@ -17666,6 +17666,19 @@ msgstr "Descriptor etichetă."
 msgid "Image ID."
 msgstr "ID imagine."
 
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:698
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1214
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-categories-controller.php:185
+#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2134
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-categories-v2-controller.php:185
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:919
+#: includes/rest-api/Controllers/Version1/class-wc-rest-product-categories-v1-controller.php:244
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2178
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2510
+#: packages/woocommerce-blocks/src/StoreApi/Schemas/ImageAttachmentSchema.php:59
+msgid "Image name."
+msgstr "Nume imagine."
+
 #: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:816
 #: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1742
 #: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:1801
@@ -17680,19 +17693,6 @@ msgstr "Descriere produs."
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/ProductSchema.php:118
 msgid "Current product price."
 msgstr "Preț actual produs."
-
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:698
-#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1214
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-categories-controller.php:185
-#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2134
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-categories-v2-controller.php:185
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:919
-#: includes/rest-api/Controllers/Version1/class-wc-rest-product-categories-v1-controller.php:244
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2178
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2510
-#: packages/woocommerce-blocks/src/StoreApi/Schemas/ImageAttachmentSchema.php:59
-msgid "Image name."
-msgstr "Nume imagine."
 
 #: includes/rest-api/Controllers/Version3/class-wc-rest-product-categories-controller.php:145
 #: includes/rest-api/Controllers/Version2/class-wc-rest-product-categories-v2-controller.php:145
@@ -17958,46 +17958,6 @@ msgstr "Nume etichetă."
 msgid "Product slug."
 msgstr "Descriptor produs."
 
-#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1009
-msgid "The date the order was last modified, in the site's timezone."
-msgstr "Data la care comanda a fost modificată ultima dată, în fusul orar al sitului."
-
-#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:767
-#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1691
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:1762
-msgid "The date the product was created, in the site's timezone."
-msgstr "Data la care a fost creat produsul, în fusul orar al sitului."
-
-#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:777
-#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1703
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:1768
-msgid "The date the product was last modified, in the site's timezone."
-msgstr "Data la care produsul a fost modificat ultima dată, în fusul orar al sitului."
-
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:668
-#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1184
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-categories-controller.php:155
-#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2104
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-categories-v2-controller.php:155
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:889
-#: includes/rest-api/Controllers/Version1/class-wc-rest-product-categories-v1-controller.php:226
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2160
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2492
-msgid "The date the image was created, in the site's timezone."
-msgstr "Data la care a fost creată imaginea, în fusul orar al sitului."
-
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:429
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:657
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2276
-msgid "The date the variation was created, in the site's timezone."
-msgstr "Data la care a fost creată variația, în fusul orar al sitului."
-
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:435
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:663
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2282
-msgid "The date the variation was last modified, in the site's timezone."
-msgstr "Data la care a fost modificată ultima dată variația, în fusul orar al sitului."
-
 #: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:796
 #: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1722
 #: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:1781
@@ -18026,18 +17986,6 @@ msgstr "Descriere scurtă produs."
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/ProductSchema.php:105
 msgid "Unique identifier."
 msgstr "Identificator unic."
-
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:680
-#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1196
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-categories-controller.php:167
-#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2116
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-categories-v2-controller.php:167
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:901
-#: includes/rest-api/Controllers/Version1/class-wc-rest-product-categories-v1-controller.php:232
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2166
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2498
-msgid "The date the image was last modified, in the site's timezone."
-msgstr "Data la care a fost modificată ultima dată imaginea, în fusul orar al sitului."
 
 #: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:837
 #: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1763
@@ -18484,11 +18432,6 @@ msgstr "Produs invalid."
 msgid "The ID for the parent of the resource."
 msgstr "ID-ul pentru părintele resursei."
 
-#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1225
-#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1198
-msgid "The date the order was paid, in the site's timezone."
-msgstr "Data la care comanda a fost plătită, în fusul orar al sitului."
-
 #: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1691
 #: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1527
 msgid "Coupons line data."
@@ -18644,11 +18587,6 @@ msgstr "Total reduceri."
 msgid "Category archive display type."
 msgstr "Tip de afișare arhivă categorii."
 
-#: includes/legacy/api/v2/class-wc-api-products.php:949
-#: includes/legacy/api/v3/class-wc-api-products.php:1434
-msgid "The SKU already exists on another product."
-msgstr "Acest SKU există deja pentru un alt produs."
-
 #: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1340
 #: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1535
 #: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1627
@@ -18659,6 +18597,11 @@ msgstr "Acest SKU există deja pentru un alt produs."
 #: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1490
 msgid "Line total tax (after discounts)."
 msgstr "Linie pentru total taxe (după reduceri)."
+
+#: includes/legacy/api/v2/class-wc-api-products.php:949
+#: includes/legacy/api/v3/class-wc-api-products.php:1434
+msgid "The SKU already exists on another product."
+msgstr "Acest SKU există deja pentru un alt produs."
 
 #: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:1832
 #: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2316
@@ -18740,10 +18683,6 @@ msgstr "Taxă totală reduceri."
 #: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2311
 msgid "Variation sale price."
 msgstr "Variație preț de vânzare."
-
-#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:997
-msgid "The date the order was created, in the site's timezone."
-msgstr "Data la care a fost creată comanda, în fusul orar al sitului."
 
 #: includes/rest-api/Controllers/Version1/class-wc-rest-report-sales-v1-controller.php:290
 msgid "Gross sales in the period."
@@ -18849,11 +18788,6 @@ msgstr "Starea de impozitare a taxei."
 msgid "Tax lines data."
 msgstr "Date linii de impozite."
 
-#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1237
-#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1192
-msgid "The date the order was completed, in the site's timezone."
-msgstr "Data la care a fost finalizată comanda, în fusul orar al sitului."
-
 #: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1359
 #: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1555
 #: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1647
@@ -18889,13 +18823,6 @@ msgstr "Arată dacă variația este pentru vânzări cu reducere."
 msgid "Shows if the product is on sale."
 msgstr "Arată dacă produsul este cu reducere."
 
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-reviews-controller.php:837
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-reviews-v2-controller.php:164
-#: includes/rest-api/Controllers/Version1/class-wc-rest-product-reviews-v1-controller.php:537
-#: packages/woocommerce-blocks/src/StoreApi/Schemas/ProductReviewSchema.php:59
-msgid "The date the review was created, in the site's timezone."
-msgstr "Data la care a fost creată recenzia, în fusul orar al sitului."
-
 #: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1045
 #: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1012
 msgid "Sum of line item taxes only."
@@ -18910,6 +18837,79 @@ msgstr "Nu pot crea elementul de rând, încearcă din nou."
 #: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1311
 msgid "Line item meta data."
 msgstr "Metadate element de rând."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1237
+#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1192
+msgid "The date the order was completed, in the site's timezone."
+msgstr "Data la care a fost finalizată comanda, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1009
+msgid "The date the order was last modified, in the site's timezone."
+msgstr "Data la care comanda a fost modificată ultima dată, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:997
+msgid "The date the order was created, in the site's timezone."
+msgstr "Data la care a fost creată comanda, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:435
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:663
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2282
+msgid "The date the variation was last modified, in the site's timezone."
+msgstr "Data la care a fost modificată ultima dată variația, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:429
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:657
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2276
+msgid "The date the variation was created, in the site's timezone."
+msgstr "Data la care a fost creată variația, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:680
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1196
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-categories-controller.php:167
+#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2116
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-categories-v2-controller.php:167
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:901
+#: includes/rest-api/Controllers/Version1/class-wc-rest-product-categories-v1-controller.php:232
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2166
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2498
+msgid "The date the image was last modified, in the site's timezone."
+msgstr "Data la care imaginea a fost modificată ultima dată, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:777
+#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1703
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:1768
+msgid "The date the product was last modified, in the site's timezone."
+msgstr "Data la care produsul a fost modificat ultima dată, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:767
+#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1691
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:1762
+msgid "The date the product was created, in the site's timezone."
+msgstr "Data la care a fost creat produsul, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-reviews-controller.php:837
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-reviews-v2-controller.php:164
+#: includes/rest-api/Controllers/Version1/class-wc-rest-product-reviews-v1-controller.php:537
+#: packages/woocommerce-blocks/src/StoreApi/Schemas/ProductReviewSchema.php:59
+msgid "The date the review was created, in the site's timezone."
+msgstr "Data la care a fost creată recenzia, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1225
+#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1198
+msgid "The date the order was paid, in the site's timezone."
+msgstr "Data la care a fost plătită comanda, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:668
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1184
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-categories-controller.php:155
+#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2104
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-categories-v2-controller.php:155
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:889
+#: includes/rest-api/Controllers/Version1/class-wc-rest-product-categories-v1-controller.php:226
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2160
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2492
+msgid "The date the image was created, in the site's timezone."
+msgstr "Data la care a fost creată imaginea, în fusul orar al site-ului."
 
 #: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:160
 #: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:223
@@ -19017,29 +19017,6 @@ msgstr "Adresă email."
 msgid "Phone number."
 msgstr "Număr de telefon."
 
-#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:195
-#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:258
-#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:240
-#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:303
-#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:768
-#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:831
-msgid "ISO code of the country."
-msgstr "Codul ISO al țării."
-
-#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:743
-#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:806
-#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1050
-#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1113
-msgid "Address line 1."
-msgstr "Prima linie a adresei."
-
-#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:748
-#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:811
-#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1055
-#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1118
-msgid "Address line 2."
-msgstr "A doua linie a adresei."
-
 #: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:165
 #: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:228
 #: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:210
@@ -19067,11 +19044,28 @@ msgstr "Nume companie."
 msgid "City name."
 msgstr "Nume oraș."
 
-#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:271
-#: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:253
-#: includes/legacy/api/class-wc-rest-legacy-coupons-controller.php:113
-msgid "The coupon code cannot be empty."
-msgstr "Codul cuponului nu poate fi gol."
+#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:195
+#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:258
+#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:240
+#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:303
+#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:768
+#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:831
+msgid "ISO code of the country."
+msgstr "Codul ISO al țării."
+
+#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:743
+#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:806
+#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1050
+#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1113
+msgid "Address line 1."
+msgstr "Prima linie a adresei."
+
+#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:748
+#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:811
+#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1055
+#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1118
+msgid "Address line 2."
+msgstr "A doua linie a adresei."
 
 #: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:750
 #: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1674
@@ -19090,6 +19084,12 @@ msgstr "Codul cuponului nu poate fi gol."
 msgid "Product name."
 msgstr "Nume produs."
 
+#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:271
+#: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:253
+#: includes/legacy/api/class-wc-rest-legacy-coupons-controller.php:113
+msgid "The coupon code cannot be empty."
+msgstr "Codul cuponului nu poate fi gol."
+
 #: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:542
 #: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:920
 #: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1846
@@ -19101,32 +19101,6 @@ msgstr "Nume produs."
 #: packages/woocommerce-admin/src/API/Reports/Downloads/Controller.php:205
 msgid "File URL."
 msgstr "URL fișier."
-
-#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:97
-#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:142
-msgid "The date the customer was last modified, in the site's timezone."
-msgstr "Data la care clientul a fost modificat ultima dată, în fusul orar al sitului."
-
-#: includes/rest-api/Controllers/Version3/class-wc-rest-order-notes-controller.php:134
-#: includes/rest-api/Controllers/Version2/class-wc-rest-order-notes-v2-controller.php:135
-#: includes/rest-api/Controllers/Version1/class-wc-rest-order-notes-v1-controller.php:407
-msgid "The date the order note was created, in the site's timezone."
-msgstr "Data la care nota comenzii a fost creată, în fusul orar al sitului."
-
-#: includes/rest-api/Controllers/Version2/class-wc-rest-order-refunds-v2-controller.php:368
-#: includes/rest-api/Controllers/Version1/class-wc-rest-order-refunds-v1-controller.php:350
-msgid "The date the order refund was created, in the site's timezone."
-msgstr "Data la care rambursarea comenzii a fost creată, în fusul orar al sitului."
-
-#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:363
-#: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:432
-msgid "The date the coupon was last modified, in the site's timezone."
-msgstr "Data la care cuponul a fost modificat ultima dată, în fusul orar al sitului."
-
-#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:351
-#: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:426
-msgid "The date the coupon was created, in the site's timezone."
-msgstr "Data la care cuponul a fost creat, în fusul orar al sitului."
 
 #: includes/rest-api/Controllers/Version1/class-wc-rest-tax-classes-v1-controller.php:219
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:471
@@ -19301,6 +19275,21 @@ msgstr "Notă comandă."
 msgid "Shows/define if the note is only for reference or for the customer (the user will be notified)."
 msgstr "Arată/definește dacă nota este numai pentru referință sau pentru client (utilizatorul va fi notificat)."
 
+#: includes/wc-core-functions.php:149 includes/wc-order-functions.php:514
+#: includes/wc-order-functions.php:1078
+#: includes/rest-api/Controllers/Version3/class-wc-rest-order-refunds-controller.php:44
+#: includes/rest-api/Controllers/Version3/class-wc-rest-order-notes-controller.php:79
+#: includes/rest-api/Controllers/Version2/class-wc-rest-order-notes-v2-controller.php:39
+#: includes/rest-api/Controllers/Version2/class-wc-rest-order-refunds-v2-controller.php:198
+#: includes/rest-api/Controllers/Version2/class-wc-rest-order-refunds-v2-controller.php:280
+#: includes/rest-api/Controllers/Version1/class-wc-rest-order-notes-v1-controller.php:186
+#: includes/rest-api/Controllers/Version1/class-wc-rest-order-notes-v1-controller.php:226
+#: includes/rest-api/Controllers/Version1/class-wc-rest-order-notes-v1-controller.php:268
+#: includes/rest-api/Controllers/Version1/class-wc-rest-order-notes-v1-controller.php:301
+#: includes/rest-api/Controllers/Version1/class-wc-rest-order-refunds-v1-controller.php:127
+msgid "Invalid order ID."
+msgstr "ID comandă invalid."
+
 #: includes/rest-api/Controllers/Version2/class-wc-rest-order-refunds-v2-controller.php:202
 #: includes/rest-api/Controllers/Version1/class-wc-rest-order-refunds-v1-controller.php:133
 #: includes/legacy/api/v2/class-wc-api-orders.php:1512
@@ -19335,21 +19324,6 @@ msgstr "Valoare rambursare."
 #: includes/rest-api/Controllers/Version1/class-wc-rest-order-refunds-v1-controller.php:361
 msgid "Reason for refund."
 msgstr "Motiv pentru rambursare."
-
-#: includes/wc-core-functions.php:149 includes/wc-order-functions.php:514
-#: includes/wc-order-functions.php:1078
-#: includes/rest-api/Controllers/Version3/class-wc-rest-order-refunds-controller.php:44
-#: includes/rest-api/Controllers/Version3/class-wc-rest-order-notes-controller.php:79
-#: includes/rest-api/Controllers/Version2/class-wc-rest-order-notes-v2-controller.php:39
-#: includes/rest-api/Controllers/Version2/class-wc-rest-order-refunds-v2-controller.php:198
-#: includes/rest-api/Controllers/Version2/class-wc-rest-order-refunds-v2-controller.php:280
-#: includes/rest-api/Controllers/Version1/class-wc-rest-order-notes-v1-controller.php:186
-#: includes/rest-api/Controllers/Version1/class-wc-rest-order-notes-v1-controller.php:226
-#: includes/rest-api/Controllers/Version1/class-wc-rest-order-notes-v1-controller.php:268
-#: includes/rest-api/Controllers/Version1/class-wc-rest-order-notes-v1-controller.php:301
-#: includes/rest-api/Controllers/Version1/class-wc-rest-order-refunds-v1-controller.php:127
-msgid "Invalid order ID."
-msgstr "ID comandă invalid."
 
 #: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1288
 #: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1431
@@ -19429,11 +19403,6 @@ msgstr "Metodele de livrare moștenite (forfetar, forfetar internațional, prelu
 #: includes/data-stores/abstract-wc-order-item-type-data-store.php:135
 msgid "Invalid order item."
 msgstr "Element comandă invalid."
-
-#: includes/rest-api/Controllers/Version2/class-wc-rest-customer-downloads-v2-controller.php:129
-#: includes/rest-api/Controllers/Version1/class-wc-rest-customer-downloads-v1-controller.php:211
-msgid "The date when download access expires, in the site's timezone."
-msgstr "Data la care expiră accesul la descărcare, în fusul orar al sitului."
 
 #: includes/rest-api/Controllers/Version2/class-wc-rest-customer-downloads-v2-controller.php:123
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customer-downloads-v1-controller.php:205
@@ -19576,11 +19545,6 @@ msgstr "Indiferent dacă evită aruncarea la gunoi și forțează ștergerea."
 msgid "Cannot create existing resource."
 msgstr "Nu pot crea o resursă existentă."
 
-#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:85
-#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:130
-msgid "The date the customer was created, in the site's timezone."
-msgstr "Data la care a fost creat clientul, în fusul orar al sitului."
-
 #: includes/rest-api/Controllers/Version1/class-wc-rest-order-notes-v1-controller.php:295
 #: includes/rest-api/Controllers/Version1/class-wc-rest-webhooks-v1-controller.php:455
 msgid "Webhooks do not support trashing."
@@ -19591,6 +19555,12 @@ msgstr "Cârligele web nu pot fi aruncate la gunoi."
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:786
 msgid "List of shipping address data."
 msgstr "Listă cu datele adreselor de livrare."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:150
+#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:195
+#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:723
+msgid "List of billing address data."
+msgstr "Listă cu datele adreselor de facturare."
 
 #: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:185
 #: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:248
@@ -19605,18 +19575,48 @@ msgstr "Listă cu datele adreselor de livrare."
 msgid "ISO code or name of the state, province or district."
 msgstr "Cod ISO sau nume județ (provincie, stat), regiune sau district."
 
-#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:150
-#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:195
-#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:723
-msgid "List of billing address data."
-msgstr "Listă cu datele adreselor de facturare."
-
 #: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1281
 #: includes/rest-api/Controllers/Version2/class-wc-rest-order-refunds-v2-controller.php:427
 #: includes/rest-api/Controllers/Version1/class-wc-rest-order-refunds-v1-controller.php:366
 #: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1210
 msgid "Line items data."
 msgstr "Date elemente de rând."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-order-refunds-v2-controller.php:368
+#: includes/rest-api/Controllers/Version1/class-wc-rest-order-refunds-v1-controller.php:350
+msgid "The date the order refund was created, in the site's timezone."
+msgstr "Data la care a fost creată rambursarea comenzii, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-order-notes-controller.php:134
+#: includes/rest-api/Controllers/Version2/class-wc-rest-order-notes-v2-controller.php:135
+#: includes/rest-api/Controllers/Version1/class-wc-rest-order-notes-v1-controller.php:407
+msgid "The date the order note was created, in the site's timezone."
+msgstr "Data la care a fost creată nota comenzii, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:97
+#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:142
+msgid "The date the customer was last modified, in the site's timezone."
+msgstr "Data la care clientul a fost modificat ultima dată, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:85
+#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:130
+msgid "The date the customer was created, in the site's timezone."
+msgstr "Data la care a fost creat clientul, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-customer-downloads-v2-controller.php:129
+#: includes/rest-api/Controllers/Version1/class-wc-rest-customer-downloads-v1-controller.php:211
+msgid "The date when download access expires, in the site's timezone."
+msgstr "Data la care expiră accesul la descărcare, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:363
+#: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:432
+msgid "The date the coupon was last modified, in the site's timezone."
+msgstr "Data la care cuponul a fost modificat ultima dată, în fusul orar al site-ului."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:351
+#: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:426
+msgid "The date the coupon was created, in the site's timezone."
+msgstr "Data la care a fost creat cuponul, în fusul orar al site-ului."
 
 #: includes/admin/views/html-notice-legacy-shipping.php:18
 msgid "New:"
@@ -19775,6 +19775,22 @@ msgstr "Nicio locație implicită"
 msgid "This option determines a customers default location. The MaxMind GeoLite Database will be periodically downloaded to your wp-content directory if using geolocation."
 msgstr "Această opțiune determină o locație clienți implicită. Baza de date GeoLite MaxMind va fi descărcată periodic în directorul wp-content dacă folosești geo-localizarea."
 
+#: includes/customizer/class-wc-shop-customizer.php:393
+msgid "Show categories"
+msgstr "Arată categorii"
+
+#: includes/customizer/class-wc-shop-customizer.php:420
+msgid "Show subcategories &amp; products"
+msgstr "Arată subcategorii și produse"
+
+#: includes/admin/settings/class-wc-settings-shipping.php:90
+msgid "Calculations"
+msgstr "Calcule"
+
+#: includes/admin/settings/class-wc-settings-shipping.php:116
+msgid "Force shipping to the customer billing address"
+msgstr "Forțează livrarea la adresa de facturare client"
+
 #: templates/order/order-downloads.php:24
 #: templates/emails/email-downloads.php:22
 #: templates/emails/plain/email-downloads.php:20
@@ -19791,22 +19807,6 @@ msgstr "Această opțiune determină o locație clienți implicită. Baza de dat
 #: packages/woocommerce-admin/dist/app/index.js:2
 msgid "Downloads"
 msgstr "Descărcări"
-
-#: includes/customizer/class-wc-shop-customizer.php:393
-msgid "Show categories"
-msgstr "Arată categorii"
-
-#: includes/customizer/class-wc-shop-customizer.php:420
-msgid "Show subcategories &amp; products"
-msgstr "Arată subcategorii și produse"
-
-#: includes/admin/settings/class-wc-settings-shipping.php:90
-msgid "Calculations"
-msgstr "Calcule"
-
-#: includes/admin/settings/class-wc-settings-shipping.php:116
-msgid "Force shipping to the customer billing address"
-msgstr "Forțează livrarea la adresa de facturare client"
 
 #: includes/admin/settings/class-wc-settings-shipping.php:271
 msgid "Do you wish to save your changes first? Your changed data will be discarded if you choose to cancel."
@@ -20189,6 +20189,10 @@ msgstr "Limitează setul de rezultate la resurse atribuite unui anumit produs."
 msgid "Limit result set to specific ids."
 msgstr "Limitează setul de rezultate la anumite ID-uri."
 
+#: includes/admin/class-wc-admin-help.php:57
+msgid "Community forum"
+msgstr "Forum comunitate"
+
 #: includes/rest-api/Controllers/Version3/class-wc-rest-terms-controller.php:237
 #: includes/rest-api/Controllers/Version3/class-wc-rest-product-reviews-controller.php:218
 #: includes/rest-api/Controllers/Version3/class-wc-rest-posts-controller.php:134
@@ -20200,29 +20204,9 @@ msgstr "Limitează setul de rezultate la anumite ID-uri."
 msgid "Sorry, you are not allowed to batch manipulate this resource."
 msgstr "Regret, nu ai voie să manipulezi această resursă."
 
-#: includes/admin/class-wc-admin-help.php:57
-msgid "Community forum"
-msgstr "Forum comunitate"
-
 #: includes/admin/class-wc-admin-setup-wizard.php:1599
 msgid "Bank transfer (BACS) payments"
 msgstr "Plăți prin transfer bancar (BACS)"
-
-#: includes/rest-api/Controllers/Version3/class-wc-rest-terms-controller.php:263
-#: includes/rest-api/Controllers/Version3/class-wc-rest-shipping-zones-controller-base.php:47
-#: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-methods-v2-controller.php:124
-#: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-zone-methods-v2-controller.php:121
-#: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-zone-methods-v2-controller.php:215
-#: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-zone-methods-v2-controller.php:269
-#: includes/rest-api/Controllers/Version2/class-wc-rest-payment-gateways-v2-controller.php:144
-#: includes/rest-api/Controllers/Version2/class-wc-rest-payment-gateways-v2-controller.php:161
-#: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:175
-#: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:193
-#: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:211
-#: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:592
-#: includes/rest-api/Controllers/Version1/class-wc-rest-customer-downloads-v1-controller.php:70
-msgid "Resource does not exist."
-msgstr "Resursa nu există."
 
 #: includes/rest-api/Controllers/Version3/class-wc-rest-terms-controller.php:254
 msgid "Taxonomy does not exist."
@@ -20239,6 +20223,22 @@ msgstr "Regret, nu poți șterge această resursă."
 #: packages/woocommerce-blocks/src/StoreApi/Routes/Products.php:226
 msgid "Limit result set to all items except those of a particular parent ID."
 msgstr "Limitează setul de rezultate la toate elementele cu excepția celor cu un anumit ID părinte."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-terms-controller.php:263
+#: includes/rest-api/Controllers/Version3/class-wc-rest-shipping-zones-controller-base.php:47
+#: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-methods-v2-controller.php:124
+#: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-zone-methods-v2-controller.php:121
+#: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-zone-methods-v2-controller.php:215
+#: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-zone-methods-v2-controller.php:269
+#: includes/rest-api/Controllers/Version2/class-wc-rest-payment-gateways-v2-controller.php:144
+#: includes/rest-api/Controllers/Version2/class-wc-rest-payment-gateways-v2-controller.php:161
+#: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:175
+#: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:193
+#: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:211
+#: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:592
+#: includes/rest-api/Controllers/Version1/class-wc-rest-customer-downloads-v1-controller.php:70
+msgid "Resource does not exist."
+msgstr "Resursa nu există."
 
 #: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:1639
 msgid "Invalid post ID."
@@ -20794,11 +20794,6 @@ msgstr "Cum să-ți actualizezi versiunea de PHP"
 msgid "Your server does not have the %s class enabled - some gateway plugins which use SOAP may not work as expected."
 msgstr "Serverul tău nu are clasa %s activată - unele module gateway ce folosesc SOAP s-ar putea să nu funcționeze conform așteptărilor."
 
-#. Translators: %s: classname and link.
-#: includes/admin/views/html-admin-page-status-report.php:443
-msgid "Your server does not support the %s functions - this is required for better character encoding. Some fallbacks will be used instead for it."
-msgstr "Serverul tău nu suportă funcțiile %s - acest lucru este necesar pentru codificarea mai bună a caracterelor. Unele rezerve vor fi folosite în locul lor."
-
 #. Translators: %1$s: MySQL version, %2$s: Recommended MySQL version.
 #: includes/admin/views/html-admin-page-status-report.php:352
 msgid "%1$s - We recommend a minimum MySQL version of 5.6. See: %2$s"
@@ -20817,6 +20812,11 @@ msgstr "%1$s - recomandăm setarea memoriei la cel puțin 64 MO. Vezi: %2$s"
 #: includes/admin/views/html-admin-page-status-report.php:436
 msgid "Multibyte String (mbstring) is used to convert character encoding, like for emails or converting characters to lowercase."
 msgstr "Șirul multi-octet (mbstring) este folosit pentru a converti codificarea caracterelor, cum ar fi pentru emailuri sau convertirea caracterelor în minuscule."
+
+#. Translators: %s: classname and link.
+#: includes/admin/views/html-admin-page-status-report.php:443
+msgid "Your server does not support the %s functions - this is required for better character encoding. Some fallbacks will be used instead for it."
+msgstr "Serverul tău nu suportă funcțiile %s - ele sunt necesare pentru o codificare mai bună a caracterelor. În locul lor, vor fi folosite unele alternative."
 
 #: includes/admin/settings/views/html-settings-tax.php:146
 msgid "Last page"
@@ -22790,10 +22790,6 @@ msgstr "Activează pentru metodele de livrare"
 msgid "Instructions that will be added to the thank you page."
 msgstr "Instrucțiuni care vor fi adăugate în pagina de mulțumire."
 
-#: includes/gateways/cod/class-wc-gateway-cod.php:85
-msgid "Payment method description that the customer will see on your website."
-msgstr "Descrierea metodei de plată pe care clientul o va vedea pe situl tău web."
-
 #: includes/gateways/cod/class-wc-gateway-cod.php:59
 msgid "Have your customers pay with cash (or by other means) upon delivery."
 msgstr "Cere clienților să plătească în numerar (sau prin alte mijloace) la livrare."
@@ -23076,19 +23072,6 @@ msgstr "Număr de tranzit bancar"
 msgid "Branch sort"
 msgstr "Sortare sucursale"
 
-#: includes/gateways/cheque/class-wc-gateway-cheque.php:66
-#: includes/gateways/paypal/includes/settings-paypal.php:20
-#: includes/gateways/bacs/class-wc-gateway-bacs.php:90
-#: includes/shipping/free-shipping/class-wc-shipping-free-shipping.php:85
-#: includes/shipping/legacy-free-shipping/class-wc-shipping-legacy-free-shipping.php:107
-#: includes/shipping/flat-rate/includes/settings-flat-rate.php:16
-#: includes/shipping/legacy-local-pickup/class-wc-shipping-legacy-local-pickup.php:104
-#: includes/shipping/legacy-local-delivery/class-wc-shipping-legacy-local-delivery.php:125
-#: includes/shipping/local-pickup/class-wc-shipping-local-pickup.php:82
-#: includes/shipping/legacy-flat-rate/includes/settings-flat-rate.php:27
-msgid "This controls the title which the user sees during checkout."
-msgstr "Asta controlează titlul pe care îl văd utilizatorii în timpul finalizării comenzilor."
-
 #: includes/emails/class-wc-email.php:724
 msgid "Multipart"
 msgstr "Mai multe părți"
@@ -23105,6 +23088,19 @@ msgstr "Fișierul șablon a fost șters din temă."
 msgid "Full refund subject"
 msgstr "Subiect rambursare integrală"
 
+#: includes/gateways/cheque/class-wc-gateway-cheque.php:66
+#: includes/gateways/paypal/includes/settings-paypal.php:20
+#: includes/gateways/bacs/class-wc-gateway-bacs.php:90
+#: includes/shipping/free-shipping/class-wc-shipping-free-shipping.php:85
+#: includes/shipping/legacy-free-shipping/class-wc-shipping-legacy-free-shipping.php:107
+#: includes/shipping/flat-rate/includes/settings-flat-rate.php:16
+#: includes/shipping/legacy-local-pickup/class-wc-shipping-legacy-local-pickup.php:104
+#: includes/shipping/legacy-local-delivery/class-wc-shipping-legacy-local-delivery.php:125
+#: includes/shipping/local-pickup/class-wc-shipping-local-pickup.php:82
+#: includes/shipping/legacy-flat-rate/includes/settings-flat-rate.php:27
+msgid "This controls the title which the user sees during checkout."
+msgstr "Asta controlează titlul pe care îl văd utilizatorii în timpul finalizării comenzilor."
+
 #: includes/emails/class-wc-email-customer-refunded-order.php:263
 msgid "Full refund email heading"
 msgstr "Titlu email pentru rambursare integrală"
@@ -23120,6 +23116,10 @@ msgstr "Aceasta este o notificare la comandă trimisă clienților și conține 
 #: includes/emails/class-wc-email-cancelled-order.php:164
 msgid "Enter recipients (comma separated) for this email. Defaults to %s."
 msgstr "Introdu destinatarii (separați cu virgule) pentru acest email. Destinatar implicit: %s."
+
+#: includes/gateways/cod/class-wc-gateway-cod.php:85
+msgid "Payment method description that the customer will see on your website."
+msgstr "Descrierea metodei de plată pe care clientul o va vedea pe site-ul tău web."
 
 #: includes/class-wc-breadcrumb.php:117
 msgid "Error 404"
@@ -24364,14 +24364,6 @@ msgstr "Versiunea instalată a temei părinte."
 msgid "API Version"
 msgstr "Versiune API"
 
-#: includes/admin/views/html-admin-page-status-report.php:69
-msgid "The version of WooCommerce installed on your site."
-msgstr "Versiunea WooCommerce instalată pe situl tău."
-
-#: includes/admin/views/html-admin-page-status-report.php:191
-msgid "The version of WordPress installed on your site."
-msgstr "Versiunea WordPress instalată pe situl tău."
-
 #: includes/admin/views/html-admin-page-status-report.php:290
 msgid "The version of PHP installed on your hosting server."
 msgstr "Versiunea PHP instalată pe serverul tău de găzduire."
@@ -24383,14 +24375,6 @@ msgstr "Tabelul nu există"
 #: includes/admin/views/html-admin-page-status-report.php:347
 msgid "The version of MySQL installed on your hosting server."
 msgstr "Versiunea MySQL instalată pe serverul tău de găzduire."
-
-#: includes/admin/views/html-admin-page-status-report.php:224
-msgid "The maximum amount of memory (RAM) that your site can use at one time."
-msgstr "Memoria (RAM) maximă pe care situl tău o poate folosi la un moment dat."
-
-#: includes/admin/views/html-admin-page-status-report.php:743
-msgid "Does your site have REST API enabled?"
-msgstr "Situl tău are activat REST API?"
 
 #: includes/legacy/api/v2/class-wc-api-products.php:1882
 #: includes/legacy/api/v3/class-wc-api-products.php:2435
@@ -24443,10 +24427,6 @@ msgstr "Temă"
 msgid "Save changes"
 msgstr "Salvează modificările"
 
-#: includes/admin/views/html-admin-page-status-report.php:285
-msgid "Information about the web server that is currently hosting your site."
-msgstr "Informații despre serverul web care găzduiește în prezent situl tău."
-
 #: includes/admin/views/html-admin-page-status-report.php:316
 msgid "The largest filesize that can be contained in one post."
 msgstr "Cea mai mare dimensiune a fișierului pe care o poate conține un singur articol."
@@ -24467,6 +24447,10 @@ msgstr "<strong>Bine ai venit la WooCommerce</strong> &#8211; Ești aproape gata
 msgid "This section shows any files that are overriding the default WooCommerce template pages."
 msgstr "Această secțiune arată toate fișierele care nu țin cont de paginile șablon implicite WooCommerce."
 
+#: includes/admin/views/html-admin-page-status-report.php:336
+msgid "Suhosin is an advanced protection system for PHP installations. It was designed to protect your servers on the one hand against a number of well known problems in PHP applications and on the other hand against potential unknown vulnerabilities within these applications or the PHP core itself. If enabled on your server, Suhosin may need to be configured to increase its data submission limits."
+msgstr "Suhosin este un sistem de protecție avansată pentru instalările PHP. A fost conceput, pe de o parte, pentru a proteja serverele împotriva unui număr de probleme bine cunoscute în aplicațiile PHP și, pe de altă parte, împotriva unor vulnerabilități potențiale necunoscute în cadrul aplicațiilor sau nucleul PHP în sine. Dacă este activat pe serverul tău, Suhosin poate ar trebui să fie configurat pentru a-și mări limitele de transmitere a datelor."
+
 #: includes/admin/views/html-admin-page-status-report.php:408
 msgid "HTML/Multipart emails use DOMDocument to generate inline CSS in templates."
 msgstr "Emailurile HTML/Multipart folosesc DOMDocument pentru a genera CSS în-linie în șabloane."
@@ -24475,10 +24459,6 @@ msgstr "Emailurile HTML/Multipart folosesc DOMDocument pentru a genera CSS în-l
 #: includes/admin/views/html-admin-page-status-report.php:415
 msgid "Your server does not have the %s class enabled - HTML/Multipart emails, and also some extensions, will not work without DOMDocument."
 msgstr "Serverul tău nu are clasa %s activată - emailurile HTML/Multipart și, de asemenea, unele extensii nu vor funcționa fără DOMDocument."
-
-#: includes/admin/views/html-admin-page-status-report.php:336
-msgid "Suhosin is an advanced protection system for PHP installations. It was designed to protect your servers on the one hand against a number of well known problems in PHP applications and on the other hand against potential unknown vulnerabilities within these applications or the PHP core itself. If enabled on your server, Suhosin may need to be configured to increase its data submission limits."
-msgstr "Suhosin este un sistem de protecție avansată pentru instalările PHP. A fost conceput, pe de o parte, pentru a proteja serverele împotriva unui număr de probleme bine cunoscute în aplicațiile PHP și, pe de altă parte, împotriva unor vulnerabilități potențiale necunoscute în cadrul aplicațiilor sau nucleul PHP în sine. Dacă este activat pe serverul tău, Suhosin poate ar trebui să fie configurat pentru a-și mări limitele de transmitere a datelor."
 
 #: includes/admin/views/html-admin-page-status-report.php:778
 msgid "A list of taxonomy terms that can be used in regard to order/product statuses."
@@ -24508,10 +24488,6 @@ msgstr "Afișează dacă tema actuală activă declară sau nu declară suport p
 msgid "Several WooCommerce extensions can write logs which makes debugging problems easier. The directory must be writable for this to happen."
 msgstr "Câteva extensii WooCommerce pot scrie jurnale care fac mai ușoare problemele de depanare. Directorul trebuie să fi editabil pentru ca acest lucru să se întâmple."
 
-#: includes/admin/views/html-admin-page-status-report.php:321
-msgid "The amount of time (in seconds) that your site will spend on a single operation before timing out (to avoid server lockups)"
-msgstr "Timpul (în secunde) pe care situl tău îl va consuma pentru singură operație înainte de sincronizare (pentru a evita blocările serverului)"
-
 #: includes/admin/views/html-admin-page-status-report.php:381
 msgid "Payment gateways can use cURL to communicate with remote servers to authorize payments, other plugins may also use it when communicating with remote services."
 msgstr "Gateway-urile de plată pot folosi cURL pentru a comunica cu servere la distanță pentru a autoriza plăți, de asemenea, alte module le pot folosi atunci când comunică cu servicii la distanță."
@@ -24533,10 +24509,6 @@ msgstr "Vizitează prima pagină a modulului"
 #: includes/admin/views/html-bulk-edit-product.php:276
 msgid "Backorders?"
 msgstr "Precomenzi?"
-
-#: includes/admin/views/html-admin-page-status-report.php:748
-msgid "Does your site force a SSL Certificate for transactions?"
-msgstr "Situl tău forțează un certificat SSL pentru tranzacții?"
 
 #: includes/admin/views/html-admin-page-status-report.php:362
 msgid "The largest filesize that can be uploaded to your WordPress installation."
@@ -24562,10 +24534,6 @@ msgstr "Pagină nesetată"
 #: includes/legacy/api/v3/class-wc-api-orders.php:1128
 msgid "Fee title is required"
 msgstr "Titlul taxei este obligatoriu"
-
-#: includes/admin/views/html-admin-page-status-report.php:59
-msgid "The root URL of your site."
-msgstr "URL-ul rădăcină al sitului tău."
 
 #: includes/legacy/api/v2/class-wc-api-server.php:375
 #: includes/legacy/api/v1/class-wc-api-server.php:377
@@ -24891,10 +24859,6 @@ msgstr "Limba actuală folosită de WordPress. Implicită = limba engleză"
 msgid "Displays whether or not WordPress is in Debug Mode."
 msgstr "Afișează dacă WordPress este sau nu în modul Depanare."
 
-#: includes/admin/views/html-admin-page-status-report.php:219
-msgid "Whether or not you have WordPress Multisite enabled."
-msgstr "Indiferent dacă ai sau nu multi-sit WordPress activat."
-
 #: includes/admin/views/html-admin-page-status-report.php:773
 msgid "The number of decimal points shown in displayed prices."
 msgstr "Numărul de zecimale arătat în prețurile afișate."
@@ -24988,12 +24952,6 @@ msgstr "Rulează asistentul de inițializare"
 #: includes/legacy/api/v3/class-wc-api-json-handler.php:61
 msgid "The JSONP callback function is invalid"
 msgstr "Funcția apel-înapoi JSONP este invalidă"
-
-#: includes/legacy/api/v2/class-wc-api-json-handler.php:54
-#: includes/legacy/api/v1/class-wc-api-json-handler.php:55
-#: includes/legacy/api/v3/class-wc-api-json-handler.php:54
-msgid "JSONP support is disabled on this site"
-msgstr "Suportul JSONP este dezactivat pe acest sit"
 
 #: includes/legacy/api/v2/class-wc-api-customers.php:726
 #: includes/legacy/api/v1/class-wc-api-customers.php:441
@@ -25330,6 +25288,48 @@ msgstr "Nu ai permisiunea să editezi atributele pentru produse"
 #: includes/admin/views/html-admin-page-status-report.php:848
 msgid "Page does not contain the %s shortcode."
 msgstr "Pagina nu conține scurtcodul %s."
+
+#: includes/legacy/api/v2/class-wc-api-json-handler.php:54
+#: includes/legacy/api/v1/class-wc-api-json-handler.php:55
+#: includes/legacy/api/v3/class-wc-api-json-handler.php:54
+msgid "JSONP support is disabled on this site"
+msgstr "Suportul JSONP este dezactivat pe acest site"
+
+#: includes/admin/views/html-admin-page-status-report.php:743
+msgid "Does your site have REST API enabled?"
+msgstr "Site-ul tău are activat REST API?"
+
+#: includes/admin/views/html-admin-page-status-report.php:748
+msgid "Does your site force a SSL Certificate for transactions?"
+msgstr "Site-ul tău forțează un certificat SSL pentru tranzacții?"
+
+#: includes/admin/views/html-admin-page-status-report.php:321
+msgid "The amount of time (in seconds) that your site will spend on a single operation before timing out (to avoid server lockups)"
+msgstr "Perioada de timp (în secunde) pe care site-ul tău o va consuma pentru o singură operație înainte de a o închide (pentru a evita blocările serverului)"
+
+#: includes/admin/views/html-admin-page-status-report.php:285
+msgid "Information about the web server that is currently hosting your site."
+msgstr "Informații despre serverul web care găzduiește în prezent site-ul tău."
+
+#: includes/admin/views/html-admin-page-status-report.php:224
+msgid "The maximum amount of memory (RAM) that your site can use at one time."
+msgstr "Memoria (RAM) maximă pe care site-ul tău o poate folosi la un moment dat."
+
+#: includes/admin/views/html-admin-page-status-report.php:219
+msgid "Whether or not you have WordPress Multisite enabled."
+msgstr "Indiferent dacă ai activat sau nu multi-site WordPress."
+
+#: includes/admin/views/html-admin-page-status-report.php:191
+msgid "The version of WordPress installed on your site."
+msgstr "Versiunea WordPress instalată pe site-ul tău."
+
+#: includes/admin/views/html-admin-page-status-report.php:69
+msgid "The version of WooCommerce installed on your site."
+msgstr "Versiunea WooCommerce instalată pe site-ul tău."
+
+#: includes/admin/views/html-admin-page-status-report.php:59
+msgid "The root URL of your site."
+msgstr "URL-ul rădăcină al site-ului tău."
 
 #: templates/checkout/thankyou.php:34
 #: includes/admin/settings/class-wc-settings-advanced.php:190
@@ -26795,10 +26795,6 @@ msgstr "Va trebui să ceri manual o rambursare prin gateway-ul de plată după c
 msgid "Pricing"
 msgstr "Stabilire preț"
 
-#: includes/admin/settings/class-wc-settings-advanced.php:311
-msgid "Endpoint for the triggering logout. You can add this to your menus via a custom link: yoursite.com/?customer-logout=true"
-msgstr "Punct-final pentru declanșarea dezautentificării. Poți adăuga acesta la meniuri printr-o legătură personalizată: yoursite.com/?customer-logout=true"
-
 #: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:77
 msgid "Shipping methods"
 msgstr "Metode de livrare"
@@ -27475,6 +27471,10 @@ msgstr[2] "de comenzi"
 #: includes/class-wc-order.php:2052
 msgid "Refund"
 msgstr "Rambursează"
+
+#: includes/admin/settings/class-wc-settings-advanced.php:311
+msgid "Endpoint for the triggering logout. You can add this to your menus via a custom link: yoursite.com/?customer-logout=true"
+msgstr "Punct-final pentru declanșarea dezautentificării. Îl poți adăuga în meniuri printr-o legătură personalizată: yoursite.com/?customer-logout=true"
 
 #: includes/wc-product-functions.php:864
 msgid "Allow"
@@ -29472,10 +29472,6 @@ msgstr "Vânzări după categorie"
 msgid "State"
 msgstr "Județ (provincie, stat)"
 
-#: includes/admin/class-wc-admin-pointers.php:94
-msgid "Finally, external products are for linking off-site."
-msgstr "În cele din urmă, produsele externe sunt cele care au o legătură în afara sitului."
-
 #: includes/admin/class-wc-admin-pointers.php:126
 msgid "If purchasing this product gives a customer access to a downloadable file, e.g. software, check this box."
 msgstr "Dacă cumpărarea acestui produs oferă acces clientului la un fișier care poate fi descărcat, de exemplu un software, bifează această casetă."
@@ -29492,6 +29488,10 @@ msgstr "Bifează caseta „Virtual” dacă este un element non-fizic, de exempl
 msgctxt "Page title"
 msgid "Checkout"
 msgstr "Finalizare"
+
+#: includes/admin/class-wc-admin-pointers.php:94
+msgid "Finally, external products are for linking off-site."
+msgstr "În cele din urmă, produsele externe sunt cele care au o legătură în afara site-ului."
 
 #: templates/single-product/tabs/description.php:22
 #: includes/gateways/cod/class-wc-gateway-cod.php:83
