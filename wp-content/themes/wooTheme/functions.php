@@ -88,6 +88,8 @@ function remove_actions_parent_theme(){
 	remove_action( 'storefront_header', 'storefront_header_cart', 60 );
 	/*Remove Check Out button from cart widget*/
 	remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
+	/* Remove the sale badge in shop page*/
+	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 6 );
 };
 
 add_action( 'init', 'remove_actions_parent_theme', 1 );
@@ -119,17 +121,26 @@ add_action( 'storefront_before_footer', 'zoltan_before_footer');
  function zoltan_change_breadcrumb_home_text() {
 	
  	return array(
- 		'delimiter' => ' &#47; ',
+ 		'delimiter'   => ' &#47; ',
  		'wrap_before' => '<div class="col-full"><div class="col-full"><nav class="woocommerce-breadcrumb" aria-label="breadcrumbs">',
  		'wrap_after'  => '</nav></div></div>',
  		'before'      => '',
  		'after'       => '',
- 		'home' => 'PhoneProtectors'
+ 		'home'        => 'PhoneProtectors'
  	);
 	
  }
 
  add_filter( 'woocommerce_breadcrumb_defaults', 'zoltan_change_breadcrumb_home_text',20);
 
+ 
+ 
+/* Added wishlist plugin position*/
+function zoltan_add_to_wishlist_button_position(){
+	 echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+}
+	
+add_action('woocommerce_before_shop_loop_item','zoltan_add_to_wishlist_button_position',10);
+		
 
 ?>
