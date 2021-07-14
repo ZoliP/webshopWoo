@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.7.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-06-28 21:07:14+0000\n"
+"PO-Revision-Date: 2021-07-14 06:38:46+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -370,7 +370,7 @@ msgstr "Dacă nu ai de gând să folosești un domeniu important pentru site, la
 
 #: wp-signup.php:363
 msgid "Sites you are already a member of:"
-msgstr "Site-uri la care ești deja membru:"
+msgstr "Site-uri pe care ești deja membru:"
 
 #. translators: %s: Current user's display name.
 #: wp-signup.php:352
@@ -1586,7 +1586,7 @@ msgstr "Îți mulțumesc pentru confirmarea cererii de export."
 
 #: wp-includes/user.php:3918
 msgid "The site administrator has been notified and will fulfill your request as soon as possible."
-msgstr "Administratorul site-ului a fost notificat și îți va satisface cererea cât mai repede posibil."
+msgstr "Administratorul site-ului a fost notificat și îți va onora cererea cât mai repede posibil."
 
 #: wp-includes/user.php:3917
 msgid "Action has been confirmed."
@@ -2383,7 +2383,7 @@ msgstr "Arhive"
 #: wp-includes/theme.php:2175
 msgctxt "Theme starter content"
 msgid "This may be a good place to introduce yourself and your site or include some credits."
-msgstr "Acesta poate fi un loc bine ales în care să-ți prezinți activitățile și site-ul sau să-și etalezi meritele."
+msgstr "Acesta ar putea fi un loc bun în care să te prezinți și să-ți prezinți site-ul sau să incluzi ceva merite."
 
 #: wp-includes/theme.php:2174
 msgctxt "Theme starter content"
@@ -6906,7 +6906,7 @@ msgstr "Nume utilizator: %s"
 #. translators: %s: Site title.
 #: wp-includes/pluggable.php:2026
 msgid "New user registration on your site %s:"
-msgstr "Utilizator nou înregistrat pe %s:"
+msgstr "Utilizator nou înregistrat pe site-ul %s:"
 
 #. translators: Password change notification email subject. %s: Site title.
 #: wp-includes/pluggable.php:1957 wp-includes/user.php:2238
@@ -7240,11 +7240,11 @@ msgstr "Trebuie completat ID-ul site-ului."
 
 #: wp-includes/ms-site.php:79
 msgid "Could not retrieve site data."
-msgstr "Nu am putut recupera datele site-ului."
+msgstr "Nu am putut prelua datele site-ului."
 
 #: wp-includes/ms-site.php:69
 msgid "Could not insert site into the database."
-msgstr "Nu am putut insera site-ul în baza de date."
+msgstr "Nu am putut introduce site-ul în baza de date."
 
 #: wp-includes/ms-load.php:498
 msgid "If you&#8217;re still stuck with this message, then check that your database contains the following tables:"
@@ -7435,7 +7435,7 @@ msgstr "Utilizator nou %1$s: %2$s"
 #: wp-includes/ms-functions.php:1767
 msgctxt "email \"From\" field"
 msgid "Site Admin"
-msgstr "Administrator site"
+msgstr "Administrare site"
 
 #. translators: New site notification email. 1: User login, 2: Site URL, 3:
 #. Site title.
@@ -8709,7 +8709,7 @@ msgstr "Copierea verificării nunicului a eșuat. Te rog încearcă din nou."
 
 #: wp-includes/load.php:725
 msgid "The site you have requested is not installed properly. Please contact the system administrator."
-msgstr "Site-ul pe care l-ai cerut nu este instalat corect. Te rog contactează administratorul de sistem."
+msgstr "Site-ul pe care l-ai solicitat nu este instalat corespunzător. Te rog contactează administratorul de sistem."
 
 #. translators: 1: $table_prefix, 2: wp-config.php
 #: wp-includes/load.php:611
@@ -10750,7 +10750,7 @@ msgstr "Nume"
 #. translators: %s: Author of the comment being replied to.
 #: wp-includes/comment-template.php:2000 wp-includes/comment-template.php:2479
 msgid "Leave a Reply to %s"
-msgstr "Lasă un răspuns la %s"
+msgstr "Dă-i un răspuns lui %s"
 
 #: wp-includes/comment-template.php:1995 wp-includes/comment-template.php:2477
 msgid "Leave a Reply"
@@ -10775,7 +10775,7 @@ msgstr "Autentifică-te pentru a răspunde"
 #. translators: Comment reply button text. %s: Comment author name.
 #: wp-includes/comment-template.php:1679
 msgid "Reply to %s"
-msgstr "Răspunde la %s"
+msgstr "Răspunde-i lui %s"
 
 #: wp-includes/comment-template.php:1677
 #: wp-admin/includes/class-wp-comments-list-table.php:799
@@ -15307,7 +15307,7 @@ msgstr "Ultima actualizare: %s"
 #. translators: %s: taxonomy name
 #: wp-includes/blocks/tag-cloud.php:28
 msgid "Your site doesn&#8217;t have any %s, so there&#8217;s nothing to display here at the moment."
-msgstr "Site-ul tău nu are %s, deci momentan nu există nimic de afișat aici."
+msgstr "Site-ul tău nu are niciun (nicio) %s, deci nu este nimic de afișat aici în acest moment."
 
 #: wp-includes/blocks/rss.php:23 wp-includes/widgets.php:1551
 msgid "An error has occurred, which probably means the feed is down. Try again later."

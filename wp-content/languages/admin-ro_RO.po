@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.7.x - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-06-29 13:15:03+0000\n"
+"PO-Revision-Date: 2021-07-13 11:34:35+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -411,7 +411,7 @@ msgstr "Editează utilizatorul"
 
 #: wp-admin/user-new.php:335
 msgid "User has been added to your site."
-msgstr "Utilizatorul a fost adăugat pe site-ului tău."
+msgstr "Utilizatorul a fost adăugat pe site-ul tău."
 
 #: wp-admin/user-new.php:332
 msgid "Invitation email sent to user. A confirmation link must be clicked for them to be added to your site."
@@ -8826,7 +8826,7 @@ msgstr "Primești ajutor pentru a rezolva această problemă."
 #. translators: Localized Support reference.
 #: wp-admin/includes/class-wp-site-health.php:1402
 msgid "https://wordpress.org/support"
-msgstr "https://wordpress.org/support"
+msgstr "https://ro.wordpress.org/support"
 
 #. translators: 1: The IP address WordPress.org resolves to. 2: The error
 #. returned by the lookup.
@@ -8923,7 +8923,7 @@ msgstr "Află mai mult despre ce necesită WordPress pentru a rula."
 #. translators: Localized version of WordPress requirements if one exists.
 #: wp-admin/includes/class-wp-site-health.php:1165
 msgid "https://wordpress.org/about/requirements/"
-msgstr "https://wordpress.org/about/requirements/"
+msgstr "https://ro.wordpress.org/about/requirements/"
 
 #: wp-admin/includes/class-wp-site-health.php:1160
 msgid "The SQL server is a required piece of software for the database WordPress uses to store all your site&#8217;s content and settings."
@@ -13158,7 +13158,7 @@ msgstr "Modulul nu a putut fi șters."
 
 #: wp-admin/includes/ajax-actions.php:4556 wp-admin/plugins.php:622
 msgid "You cannot delete a plugin while it is active on the main site."
-msgstr "Nu poți șterge un modul cât timp el este activ pe site-ul principal. "
+msgstr "Nu poți șterge un modul cât timp el este activ pe site-ul principal."
 
 #: wp-admin/includes/ajax-actions.php:4513
 #: wp-admin/includes/class-plugin-upgrader.php:64
@@ -13526,7 +13526,7 @@ msgstr "După ce ai salvat fișierul descărcat, poți folosi funcția de import
 
 #: wp-admin/export.php:172
 msgid "This format, which we call WordPress eXtended RSS or WXR, will contain your posts, pages, comments, custom fields, categories, and tags."
-msgstr "Acest format, numit WordPress eXtended RSS sau WXR, va conține toate articolele, comentariile, câmpurile personalizate, categoriile și etichetele de pe acest sit."
+msgstr "Acest format, numit WordPress eXtended RSS sau WXR, va conține toate articolele, comentariile, câmpurile personalizate, categoriile și etichetele de pe acest site."
 
 #: wp-admin/export.php:171
 msgid "When you click the button below WordPress will create an XML file for you to save to your computer."
