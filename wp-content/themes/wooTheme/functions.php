@@ -10,6 +10,15 @@ add_action('wp_enqueue_scripts', 'zoltan_woocommerce_register_styles');
 
 
 
+function zoltan_woocommerce_register_script() {
+	wp_enqueue_script( 'zoltan_script', get_template_directory_uri() . "/js/javascript.js", array(), '1.0', true);
+}
+
+add_action('wp_enqueue_scripts', 'zoltan_woocommerce_register_script');
+
+
+
+
 /* Define the size of the logo */
 function zoltan_woocommerce_theme_support(){
 	/**
@@ -100,13 +109,17 @@ function zoltan_remove_actions_parent_theme(){
 	/* Remove Sale! Badge in Single Product Summary Page */
 	remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
 
-	//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+	// remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+	//add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 };
 
 add_action( 'init', 'zoltan_remove_actions_parent_theme', 1 );
 add_action( 'storefront_header', 'storefront_header_cart', 41 );
 
-
+function move_stock_before_title(){
+echo 'stock status';
+}
+add_action('woocommerce_single_product_summary', 'move_stock_before_title',4);
 
 /*Social Icons section in Footer BEFORE */
 function zoltan_before_footer(){
@@ -216,6 +229,22 @@ if ( ! function_exists( 'woocommerce_catalog_ordering' ) ) {
 }
 
 
+/**
+ * Ascunde celelate metode de livrare daca freeshipping este activ.
+ * */
+function iap_hide_shipping_when_free_is_available( $rates ) {
+	$free = array();
+	foreach ( $rates as $rate_id => $rate ) {
+		if ( 'free_shipping' === $rate->method_id ) {
+			$free[ $rate_id ] = $rate;
+			break;
+		}
+	}
+	return ! empty( $free ) ? $free : $rates;
+}
+add_filter( 'woocommerce_package_rates', 'iap_hide_shipping_when_free_is_available', 100 );
+
+
 /*Show Sidebar only on the SHOP page*/
 function zoltan_remove_storefront_sidebar_in_single_product(){
 	if ( ! is_shop() ) {
@@ -227,3 +256,4 @@ add_action( 'get_header', 'zoltan_remove_storefront_sidebar_in_single_product', 
 
 
 ?>
+

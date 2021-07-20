@@ -1,0 +1,69 @@
+/* Sales banner in header and countdown*/
+.header-widget-region {
+  background-color: $blue-bg-color;
+}
+
+/* Sales banner in header and countdown*/
+.header-widget-region .widget {
+  padding: 8px;
+}
+
+/* Sales banner in header and countdown*/
+.col-full::before,
+.col-full::after {
+  content: unset;
+}
+
+/* Sales banner in header and countdown*/
+.header-widget-region .col-full {
+  @include responsive(sm) {
+    display: block;
+  }
+  @include responsive(md) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/*Red Sales bagde on the left*/
+.gallery .gallery-item .gallery-icon img {
+  @include responsive(sm) {
+    margin-top: 20px;
+    box-shadow: -16px 4px 6px 6px rgb(0 0 0 / 20%);
+  }
+}
+
+/*Red Sales bagde on the left*/
+.gallery {
+  @include responsive(md) {
+    margin-bottom: 0;
+    box-shadow: -16px 4px 6px 6px rgb(0 0 0 / 20%);
+  }
+}
+
+/* Breadcrumb background*/
+body .site > .col-full {
+  background-color: $grey-bg-color;
+  max-width: 100%;
+  line-height: 22px;
+}
+
+/* Breadcrumb Home icon*/
+.woocommerce-breadcrumb a:first-of-type::before {
+  content: none;
+}
+
+/* Breadcrumb Home */
+.woocommerce-breadcrumb {
+  padding: 4px 0;
+  font-size: 12px;
+  letter-spacing: -0.2px;
+}
+
+/* Breadcrumb Home */
+.woocommerce-breadcrumb a {
+  text-decoration: none;
+  &:hover {
+    color: $darkblue-text-color;
+  }
+}

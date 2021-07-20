@@ -1,0 +1,61 @@
+/*Items in the cart in header*/
+.site-header-cart .widget_shopping_cart a:hover {
+  color: $blue-hover-text-color;
+}
+
+/*Items in the cart in header*/
+.site-header-cart .widget_shopping_cart .widget_shopping_cart_content > p,
+.site-header-cart .widget_shopping_cart,
+.site-header-cart .widget_shopping_cart a,
+.site-header .product_list_widget li .quantity {
+  background-color: $white-bg-color;
+  color: $darkgrey-text-color;
+}
+
+/*Cart and bagde icon in header*/
+.site-header-cart .cart-contents {
+  padding: 0;
+}
+
+/* Cart icon in header*/
+.site-header-cart .cart-contents::after {
+  width: 32px;
+  height: 32px;
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="-35 0 512 512.00102" width="32px"><path d="m443.054688 495.171875-38.914063-370.574219c-.816406-7.757812-7.355469-13.648437-15.15625-13.648437h-73.140625v-16.675781c0-51.980469-42.292969-94.273438-94.273438-94.273438-51.984374 0-94.277343 42.292969-94.277343 94.273438v16.675781h-73.140625c-7.800782 0-14.339844 5.890625-15.15625 13.648437l-38.9140628 370.574219c-.4492192 4.292969.9453128 8.578125 3.8320308 11.789063 2.890626 3.207031 7.007813 5.039062 11.324219 5.039062h412.65625c4.320313 0 8.4375-1.832031 11.324219-5.039062 2.894531-3.210938 4.285156-7.496094 3.835938-11.789063zm-285.285157-400.898437c0-35.175782 28.621094-63.796876 63.800781-63.796876 35.175782 0 63.796876 28.621094 63.796876 63.796876v16.675781h-127.597657zm-125.609375 387.25 35.714844-340.097657h59.417969v33.582031c0 8.414063 6.824219 15.238282 15.238281 15.238282s15.238281-6.824219 15.238281-15.238282v-33.582031h127.597657v33.582031c0 8.414063 6.824218 15.238282 15.238281 15.238282 8.414062 0 15.238281-6.824219 15.238281-15.238282v-33.582031h59.417969l35.714843 340.097657zm0 0"/></svg>') !important;
+  filter: invert(100%) sepia(3%) saturate(2096%) hue-rotate(207deg)
+    brightness(116%) contrast(100%); //set #ffffff color for the svg
+}
+
+/* Cart icon in header*/
+.site-header-cart .cart-contents:hover::after {
+  filter: invert(87%) sepia(31%) saturate(3725%) hue-rotate(12deg)
+    brightness(94%) contrast(107%); //set #ccd500 color for the svg
+}
+
+/* Cart badge with shopping quantity*/
+.site-header-cart .cart-contents .count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  float: right;
+  opacity: 1;
+  width: 18px;
+  border-radius: 18px;
+  height: 18px;
+  background-color: $red-bg-color;
+  color: $white-text-color;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/*Cart widget button's arrow in header*/
+.wc-forward::after,
+.woocommerce-Button--next::after {
+  width: 16px;
+  height: 22px;
+  font-size: 0.875em;
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 512 512" width="16px"><path d="m256 512c-68.378906 0-132.667969-26.628906-181.019531-74.980469-48.351563-48.351562-74.980469-112.640625-74.980469-181.019531s26.628906-132.667969 74.980469-181.019531c48.351562-48.351563 112.640625-74.980469 181.019531-74.980469s132.667969 26.628906 181.019531 74.980469c48.351563 48.351562 74.980469 112.640625 74.980469 181.019531s-26.628906 132.667969-74.980469 181.019531c-48.351562 48.351563-112.640625 74.980469-181.019531 74.980469zm0-472c-119.101562 0-216 96.898438-216 216s96.898438 216 216 216 216-96.898438 216-216-96.898438-216-216-216zm104.285156 216-138.285156-138.285156-28.285156 28.285156 110 110-110 110 28.285156 28.285156zm0 0"/></svg>');
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(176deg)
+    brightness(111%) contrast(101%); //set #ffffff color for the svg
+}

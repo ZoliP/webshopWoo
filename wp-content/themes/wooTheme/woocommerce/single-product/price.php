@@ -30,7 +30,7 @@ global $product;
 	</del>
 </p>
 <span>| Reducere 
-	<?php echo wc_price(wc_get_price_to_display($product, array('price' => (float)$product-> get_regular_price() - (float)$product-> get_sale_price())));?> 	
+	<?php echo wc_price(wc_get_price_to_display($product, array('price' => (float)$product->get_regular_price() - (float)$product->get_sale_price())));?> 	
 </span>
 </div>
 

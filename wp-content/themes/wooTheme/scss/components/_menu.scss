@@ -1,0 +1,45 @@
+/*Menu*/
+.primary-navigation {
+  @include responsive(sm) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Menu items in header and cart items*/
+.main-navigation ul li a,
+ul.menu li a,
+.cart-contents {
+  color: $white-text-color;
+}
+
+/* Menu items in header*/
+.main-navigation ul li a {
+  text-transform: uppercase;
+}
+
+/* Menu items in header*/
+.main-navigation ul li a:hover,
+.main-navigation ul li:hover > a,
+.site-title a:hover,
+.site-header ul.menu li.current-menu-item > a,
+a.cart-contents:hover,
+.site-header-cart:hover > li > a {
+  color: $green-text-color;
+}
+
+/* Navigation menu and submenu for storefront*/
+.storefront-primary-navigation,
+.main-navigation ul.menu ul.sub-menu,
+.site-header-cart .widget_shopping_cart {
+  background-color: $darkgrey-bg-color;
+  color: $white-text-color;
+}
+
+/* Menu items with submenus: down arrow hiding*/
+.main-navigation ul.menu > li.menu-item-has-children > a::after,
+.main-navigation ul.menu > li.page_item_has_children > a::after,
+.main-navigation ul.nav-menu > li.menu-item-has-children > a::after,
+.main-navigation ul.nav-menu > li.page_item_has_children > a::after {
+  display: none;
+}

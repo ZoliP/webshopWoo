@@ -1,0 +1,96 @@
+/* Display width*/
+.site-main .status-publish {
+  @include responsive(md) {
+    margin-left: -37%;
+  }
+}
+
+/* Wishlist plugin's title*/
+.woocommerce .wishlist-title {
+  display: none;
+}
+
+/*Mobile mode */
+table {
+  @include responsive(sm) {
+    width: 100%;
+  }
+}
+
+/*Wishlist Item separator*/
+.wishlist_table.mobile li {
+  border-bottom: 1px solid $darkgrey-text-color;
+}
+
+/*Product title*/
+.hentry .entry-content a {
+  text-decoration: none;
+  &:hover {
+    color: $blue-hover-text-color;
+  }
+  @include responsive(sm) {
+    font-size: 12px;
+  }
+  @include responsive(md) {
+    font-size: 16px;
+  }
+}
+
+/*Mobile mode Remove from wishlist icon*/
+.product-remove a.remove_from_wishlist:hover {
+  color: $red-bg-color;
+}
+
+/*Desktop mode wishlist table head text*/
+table td,
+table th {
+  text-align: center;
+}
+
+/*Desktop mode Delete icon */
+.woocommerce #content table.wishlist_table.cart a.remove:hover::before {
+  top: 1px;
+  left: 1px;
+}
+.woocommerce #content table.wishlist_table.cart a.remove:hover {
+  background-color: red !important;
+  border-radius: 15px;
+}
+
+/*Product price */
+.item-wrapper .item-details .item-details-table {
+  tbody tr {
+    background-color: red !important;
+  }
+  @include responsive(sm) {
+    margin-left: -45%;
+    width: 185%;
+  }
+}
+
+li .item-details table.item-details-table td.value,
+.wishlist_table.mobile li table.additional-info td.value,
+.wishlist_table.modern_grid li .item-details table.item-details-table td.value {
+  display: flex;
+  flex-direction: row;
+}
+
+/*Wislist item's price*/
+.wishlist_table .wishlist-items-wrapper .product-price {
+  del .woocommerce-Price-amount bdi {
+    @include responsive(sm) {
+      font-size: 12px !important;
+    }
+    @include responsive(md) {
+      font-size: 12px !important;
+    }
+  }
+  ins .woocommerce-Price-amount bdi {
+    @include responsive(sm) {
+      font-size: 12px !important;
+    }
+    @include responsive(md) {
+      font-size: 16px !important;
+    }
+  }
+}

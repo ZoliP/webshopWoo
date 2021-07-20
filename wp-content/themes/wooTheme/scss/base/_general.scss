@@ -1,0 +1,48 @@
+body,
+button,
+input,
+textarea {
+  font-family: $font-family;
+}
+
+body {
+  background-color: $white-bg-color;
+}
+
+a {
+  color: $black-text-color;
+}
+
+/*Links, inputs, buttons, teaxareas border */
+a:focus,
+input[type="search"],
+button[type="submit"],
+input:focus,
+textarea:focus,
+button:focus,
+a:hover {
+  outline: unset;
+}
+
+/*Buttons, inputs*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button,
+.widget a.button,
+.added_to_cart,
+.site-header-cart .widget_shopping_cart a:first-child.button {
+  background-color: $red-bg-color;
+  border: none;
+  border-radius: 25px;
+  color: $white-text-color;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+  @include responsive(sm) {
+    font-size: 14px;
+  }
+}
+
+.col-full {
+  padding: 0;
+}

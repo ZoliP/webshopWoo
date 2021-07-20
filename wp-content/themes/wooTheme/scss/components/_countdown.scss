@@ -1,0 +1,98 @@
+/*Countdown dashboard*/
+.naboo-countdown {
+  background: none !important;
+  padding: 0 !important;
+}
+
+/*Countdown dashboard*/
+.naboo-dashboard {
+  margin-top: -3px !important;
+  padding-bottom: 0;
+}
+
+/*Countdown timer*/
+.CountDownTimer {
+  display: flex;
+  justify-content: flex-end;
+  @include responsive(sm) {
+    flex-direction: column;
+  }
+}
+
+/*Countdown timer title*/
+.header-widget-region .col-full .CountDownTimer .widget-title {
+  letter-spacing: -0.032px;
+  color: $white-text-color;
+  text-shadow: 1px 1px 0px $black-bg-color;
+  margin-bottom: 0;
+  border-bottom: 0;
+  @include responsive(sm) {
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+  }
+  @include responsive(md) {
+    font-size: 20px;
+    padding: 7px;
+  }
+}
+
+/*Digits distance*/
+.naboo-dash {
+  @include responsive(sm) {
+    padding: 5px 5px !important;
+  }
+  @include responsive(md) {
+    padding: 5px 10px !important;
+  }
+}
+
+/*Countdown dashboard titles (Days, Hours, Minutes, Seconds)*/
+.naboo-dash_title {
+  -webkit-transform: unset !important;
+  transform: unset;
+  font-weight: 300 !important;
+  text-transform: uppercase !important;
+  @include responsive(sm) {
+    font-size: 8px !important;
+    line-height: 18px !important;
+    margin-top: 25px !important;
+    margin-left: -7px !important;
+    width: 30px !important;
+  }
+  @include responsive(md) {
+    font-size: 10px !important;
+    line-height: 22px !important;
+    margin-top: 35px !important;
+    margin-left: -10px !important;
+    width: 40px !important;
+  }
+}
+
+/*Background of the digits*/
+.naboo-dash {
+  background-color: $black-bg-color;
+  @include responsive(sm) {
+    height: 30px !important;
+    width: 30px !important;
+    border-radius: 30px !important;
+  }
+  @include responsive(md) {
+    height: 40px !important;
+    width: 40px !important;
+    border-radius: 40px !important;
+  }
+}
+
+/*Countdown digits*/
+.naboo-digit {
+  line-height: unset !important;
+  @include responsive(sm) {
+    margin-top: -3px;
+    margin-left: 1px;
+    font-size: 16px !important;
+  }
+  @include responsive(md) {
+    font-size: 20px !important;
+  }
+}

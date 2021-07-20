@@ -1,0 +1,29 @@
+/* Header*/
+.site-header {
+  background-color: $black-bg-color;
+  border-bottom: none;
+}
+
+/* Header*/
+.home.blog .site-header,
+.home.page:not(.page-template-template-homepage) .site-header,
+.home.post-type-archive-product .site-header {
+  margin-bottom: 0;
+}
+
+/* Header*/
+.site-header .col-full {
+  display: flex;
+  align-items: center;
+  height: 76px;
+}
+
+.col-full .site-branding,
+.col-full .site-search {
+  margin-bottom: 0;
+}
+
+/* Logo div in Header*/
+.woocommerce-active .site-header .site-branding {
+  width: 25%;
+}

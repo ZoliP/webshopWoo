@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.7.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-07-14 06:38:46+0000\n"
+"PO-Revision-Date: 2021-07-18 13:42:46+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10182,7 +10182,7 @@ msgstr "Descrierea va fi afișată în meniu dacă tema actuală o suportă."
 #: wp-admin/includes/class-walker-nav-menu-edit.php:218
 #: wp-admin/includes/nav-menu.php:1108
 msgid "Link Relationship (XFN)"
-msgstr "Legătură relație (XFN)"
+msgstr "Relație legătură (XFN)"
 
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:119
 #: wp-admin/includes/nav-menu.php:1107

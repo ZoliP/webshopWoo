@@ -1,0 +1,145 @@
+/* Site content*/
+.site-content {
+  margin-top: 32px;
+}
+
+/*Site content sorting*/
+.site-main .storefront-sorting {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  @include responsive(sm) {
+    flex-direction: column;
+  }
+}
+
+/*Site content sorting*/
+.storefront-sorting .woocommerce-ordering {
+  margin-right: 6%;
+  @include responsive(sm) {
+    margin: 15px 0;
+  }
+}
+
+/*Site content sorting*/
+.storefront-sorting .woocommerce-ordering select {
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  font-family: inherit;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><path d="M98.9,184.7l1.8,2.1l136,156.5c4.6,5.3,11.5,8.6,19.2,8.6c7.7,0,14.6-3.4,19.2-8.6L411,187.1l2.3-2.6  c1.7-2.5,2.7-5.5,2.7-8.7c0-8.7-7.4-15.8-16.6-15.8v0H112.6v0c-9.2,0-16.6,7.1-16.6,15.8C96,179.1,97.1,182.2,98.9,184.7z"/></svg>'),
+    linear-gradient(to bottom, $white-bg-color 0%, $grey-bg-color 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 14px 14px, 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+/* Site content result count*/
+.storefront-sorting .woocommerce-result-count {
+  margin-right: 7%;
+  @include responsive(sm) {
+    margin: 15px 0;
+    display: none;
+  }
+}
+
+/*Pagination before site content*/
+.storefront-sorting .woocommerce-pagination {
+  margin-left: 30%;
+  @include responsive(sm) {
+    margin: 15px 0;
+    display: none;
+  }
+}
+
+/*Site content products original price*/
+.woocommerce-LoopProduct-link .price del .woocommerce-Price-amount bdi {
+  margin-bottom: 7px !important;
+  background-color: $lightyellow-bg-color;
+  border-radius: 7px;
+  padding: 4px;
+  font-weight: 100 !important;
+}
+
+/*Site content products original price*/
+.price del {
+  opacity: 1 !important;
+}
+
+/*Site content products old and reduced prices */
+bdi {
+  margin: 0 !important;
+  border-radius: 7px;
+  padding: 4px;
+  font-size: 20px;
+  font-weight: 700;
+  @include responsive(sm) {
+    font-size: 16px;
+  }
+}
+
+/*Site content products old and reduced prices */
+.price del + ins,
+ul.products li.product .price ins,
+ul.products .wc-block-grid__product .price ins,
+.wc-block-grid__products li.product .price ins,
+.wc-block-grid__products .wc-block-grid__product .price ins {
+  margin: 0;
+}
+
+/*Site content Product price*/
+ul.products li.product .price,
+ul.products .wc-block-grid__product .price,
+.wc-block-grid__products li.product .price,
+.wc-block-grid__products .wc-block-grid__product .price {
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*Site content Product Add to wishlist HEART symbol*/
+.single_add_to_wishlist {
+  opacity: 0.5;
+  position: absolute;
+  right: -5px;
+  filter: unset;
+}
+
+/*Site content Product Browse wishlist EYE symbol*/
+.yith-wcwl-wishlistexistsbrowse,
+.yith-wcwl-wishlistaddedbrowse {
+  position: absolute;
+  right: -15px;
+}
+
+/*Site content Product Added to wishlist HEART symbol*/
+.fa-heart:before {
+  color: $red-bg-color;
+}
+
+/*Site content popup message box hide after added item to wishlist*/
+#yith-wcwl-popup-message {
+  background: transparent;
+  -webkit-box-shadow: unset;
+  box-shadow: unset;
+}
+
+/*Site content Product compare link*/
+.site-main ul li .compare {
+  margin: 30px;
+  @include responsive(sm) {
+    margin: 40px;
+    font-size: 14px;
+  }
+  &:hover {
+    border-radius: 25px;
+    padding: 2px 15px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+  }
+}

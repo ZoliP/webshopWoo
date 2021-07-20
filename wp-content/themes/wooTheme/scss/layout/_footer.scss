@@ -1,0 +1,92 @@
+/*Footer*/
+.site-footer {
+  background-color: $white-bg-color;
+  padding-top: 55px;
+}
+
+/*Footer before: Social icons*/
+.footer-before {
+  background-color: $darkgrey-bg-color;
+  color: $white-text-color;
+  padding: 10px 0;
+}
+
+/*Footer before: Social icons*/
+.footer-before ul {
+  list-style: none;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*Footer before: Social icons*/
+.footer-before ul li a {
+  color: $white-text-color;
+  padding: 5px;
+  &:hover {
+    color: $darkblue-text-color;
+  }
+}
+
+/*Footer widgets*/
+.footer-widgets {
+  padding-top: 0;
+}
+
+/*Footer widgets*/
+.site-footer h1,
+.site-footer h2,
+.site-footer h3,
+.site-footer h4,
+.site-footer h5,
+.site-footer h6,
+.site-footer .widget .widget-title,
+.site-footer .widget .widgettitle {
+  color: $grey-text-color;
+}
+
+/*Footer widgets title */
+.widget .widget-title,
+.widget .widgettitle {
+  padding-bottom: 0.8125rem;
+  margin-bottom: 0;
+  border-bottom: none;
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 600;
+  letter-spacing: 0.64px;
+}
+
+/*Footer AJUTOR section */
+#custom_html-2 .textwidget ul li a,
+#custom_html-3 .textwidget a {
+  text-decoration: none;
+  padding: 3px 0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/*Footer AJUTOR section */
+#custom_html-2 .textwidget ul li a:hover,
+#custom_html-3 .textwidget a:hover {
+  color: $darkblue-text-color;
+}
+
+/*Footer DESPRE, CONTACT text */
+.widget .textwidget p {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 300;
+  letter-spacing: -0.032px;
+}
+
+/*Footer widgets*/
+.widget {
+  margin: 0;
+}
+
+/*The weekly programm in CONTACTATI-NE section in Footer */
+#text-3 .textwidget p:nth-child(n + 3):nth-child(-n + 6) {
+  margin: 0;
+}

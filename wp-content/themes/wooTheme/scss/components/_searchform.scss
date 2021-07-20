@@ -1,0 +1,98 @@
+/* Search form in header*/
+.aws-container form input[type="search"] {
+  padding: 6px 4px 4px 24px;
+  background-color: $black-bg-color;
+  color: $white-text-color;
+  border: 1px solid $yellow-bg-color;
+  font-weight: 300;
+  width: calc(100%-46px);
+  height: 40px;
+  font-size: 14px;
+  border-radius: 20px 0 0 20px !important;
+}
+
+/* Search form input in header*/
+input[type="search"]::placeholder {
+  color: $white-text-color;
+  opacity: 0.8;
+}
+
+/* Search form div in header*/
+.aws-container {
+  width: 75%;
+  float: left;
+}
+
+/* Search form in header*/
+.aws-container .aws-search-form {
+  height: 40px;
+  margin-bottom: 0;
+}
+
+/* Search form in header*/
+.aws-container form input[type="search"]:focus {
+  background-color: $black-bg-color;
+}
+
+/* Search form button in header*/
+.aws-container .aws-search-form .aws-form-btn {
+  width: 42px;
+  height: 40px;
+  background-color: $yellow-bg-color;
+  border-radius: 0 20px 20px 0 !important;
+  border: none;
+  margin: 0;
+  opacity: 0.9;
+  &:hover {
+    background-color: $yellow-bg-color;
+    opacity: 1;
+  }
+}
+
+/*Icon on search button in header*/
+form button[type="submit"] i {
+  position: relative;
+  top: 2px;
+  left: 0;
+  font-size: 18px;
+  color: $grey-text-color;
+}
+
+/*Quick search rezult*/
+.aws-search-result {
+  border-color: $yellow-bg-color !important;
+  border-radius: 20px !important;
+}
+
+/*Quick search rezult scroll bar*/
+.aws-search-result ul::-webkit-scrollbar-track {
+  border-radius: 0 20px 20px 0 !important;
+  background-color: $yellow-bg-color !important;
+}
+
+/*Quick search rezult scroll bar*/
+.aws-search-result ul::-webkit-scrollbar {
+  border-radius: 0 20px 20px 0 !important;
+  width: 20px;
+}
+
+/*Quick search rezult scroll bar*/
+.aws-search-result ul::-webkit-scrollbar-thumb {
+  border-radius: 0 20px 20px 0 !important;
+  background-color: $white-bg-color !important;
+}
+
+/*Quick search rezult item*/
+.aws-search-result ul li {
+  border-bottom-color: $yellow-bg-color !important;
+}
+
+/*Quick search rezult first item*/
+.aws-search-result ul li:first-child {
+  border-radius: 20px 0 0 0;
+}
+
+/*Quick search rezult 'mai multe' button*/
+.aws-search-result ul li:last-child {
+  border-radius: 0 0 0 20px;
+}

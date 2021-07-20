@@ -1,0 +1,24 @@
+/*
+Theme Name: WebshopWoo Child Theme
+Version: 1.0
+Description: Storefront Child theme for Woocommerce.
+Author: ZoliP
+Author URI: http://woocommerce.com 
+Template: storefront 
+*/
+@import "base/variables";
+@import "base/responsive";
+@import "base/general";
+
+@import "layout/header";
+@import "layout/header-after";
+@import "layout/sidebar";
+@import "layout/site-content";
+@import "layout/single-product-page";
+@import "layout/footer";
+@import "layout/wishlist";
+
+@import "components/menu";
+@import "components/minicart";
+@import "components/searchform";
+@import "components/countdown";
