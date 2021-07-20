@@ -945,6 +945,7 @@ a.cart-contents:hover,
 .site-header .product_list_widget li .quantity {
   background-color: #ffffff;
   color: #1d1d1d;
+  border-radius: 5px;
 }
 
 /*Cart and bagde icon in header*/
@@ -980,6 +981,11 @@ a.cart-contents:hover,
   text-align: center;
   font-size: 12px;
   line-height: 1.4;
+}
+
+/*Cart widget button*/
+#site-header-cart > li:nth-child(2) > div > div > p.woocommerce-mini-cart__buttons.buttons > a:hover {
+  background-color: #e30000;
 }
 
 /*Cart widget button's arrow in header*/

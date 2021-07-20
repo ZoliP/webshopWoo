@@ -229,10 +229,8 @@ if ( ! function_exists( 'woocommerce_catalog_ordering' ) ) {
 }
 
 
-/**
- * Ascunde celelate metode de livrare daca freeshipping este activ.
- * */
-function iap_hide_shipping_when_free_is_available( $rates ) {
+/*  Hide other shipping methods when free shipping is active.*/
+function zoltan_hide_shipping_when_free_is_available( $rates ) {
 	$free = array();
 	foreach ( $rates as $rate_id => $rate ) {
 		if ( 'free_shipping' === $rate->method_id ) {
@@ -242,7 +240,7 @@ function iap_hide_shipping_when_free_is_available( $rates ) {
 	}
 	return ! empty( $free ) ? $free : $rates;
 }
-add_filter( 'woocommerce_package_rates', 'iap_hide_shipping_when_free_is_available', 100 );
+add_filter( 'woocommerce_package_rates', 'zoltan_hide_shipping_when_free_is_available', 100 );
 
 
 /*Show Sidebar only on the SHOP page*/
