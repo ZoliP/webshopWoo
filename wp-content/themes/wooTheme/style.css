@@ -326,6 +326,9 @@ a.remove::before {
   padding: 5px 15px;
   cursor: pointer;
 }
+.storefront-sorting .woocommerce-ordering select:focus {
+  outline: none;
+}
 
 /* Site content result count*/
 .storefront-sorting .woocommerce-result-count {
@@ -341,6 +344,9 @@ a.remove::before {
 /*Pagination before site content*/
 .storefront-sorting .woocommerce-pagination {
   margin-left: 30%;
+}
+.storefront-sorting .woocommerce-pagination .page-numbers li .page-numbers {
+  border-radius: 8px;
 }
 @media only screen and (max-width: 414px) {
   .storefront-sorting .woocommerce-pagination {
@@ -450,14 +456,14 @@ ul.products .wc-block-grid__product .price,
 /* Single Product summary*/
 @media only screen and (min-width: 768px) {
   .single-product div.product .summary {
-    width: 34%;
+    width: 36%;
   }
 }
 
 /* Single Product gallery*/
 @media only screen and (min-width: 768px) {
   .single-product div.product .woocommerce-product-gallery {
-    width: 60%;
+    width: 50%;
   }
 }
 
@@ -620,6 +626,10 @@ h1,
   margin: 0 !important;
 }
 
+.price-whitout-text {
+  display: none;
+}
+
 /*Single Product old price*/
 .price-with-text .price del .woocommerce-Price-amount bdi,
 .price-with-text span span.woocommerce-Price-amount bdi {
@@ -648,19 +658,23 @@ input[type=number] {
 .quantity .qty {
   text-align: right;
 }
-
+@media only screen and (max-width: 414px) {
+  .quantity .qty {
+    height: 39px;
+  }
+}
 /* Input type number buttons up and down arrows*/
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   opacity: 1;
   -webkit-appearance: none;
-  height: 50px;
-  width: 38px;
   cursor: pointer;
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512" height="150px" id="Layer_1" version="1.0" viewBox="0 0 512 512" width="512px" xml:space="preserve"><g><polygon points="402.8,361.2 256,214.4 109.2,361.2 66.8,318.8 256,129.6 445.2,318.8  "/></g></svg>'), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512" height="150px" id="Layer_1" version="1.0" viewBox="0 0 512 512" width="512px" xml:space="preserve"><g><polygon points="256,382.4 66.8,193.2 109.2,150.8 256,297.6 402.8,150.8 445.2,193.2  "/></g></svg>');
   background-position: center 35%, center 65%;
   background-size: contain;
   background-repeat: no-repeat;
+  height: 50px;
+  width: 38px;
 }
 
 /*Add to cart button*/
@@ -673,8 +687,23 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /*Stock status display*/
-.stock.in-stock {
+.stock {
   display: none;
+}
+
+.stock_status {
+  background-color: #2879fe;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 2px 5px;
+  width: 25%;
+}
+@media only screen and (min-width: 768px) {
+  .stock_status {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
 }
 
 /*Single product sku, category, tags after add to cart  button*/

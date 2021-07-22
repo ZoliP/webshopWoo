@@ -36,6 +36,9 @@
   border-radius: 8px;
   padding: 5px 15px;
   cursor: pointer;
+  &:focus {
+    outline: none;
+  }
 }
 
 /* Site content result count*/
@@ -50,6 +53,9 @@
 /*Pagination before site content*/
 .storefront-sorting .woocommerce-pagination {
   margin-left: 30%;
+  .page-numbers li .page-numbers {
+    border-radius: 8px;
+  }
   @include responsive(sm) {
     margin: 15px 0;
     display: none;

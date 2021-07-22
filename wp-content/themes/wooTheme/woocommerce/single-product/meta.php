@@ -31,36 +31,17 @@ global $product;
 
 	<?php endif; ?>
 
-<!-- <?php 
 
- 	$ancestor_cat_ids = get_ancestors( $product->get_id(), 'category');
-	var_dump($product->get_id());
-	var_dump($ancestor_cat_ids);
-	$highest_ancestor = $ancestor_cat_ids[count($ancestor_cat_ids) - 1];
-	var_dump($highest_ancestor);
+	<?php
+        $terms = get_the_terms( $product->get_id(), 'product_cat' );
+        foreach ($terms as $term ) {
+            if ( $term->parent == '0' ) {
+                echo ('<span>Categoria: </span><a href="' . get_category_link( $term ) . '">' . $term->name . '</a>');
+            }
+        }
+    ?> 
 
-?> -->
-<!-- <?php
-	$queried_object = get_queried_object();
-	$parent = $queried_object->term_id;
-	$prod = $product -> get_category_ids();
-	var_dump($prod);
-	$categories = get_term_children( $prod, 'product_cat' ); 
-		if ( $categories && ! is_wp_error( $category ) ) : 
-			echo '<ul>';
-			foreach($categories as $category) :
-				$term = get_term( $category, 'product_cat' );
-				echo '<li>';
-				echo '<a href="'.get_term_link($term).'" >';
-				echo $term->name;
-				echo '</a>';
-				echo '</li>';
-			endforeach;
-			echo '</ul>';
-		endif;
-?> -->
-
-	<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+	<!-- <?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?> -->
 
 	<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
 

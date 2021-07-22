@@ -116,10 +116,42 @@ function zoltan_remove_actions_parent_theme(){
 add_action( 'init', 'zoltan_remove_actions_parent_theme', 1 );
 add_action( 'storefront_header', 'storefront_header_cart', 41 );
 
-function move_stock_before_title(){
-echo 'stock status';
+
+/*Move stock status before the product title */
+
+function zoltan_move_stock_before_title(){
+	
+	global $product, $wpdb;
+
+	if ( ! $product->is_purchasable() ) {
+		return;
+	}
+
+	if( $product->is_type( 'simple' ) ){
+		
+		$availability = $product->get_availability();
+		echo  ('<p class="stock_status">' . $availability['availability'] . '</p>');
+	
+	} elseif( $product->is_type( 'variable' ) ){
+	   // Product has variations
+	   echo 'stock-ul variantei produsului';
+	   echo '<br>';
+	   $variations = $product->get_available_variations();
+    	foreach($variations as $variation){
+        	$variation_id = $variation['variation_id'];
+         	$variation_obj = new WC_Product_variation($variation_id);
+         	$stock = $variation_obj->get_availability();
+    	
+			 echo ($stock['availability'] . ' ');
+		}
+	}
+
 }
-add_action('woocommerce_single_product_summary', 'move_stock_before_title',4);
+
+add_action('woocommerce_single_product_summary', 'zoltan_move_stock_before_title',4);
+
+
+
 
 /*Social Icons section in Footer BEFORE */
 function zoltan_before_footer(){

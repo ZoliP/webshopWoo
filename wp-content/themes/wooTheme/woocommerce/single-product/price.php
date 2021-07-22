@@ -22,20 +22,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 ?>
-<div class="price-with-text">
-<span>A fost </span>
-<p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>" >
-	<del>
-	 <?php echo wc_price(wc_get_price_to_display($product, array('price' => $product->get_regular_price())));?> 		
-	</del>
-</p>
-<span>| Reducere 
-	<?php echo wc_price(wc_get_price_to_display($product, array('price' => (float)$product->get_regular_price() - (float)$product->get_sale_price())));?> 	
-</span>
-</div>
 
-<p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>" >
-	<ins>
-		<?php echo wc_price(wc_get_price_to_display($product, array('price' => $product->get_sale_price())));?>
-	</ins>
-</p>
+<?php if( $product->is_type( 'simple' ) ){ ?>
+
+	<?php if ( $product ->is_on_sale()) { ?>
+
+		<div class="price-with-text">
+			<span>A fost </span>
+			<p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>" >
+				<del>
+					<?php echo wc_price(wc_get_price_to_display($product, array('price' => $product->get_regular_price())));?> 		
+				</del>
+			</p>
+			<span>| Reducere 
+				<?php echo wc_price(wc_get_price_to_display($product, array('price' => (float)$product->get_regular_price() - (float)$product->get_sale_price())));?> 	
+			</span>
+		</div>
+		<?php } else { ?>
+			<div class="price-without-text"></div>
+		<?php } ?>
+	
+	<p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>" >
+		<ins>
+			<?php echo wc_price(wc_get_price_to_display($product, array('price' => $product->get_sale_price())));?>
+		</ins>
+	</p>
+
+<?php } elseif( $product->is_type( 'variable' ) ){ ?>
+
+<?php  // Product has variations?>
+<?php  echo 'pretul variantei produsului';?>
+<?php } ?>
