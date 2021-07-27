@@ -1,7 +1,32 @@
+.header-before {
+  background-color: $white-bg-color !important;
+  text-align: center;
+  margin: 14px 0;
+  font-size: 18px;
+}
+
 /* Header*/
 .site-header {
   background-color: $black-bg-color;
   border-bottom: none;
+  .col-full {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    @include responsive(md) {
+      flex-direction: row;
+      align-items: unset;
+      height: 76px;
+    }
+    .site-branding,
+    .aws-container {
+      margin-bottom: 15px;
+      @include responsive(md) {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 /* Header*/
@@ -11,19 +36,13 @@
   margin-bottom: 0;
 }
 
-/* Header*/
-.site-header .col-full {
-  display: flex;
-  align-items: center;
-  height: 76px;
-}
-
-.col-full .site-branding,
-.col-full .site-search {
-  margin-bottom: 0;
-}
-
 /* Logo div in Header*/
 .woocommerce-active .site-header .site-branding {
-  width: 25%;
+  width: 100%;
+  @include responsive(md) {
+    width: 25%;
+  }
+  a img {
+    max-width: none;
+  }
 }

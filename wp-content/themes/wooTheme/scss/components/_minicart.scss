@@ -3,6 +3,10 @@
   color: $blue-hover-text-color;
 }
 
+.site-header-cart .widget_shopping_cart {
+  border: none !important;
+}
+
 /*Items in the cart in header*/
 .site-header-cart .widget_shopping_cart .widget_shopping_cart_content > p,
 .site-header-cart .widget_shopping_cart,

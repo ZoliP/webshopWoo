@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.8.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-07-21 09:13:02+0000\n"
+"PO-Revision-Date: 2021-07-27 06:45:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1084,7 +1084,7 @@ msgstr "Aranjament"
 
 #: wp-login.php:1263
 msgid "<strong>Error</strong>: User registration is currently not allowed."
-msgstr "<strong>Eroare:</strong> înregistrarea utilizatorilor nu este permisă în prezent."
+msgstr "<strong>Eroare</strong>: înregistrarea de utilizatori nu este permisă acum."
 
 #: wp-login.php:845
 msgid "<strong>Error</strong>: The passwords do not match."
@@ -1096,7 +1096,7 @@ msgstr "<strong>Eroare</strong>: legătura pentru resetarea parolei a expirat. T
 
 #: wp-login.php:727
 msgid "<strong>Error</strong>: Your password reset link appears to be invalid. Please request a new link below."
-msgstr "<strong>Eroare</strong>: legătura pentru resetarea parolei pare să fie invalidă. Te rog cere una nouă mai jos."
+msgstr "<strong>Eroare</strong>: legătura pentru resetarea parolei pare a fi invalidă. Te rog cere una nouă mai jos."
 
 #: wp-includes/widgets/class-wp-widget-block.php:205
 msgid "Block HTML:"
@@ -4198,7 +4198,7 @@ msgstr "Detalii"
 
 #: wp-includes/media-template.php:356
 msgid "Attachment Preview"
-msgstr "Previzualizare atașament"
+msgstr "Previzualizează atașamentul"
 
 #: wp-includes/media-template.php:232
 msgid "Your browser cannot upload files"
@@ -7605,7 +7605,7 @@ msgstr "Ascunde comenzile"
 
 #: wp-includes/media-template.php:396
 msgid "Document Preview"
-msgstr "Previzualizare document"
+msgstr "Previzualizează documentul"
 
 #: wp-includes/class-wp-customize-manager.php:5294
 msgid "Header Media"
@@ -8607,7 +8607,7 @@ msgstr "Versiune nouă disponibilă. %s"
 #. translators: %s: Theme name.
 #: wp-includes/customize/class-wp-customize-theme-control.php:67
 msgid "Install and preview theme: %s"
-msgstr "Instalare și previzualizare temă: %s"
+msgstr "Instalează și previzualizează tema: %s"
 
 #. translators: %s: Theme name.
 #: wp-includes/customize/class-wp-customize-theme-control.php:65
@@ -13484,7 +13484,7 @@ msgstr "https://codex.wordpress.org/CSS"
 #. translators: 1: Link to new site, 2: Login URL, 3: Username.
 #: wp-signup.php:531
 msgid "%1$s is your new site. <a href=\"%2$s\">Log in</a> as &#8220;%3$s&#8221; using your existing password."
-msgstr "%1$s este noul tău site. <a href=\"%2$s\">Autentifică-te</a> ca &#8222;%3$s&#8221; și folosește parola."
+msgstr "%1$s este noul tău site. <a href=\"%2$s\">Autentifică-te</a> ca &#8222;%3$s&#8221; folosind parola actuală."
 
 #. translators: 1: Site URL, 2: Username, 3: User email address, 4: Lost
 #. password URL.
@@ -14439,7 +14439,7 @@ msgstr "%d actualizare WordPress"
 
 #: wp-signup.php:960
 msgid "Site registration has been disabled."
-msgstr "Înregistrarea site-ului a fost dezactivată."
+msgstr "Înregistrarea de site-uri a fost dezactivată."
 
 #: wp-signup.php:839
 msgid "If you do not activate your site within two days, you will have to sign up again."
@@ -14486,7 +14486,7 @@ msgstr "Titlu site:"
 
 #: wp-signup.php:129
 msgid "sitename"
-msgstr "nume site"
+msgstr "nume-site"
 
 #: wp-signup.php:110
 msgid "Site Domain:"
@@ -14758,7 +14758,7 @@ msgstr "Nume software"
 
 #: wp-signup.php:953
 msgid "User registration has been disabled."
-msgstr "Înregistrarea utilizatorului a fost dezactivată."
+msgstr "Înregistrarea de utilizatori a fost dezactivată."
 
 #: wp-signup.php:938
 msgid "Registration has been disabled."
@@ -17197,7 +17197,7 @@ msgstr "Comentarii recente"
 #: wp-admin/theme-install.php:404 wp-admin/theme-install.php:411
 #: wp-admin/theme-install.php:547
 msgid "Preview"
-msgstr "Previzualizare"
+msgstr "Previzualizează"
 
 #: wp-includes/widgets/class-wp-widget-rss.php:35
 #: wp-admin/includes/import.php:214

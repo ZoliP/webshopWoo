@@ -142,43 +142,52 @@ h1,
 .single-product div.product p.price {
   display: flex;
   flex-direction: column;
-  margin: 0 !important;
 }
 
 /*Single Product old price*/
-.price-with-text {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: $lightyellow-bg-color;
+// .price-with-text {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   background-color: $lightyellow-bg-color;
+//   color: $black-text-color;
+//   border-radius: 7px;
+//   padding: 4px;
+//   font-weight: 100;
+//   margin-right: 15%;
+//   @include responsive(sm) {
+//     font-size: 12px;
+//     margin-right: 0;
+//   }
+// }
+
+// .price-with-text .price del {
+//   margin: 0 !important;
+// }
+
+// .price-whitout-text {
+//   display: none;
+// }
+
+.single-product div.product .woocommerce-product-rating a {
+  text-decoration: none;
+  font-weight: 100;
+  color: $darkblue-bg-color;
+}
+
+/*Single Product old price*/
+.product .summary .price del span.woocommerce-Price-amount bdi {
+  font-size: 16px;
+  padding: 0 4px;
   color: $black-text-color;
+  background-color: $lightyellow-bg-color;
   border-radius: 7px;
   padding: 4px;
   font-weight: 100;
-  margin-right: 15%;
-  @include responsive(sm) {
-    font-size: 12px;
-    margin-right: 0;
-  }
-}
-
-.price-with-text .price del {
-  margin: 0 !important;
-}
-
-.price-whitout-text {
-  display: none;
-}
-
-/*Single Product old price*/
-.price-with-text .price del .woocommerce-Price-amount bdi,
-.price-with-text span span.woocommerce-Price-amount bdi {
-  font-size: 16px;
-  padding: 0 4px;
 }
 
 /*Single Products reduced price */
-.product .summary .price ins {
+.product .summary .price ins span.woocommerce-Price-amount bdi {
   font-size: 30px;
   font-weight: 600;
   color: $black-text-color;
@@ -186,17 +195,26 @@ h1,
   margin: 33px 0;
 }
 
+/*Product attributes*/
+table.variations tbody td {
+  text-align: left;
+}
+
+.single-product div.product table.variations .value {
+  margin-bottom: 30px;
+}
+
 /* Input type number button*/
 input[type="number"] {
   border-radius: 25px;
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: 15px;
+  padding-left: 17px !important;
+  padding-right: 0 !important;
 }
 
-.quantity .qty {
-  text-align: right;
+.quantity .qty,
+table.cart .quantity .qty {
+  text-align: center;
   @include responsive(sm) {
     height: 39px;
   }
@@ -215,8 +233,8 @@ input[type="number"]::-webkit-outer-spin-button {
   background-position: center 35%, center 65%;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 50px;
-  width: 38px;
+  height: 55px;
+  width: 28px;
 }
 
 /*Add to cart button*/
@@ -229,11 +247,28 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /*Stock status display*/
-.stock {
-  display: none;
-}
+// .stock {
+//   display: none;
+// }
 
-.stock_status {
+// .stock_status {
+//   background-color: $darkblue-bg-color;
+//   color: $white-text-color;
+//   border-radius: 6px;
+//   padding: 2px 5px;
+//   width: 25%;
+//   @include responsive(md) {
+//     width: fit-content;
+//   }
+// }
+
+/*Stock status display*/
+form
+  .single_variation_wrap
+  .single_variation
+  .woocommerce-variation-availability
+  p.stock,
+.summary p.stock {
   background-color: $darkblue-bg-color;
   color: $white-text-color;
   border-radius: 6px;
@@ -242,6 +277,16 @@ input[type="number"]::-webkit-outer-spin-button {
   @include responsive(md) {
     width: fit-content;
   }
+}
+
+/*Stock status display*/
+form
+  .single_variation_wrap
+  .single_variation
+  .woocommerce-variation-availability
+  p.stock::before,
+.summary p.stock::before {
+  content: none;
 }
 
 /*Single product sku, category, tags after add to cart  button*/
@@ -255,4 +300,9 @@ input[type="number"]::-webkit-outer-spin-button {
     text-decoration: none;
     font-weight: 100;
   }
+}
+
+/*Related products*/
+section.related ul.products li.product a span.price ins span.amount bdi {
+  background-color: none;
 }

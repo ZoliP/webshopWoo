@@ -96,6 +96,20 @@ add_action( 'storefront_header', 'zoltan_advanced_woo_search', 40 );
 
 
 
+function zoltan_free_shipping_at_more_than_49() {
+	echo '
+	<div class="col-full header-before"> 
+		<a href="http://localhost/webshopWoo/despre-livrare/">
+			<b>TRANSPORT GRATUIT</b> LA COMEZNI DE MINIM 49 DE LEI
+		</a>
+	</div>
+	';
+}
+
+add_action('storefront_before_header','zoltan_free_shipping_at_more_than_49' );
+
+
+
 function zoltan_remove_actions_parent_theme(){
 	remove_action( 'storefront_header', 'storefront_product_search', 40 );
 	remove_action( 'storefront_header', 'storefront_header_cart', 60 );
@@ -109,8 +123,8 @@ function zoltan_remove_actions_parent_theme(){
 	/* Remove Sale! Badge in Single Product Summary Page */
 	remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
 
-	// remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
-	//add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+	//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+	//add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 };
 
 add_action( 'init', 'zoltan_remove_actions_parent_theme', 1 );
@@ -119,36 +133,36 @@ add_action( 'storefront_header', 'storefront_header_cart', 41 );
 
 /*Move stock status before the product title */
 
-function zoltan_move_stock_before_title(){
+// function zoltan_move_stock_before_title(){
 	
-	global $product, $wpdb;
+// 	global $product;
 
-	if ( ! $product->is_purchasable() ) {
-		return;
-	}
+// 	if ( ! $product->is_purchasable() ) {
+// 		return;
+// 	}
 
-	if( $product->is_type( 'simple' ) ){
+// 	if( $product->is_type( 'simple' ) ){
 		
-		$availability = $product->get_availability();
-		echo  ('<p class="stock_status">' . $availability['availability'] . '</p>');
+// 		$availability = $product->get_availability();
+// 		echo  ('<p class="stock_status">' . $availability['availability'] . '</p>');
 	
-	} elseif( $product->is_type( 'variable' ) ){
-	   // Product has variations
-	   echo 'stock-ul variantei produsului';
-	   echo '<br>';
-	   $variations = $product->get_available_variations();
-    	foreach($variations as $variation){
-        	$variation_id = $variation['variation_id'];
-         	$variation_obj = new WC_Product_variation($variation_id);
-         	$stock = $variation_obj->get_availability();
+// 	} elseif( $product->is_type( 'variable' ) ){
+// 	   // Product has variations
+// 	   echo 'stock-ul variantei produsului';
+// 	   echo '<br>';
+// 	   $variations = $product->get_available_variations();
+//     	foreach($variations as $variation){
+//         	$variation_id = $variation['variation_id'];
+//          	$variation_obj = new WC_Product_variation($variation_id);
+//          	$stock = $variation_obj->get_availability();
     	
-			 echo ($stock['availability'] . ' ');
-		}
-	}
+// 			 echo ($stock['availability'] . ' ');
+// 		}
+// 	}
 
-}
+// }
 
-add_action('woocommerce_single_product_summary', 'zoltan_move_stock_before_title',4);
+// add_action('woocommerce_single_product_summary', 'zoltan_move_stock_before_title',4);
 
 
 
@@ -173,6 +187,26 @@ function zoltan_before_footer(){
 
 add_action( 'storefront_before_footer', 'zoltan_before_footer');
 
+
+/*Copied from themes/storefron/inc/storefront-template-functions.php*/
+if ( ! function_exists( 'storefront_credit' ) ) {
+	/**
+	 * Display the theme credit
+	 *
+	 * @since  1.0.0
+	 * @return void
+	 */
+	function storefront_credit() {
+		
+		?>
+		<div class="site-info">
+			<?php echo esc_html( apply_filters( 'storefront_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . gmdate( 'Y' ) ) ); ?>
+		<?php echo '<p> Numar de inregistrare in registrul general de evidenta a prelucrarii datelor cu caracter personal al ANSPDCP:....</p>'?>
+		<?php echo '<p> Specificatiile tehnice au caracter informativ si nu pot fi garantate ca fiind exacte. Phone Protectors face eforturi permanente pentru a pastra acuratetea informatiilor din aceasta pagina. Rareori acestea pot contine inadvertente: fotografia are caracter informativ si poate contine accesorii neincluse in pachetele standard, unele specificatii pot fi modificate de catre producator fara preaviz sau pot contine erori de operare. Toate promotiile prezente in site sunt valabile in limita stocului disponibil.</p>'?>
+		</div><!-- .site-info -->
+		<?php
+	}
+}
 
 
 /* Change the breadcrumb home text from 'Home' to PhoneProtectors */
@@ -285,5 +319,11 @@ function zoltan_remove_storefront_sidebar_in_single_product(){
 add_action( 'get_header', 'zoltan_remove_storefront_sidebar_in_single_product', 10 );
 
 
-?>
 
+
+
+// Disables the block editor from managing widgets in the Gutenberg plugin.
+add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
+
+// Disables the block editor from managing widgets.
+add_filter( 'use_widgets_block_editor', '__return_false' );

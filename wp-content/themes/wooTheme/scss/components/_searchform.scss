@@ -7,7 +7,12 @@
   font-weight: 300;
   width: calc(100%-46px);
   height: 40px;
-  font-size: 14px;
+  @include responsive(sm) {
+    font-size: 9px;
+  }
+  @include responsive(md) {
+    font-size: 14px;
+  }
   border-radius: 20px 0 0 20px !important;
 }
 
@@ -21,31 +26,27 @@ input[type="search"]::placeholder {
 .aws-container {
   width: 75%;
   float: left;
-}
-
-/* Search form in header*/
-.aws-container .aws-search-form {
-  height: 40px;
-  margin-bottom: 0;
-}
-
-/* Search form in header*/
-.aws-container form input[type="search"]:focus {
-  background-color: $black-bg-color;
-}
-
-/* Search form button in header*/
-.aws-container .aws-search-form .aws-form-btn {
-  width: 42px;
-  height: 40px;
-  background-color: $yellow-bg-color;
-  border-radius: 0 20px 20px 0 !important;
-  border: none;
-  margin: 0;
-  opacity: 0.9;
-  &:hover {
-    background-color: $yellow-bg-color;
-    opacity: 1;
+  .aws-search-form {
+    height: 40px;
+    margin-bottom: 0;
+    /* Search form button in header*/
+    .aws-form-btn {
+      width: 42px;
+      height: 40px;
+      background-color: $yellow-bg-color;
+      border-radius: 0 20px 20px 0 !important;
+      border: none;
+      margin: 0;
+      opacity: 0.9;
+      &:hover {
+        background-color: $yellow-bg-color;
+        opacity: 1;
+      }
+    }
+  }
+  /* Search form in header*/
+  form input[type="search"]:focus {
+    background-color: $black-bg-color;
   }
 }
 
@@ -62,37 +63,37 @@ form button[type="submit"] i {
 .aws-search-result {
   border-color: $yellow-bg-color !important;
   border-radius: 20px !important;
-}
-
-/*Quick search rezult scroll bar*/
-.aws-search-result ul::-webkit-scrollbar-track {
-  border-radius: 0 20px 20px 0 !important;
-  background-color: $yellow-bg-color !important;
-}
-
-/*Quick search rezult scroll bar*/
-.aws-search-result ul::-webkit-scrollbar {
-  border-radius: 0 20px 20px 0 !important;
-  width: 20px;
-}
-
-/*Quick search rezult scroll bar*/
-.aws-search-result ul::-webkit-scrollbar-thumb {
-  border-radius: 0 20px 20px 0 !important;
-  background-color: $white-bg-color !important;
-}
-
-/*Quick search rezult item*/
-.aws-search-result ul li {
-  border-bottom-color: $yellow-bg-color !important;
-}
-
-/*Quick search rezult first item*/
-.aws-search-result ul li:first-child {
-  border-radius: 20px 0 0 0;
-}
-
-/*Quick search rezult 'mai multe' button*/
-.aws-search-result ul li:last-child {
-  border-radius: 0 0 0 20px;
+  @include responsive(sm) {
+    top: 254px !important;
+  }
+  @include responsive(md) {
+    top: 162px !important;
+  }
+  /*Quick search rezult scroll bar*/
+  ul::-webkit-scrollbar-track {
+    border-radius: 0 20px 20px 0 !important;
+    background-color: $yellow-bg-color !important;
+  }
+  /*Quick search rezult scroll bar*/
+  ul::-webkit-scrollbar {
+    border-radius: 0 20px 20px 0 !important;
+    width: 20px;
+  }
+  /*Quick search rezult scroll bar-thumb*/
+  ul::-webkit-scrollbar-thumb {
+    border-radius: 0 20px 20px 0 !important;
+    background-color: $white-bg-color !important;
+  }
+  /*Quick search rezult item*/
+  ul li {
+    border-bottom-color: $yellow-bg-color !important;
+  }
+  /*Quick search rezult first item*/
+  ul li:first-child {
+    border-radius: 20px 0 0 0;
+  }
+  /*Quick search rezult 'mai multe' button*/
+  ul li:last-child {
+    border-radius: 0 0 0 20px;
+  }
 }

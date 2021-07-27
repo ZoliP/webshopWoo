@@ -5,6 +5,29 @@
     flex-direction: column;
   }
 }
+/*Menu button*/
+button.menu-toggle,
+button.menu-toggle:hover {
+  background-color: $black-bg-color;
+  color: $white-text-color;
+  border: 1px solid $white-text-color;
+  border-radius: 5px;
+}
+
+button.menu-toggle:after,
+button.menu-toggle:before,
+button.menu-toggle span:before {
+  background-color: $white-bg-color;
+}
+
+nav.main-navigation .menu ul {
+  @include responsive(sm) {
+    display: none !important;
+  }
+  @include responsive(md) {
+    display: block !important;
+  }
+}
 
 /* Menu items in header and cart items*/
 .main-navigation ul li a,
@@ -34,6 +57,7 @@ a.cart-contents:hover,
 .site-header-cart .widget_shopping_cart {
   background-color: $darkgrey-bg-color;
   color: $white-text-color;
+  border: 1px solid $darkgrey-bg-color;
 }
 
 /* Menu items with submenus: down arrow hiding*/

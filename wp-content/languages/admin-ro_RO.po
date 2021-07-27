@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.8.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-07-16 13:24:16+0000\n"
+"PO-Revision-Date: 2021-07-27 10:34:54+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -691,7 +691,7 @@ msgstr "Consultă ultima versiune a Ghidului general WordPress. Ghidul scoate î
 
 #: wp-admin/update-core.php:390
 msgid "This site appears to be under version control. Automatic updates are disabled."
-msgstr "Se pare că acest site nu poate folosi ultimele versiuni. Actualizările automate sunt dezactivate."
+msgstr "Se pare că acest site este sub controlul versiunilor. Actualizările automate sunt dezactivate."
 
 #: wp-admin/update-core.php:263
 msgid "You are using a development version of WordPress."
@@ -1953,7 +1953,7 @@ msgstr "Site-ul tău are probleme critice care ar trebui abordate și rezolvate 
 #. translators: %s: URL to Site Health screen.
 #: wp-admin/includes/dashboard.php:1934
 msgid "Site health checks will automatically run periodically to gather information about your site. You can also <a href=\"%s\">visit the Site Health screen</a> to gather information about your site now."
-msgstr "Verificările din sănătate site vor fi rulate automat și periodic pentru a colecta informații despre site-ul tău. De asemenea, poți <a href=\"%s\">merge la ecranul Sănătate site</a> pentru a vedea acum informațiile despre site-ul tău."
+msgstr "Verificările din Sănătate site vor fi rulate automat și periodic pentru a colecta informații despre site-ul tău. De asemenea, poți <a href=\"%s\">merge la ecranul Sănătate site</a> pentru a vedea acum informațiile despre site-ul tău."
 
 #: wp-admin/includes/dashboard.php:1921
 msgid "No information yet&hellip;"
@@ -2828,7 +2828,7 @@ msgstr "Cererile HTTP au fost blocate de constanta %s, fără nicio gazdă permi
 #. translators: 1: The name of the drop-in. 2: The name of the database engine.
 #: wp-admin/includes/class-wp-site-health.php:1229
 msgid "You are using a %1$s drop-in which might mean that a %2$s database is not being used."
-msgstr "Folosești un modul polivalent %1$s, asta ar putea însemna că o bază de date %2$s nu este utilizată."
+msgstr "Folosești modulul polivalent %1$s, probabil însemnă că nu este utilizată o bază de date %2$s."
 
 #. translators: Localized team handbook, if one exists.
 #: wp-admin/includes/class-wp-site-health.php:860
@@ -3147,7 +3147,7 @@ msgstr "Cererile de întoarcere în buclă sunt folosite pentru a rula eveniment
 
 #: wp-admin/includes/class-wp-site-health.php:1894
 msgid "Your site can perform loopback requests"
-msgstr "Site-ul tău poate executa cererile de întoarcere în buclă"
+msgstr "Site-ul tău poate executa cereri de întoarcere în buclă"
 
 #: wp-admin/includes/class-wp-site-health.php:1818
 msgid "Background updates may not be working properly"
@@ -3181,7 +3181,7 @@ msgstr "Un eveniment programat a eșuat"
 #. translators: %s: The error message returned while from the cron scheduler.
 #: wp-admin/includes/class-wp-site-health.php:1733
 msgid "While trying to test your site&#8217;s scheduled events, the following error was returned: %s"
-msgstr "În timp încercării de a testa evenimentele programate ale site-ului tău, a fost returnată următoarea eroare: %s"
+msgstr "În timpul încercării de a testa evenimentele programate pe site-ul tău, a fost returnată următoarea eroare: %s"
 
 #: wp-admin/includes/class-wp-site-health.php:1727
 msgid "It was not possible to check your scheduled events"
@@ -3243,7 +3243,7 @@ msgstr "Site-ul tău este setat să înregistreze erorile într-un fișier poten
 
 #: wp-admin/includes/class-wp-site-health.php:1450
 msgid "Debug mode is often enabled to gather more details about an error or site failure, but may contain sensitive information which should not be available on a publicly available website."
-msgstr "Modul depanare este uneori activat pentru a strânge mai multe detalii despre o eroare sau un eșec pe site, dar poate conține informații sensibile care nu ar trebui să fie disponibile pe un site web disponibil publicului."
+msgstr "Modul depanare poate fi activat pentru a strânge mai multe detalii despre o eroare sau un eșec pe site, dar poate conține informații sensibile care nu ar trebui să fie disponibile pe un site web public."
 
 #: wp-admin/includes/class-wp-site-health.php:1442
 msgid "Your site is not set to output debug information"
@@ -3300,7 +3300,7 @@ msgstr "WordPress necesită pentru %1$s versiunea %2$s sau o versiune mai nouă.
 
 #: wp-admin/includes/class-wp-site-health.php:1209
 msgid "Severely outdated SQL server"
-msgstr "Server SQL neactualizat demult"
+msgstr "Server SQL neactualizat de mult timp"
 
 #. translators: 1: The database engine in use (MySQL or MariaDB). 2: Database
 #. server recommended version number.
@@ -3574,7 +3574,7 @@ msgstr "Temă părinte"
 #: wp-admin/includes/class-wp-debug-data.php:1139
 #: wp-admin/includes/class-wp-debug-data.php:1234
 msgid "Author website"
-msgstr "Site web autor"
+msgstr "Autor site web"
 
 #. translators: %s: Latest WordPress version number.
 #. translators: %s: Latest plugin version number.
@@ -4785,7 +4785,7 @@ msgstr "La URL-ul"
 #: wp-admin/includes/privacy-tools.php:378
 msgctxt "website name"
 msgid "For site"
-msgstr "Pentru site"
+msgstr "Pentru site-ul"
 
 #: wp-admin/includes/privacy-tools.php:374
 msgctxt "email address"
@@ -7557,7 +7557,7 @@ msgstr "Dimensiune în megaocteți"
 
 #: wp-admin/includes/ms.php:299
 msgid "Site Upload Space Quota"
-msgstr "Cotă de spațiu pentru încărcare site"
+msgstr "Spațiu alocat pentru încărcări pe site"
 
 #. translators: Do not translate USERNAME, ADMIN_URL, EMAIL, SITENAME, SITEURL:
 #. those are placeholders.
@@ -8034,7 +8034,7 @@ msgstr "<strong>Șterge</strong> te duce la ecranul Șterge utilizatori pentru c
 
 #: wp-admin/users.php:56
 msgid "<strong>Remove</strong> allows you to remove a user from your site. It does not delete their content. You can also remove multiple users at once by using bulk actions."
-msgstr "<strong>Înlătură</strong> îți permite să înlături un utilizator de pe site-ul tău. Nu șterge însă și conținutul creat. De asemenea, poți să înlături mai mulți utilizatori deodată folosind Acțiuni în masă."
+msgstr "<strong>Înlătură</strong> îți permite să înlături un utilizator de pe site-ul tău. Dar nu șterge și conținutul utilizatorului. De asemenea, poți să înlături mai mulți utilizatori deodată folosind Acțiuni în masă."
 
 #: wp-admin/theme-install.php:349
 msgctxt "theme"
@@ -8497,7 +8497,7 @@ msgstr "Bună! Site-ul tău (%1$s) a fost actualizat automat la WordPress %2$s."
 #. translators: Site down notification email subject. 1: Site title.
 #: wp-admin/includes/class-wp-automatic-updater.php:724
 msgid "[%1$s] URGENT: Your site may be down due to a failed update"
-msgstr "[%1$s] URGENT: site-ul tău poate a căzut din cauza unei actualizări eșuate"
+msgstr "[%1$s] URGENT: probabil site-ul tău a căzut din cauza unei actualizări eșuate"
 
 #. translators: Update available notification email subject. 1: Site title, 2:
 #. WordPress version.
@@ -10136,7 +10136,7 @@ msgstr[2] "<strong>Versiunea %1$s</strong> a rezolvat %2$s de erori."
 
 #: wp-admin/index.php:35
 msgid "Welcome to your WordPress Dashboard! This is the screen you will see when you log in to your site, and gives you access to all the site management features of WordPress. You can get help for any screen by clicking the Help tab above the screen title."
-msgstr "Bine ai venit la Panoul control WordPress! Aceasta este ecranul pe care îl vei vedea când te autentifici pe site și care îți oferă acces la toate funcționalitățile de administrare din WordPress. Poți primi ajutor în toate ecranele dând clic pe fila Ajutor de deasupra titlului ecranului."
+msgstr "Bine ai venit la panoul de control WordPress! Aceasta este ecranul pe care îl vei vedea când te autentifici pe site și care îți oferă acces la toate funcționalitățile de administrare din WordPress. Poți primi ajutor în toate ecranele dând clic pe fila Ajutor de deasupra titlului ecranului."
 
 #. translators: %s: WordPress version number.
 #: wp-admin/about.php:277
@@ -10381,7 +10381,7 @@ msgstr "Poți administra comentariile făcute pe site-ul tău similar cu modul �
 
 #: wp-admin/index.php:50
 msgid "Links in the Toolbar at the top of the screen connect your dashboard and the front end of your site, and provide access to your profile and helpful WordPress information."
-msgstr "Legăturile din Bara de unelte din partea de sus a ecranului îți conectează panoul de control și partea din față a site-ului și îți oferă acces la propriul profil și informații utile despre WordPress."
+msgstr "Legăturile din bara de unelte din partea de sus a ecranului conectează panoul de control și partea din față a site-ului și oferă acces la propriul profil și la informații utile despre WordPress."
 
 #: wp-admin/link-manager.php:70
 msgid "Deleting Links"
@@ -10418,7 +10418,7 @@ msgstr "Administrarea paginilor"
 
 #: wp-admin/edit.php:270
 msgid "<strong>Preview</strong> will show you what your draft post will look like if you publish it. View will take you to your live site to view the post. Which link is available depends on your post&#8217;s status."
-msgstr "În <strong>Previzualizează</strong> vei vedea cum va arăta articolul tău, în ciornă, dacă îl publici. Vizualizarea te va duce pe site-ul tău live pentru a vedea articolul. Depinde de starea articolului tău care este legătura disponibilă."
+msgstr "<strong>Previzualizează</strong> îți va arăta articolul în ciornă, înainte de publicare. Vizualizarea te va duce pe site-ul live pentru a vedea articolul. Legătura disponibilă depinde de starea articolului tău."
 
 #: wp-admin/edit.php:269
 msgid "<strong>Trash</strong> removes your post from this list and places it in the Trash, from which you can permanently delete it."

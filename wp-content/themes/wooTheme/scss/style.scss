@@ -17,6 +17,8 @@ Template: storefront
 @import "layout/single-product-page";
 @import "layout/footer";
 @import "layout/wishlist";
+@import "layout/cart";
+@import "layout/checkout";
 
 @import "components/menu";
 @import "components/minicart";

@@ -1,0 +1,17 @@
+/*ADD TO CART button*/
+.cross-sells ul li a.button:hover {
+  color: $white-text-color;
+}
+
+/*COMPARE button*/
+.cross-sells ul li a.compare:hover {
+  color: $black-text-color;
+}
+
+/*CHECKOUT button*/
+.cart_totals .wc-proceed-to-checkout a {
+  border-radius: 50px;
+  &:hover {
+    color: $white-text-color;
+  }
+}
