@@ -1,31 +1,27 @@
-/*Footer*/
-.site-footer {
-  background-color: $white-bg-color;
-  padding-top: 55px;
-}
-
 /*Footer before: Social icons*/
 .footer-before {
   background-color: $darkgrey-bg-color;
   color: $white-text-color;
   padding: 10px 0;
-}
-
-/*Footer before: Social icons*/
-.footer-before ul {
-  list-style: none;
-  margin-bottom: 0;
-  display: flex;
-  justify-content: flex-end;
-}
-
-/*Footer before: Social icons*/
-.footer-before ul li a {
-  color: $white-text-color;
-  padding: 5px;
-  &:hover {
-    color: $darkblue-text-color;
+  ul {
+    list-style: none;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    li a {
+      color: $white-text-color;
+      padding: 5px;
+      &:hover {
+        color: $darkblue-text-color;
+      }
+    }
   }
+}
+
+/*Footer*/
+.site-footer {
+  background-color: $white-bg-color;
+  padding-top: 55px;
 }
 
 /*Footer widgets*/
@@ -89,4 +85,8 @@
 /*The weekly programm in CONTACTATI-NE section in Footer */
 #text-3 .textwidget p:nth-child(n + 3):nth-child(-n + 6) {
   margin: 0;
+}
+
+.site-info {
+  font-size: 12px;
 }

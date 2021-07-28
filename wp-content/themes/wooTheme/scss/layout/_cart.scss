@@ -11,6 +11,10 @@
 /*CHECKOUT button*/
 .cart_totals .wc-proceed-to-checkout a {
   border-radius: 50px;
+  font-size: 14px !important;
+  @include responsive(md) {
+    font-size: 18px !important;
+  }
   &:hover {
     color: $white-text-color;
   }

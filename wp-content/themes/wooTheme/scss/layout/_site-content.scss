@@ -154,9 +154,8 @@ ul.products .wc-block-grid__product .price,
 
 /*Site content Product compare link*/
 .site-main ul li .compare {
-  margin: 30px;
+  margin: 40px;
   @include responsive(sm) {
-    margin: 40px;
     font-size: 14px;
   }
   &:hover {

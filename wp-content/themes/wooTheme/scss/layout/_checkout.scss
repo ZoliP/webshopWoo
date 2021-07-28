@@ -1,4 +1,13 @@
 /*Order place button*/
 #place_order {
   border-radius: 50px;
+  font-size: 14px !important;
+  @include responsive(md) {
+    font-size: 18px !important;
+  }
+}
+.place-order .button {
+  @include responsive(sm) {
+    font-size: 14px !important;
+  }
 }

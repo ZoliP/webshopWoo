@@ -45,16 +45,17 @@ table {
 table td,
 table th {
   text-align: center;
+  align-items: center;
 }
 
 /*Desktop mode Delete icon */
-.woocommerce #content table.wishlist_table.cart a.remove:hover::before {
-  top: 1px;
-  left: 1px;
-}
 .woocommerce #content table.wishlist_table.cart a.remove:hover {
   background-color: red !important;
   border-radius: 15px;
+  &::before {
+    top: 1px;
+    left: 1px;
+  }
 }
 
 /*Product price */
@@ -76,8 +77,8 @@ li .item-details table.item-details-table td.value,
 }
 
 /*Wislist item's price*/
-.wishlist_table .wishlist-items-wrapper .product-price {
-  del .woocommerce-Price-amount bdi {
+table.wishlist_table tbody.wishlist-items-wrapper tr td.product-price {
+  del span.woocommerce-Price-amount bdi {
     @include responsive(sm) {
       font-size: 12px !important;
     }
@@ -86,11 +87,13 @@ li .item-details table.item-details-table td.value,
     }
   }
   ins .woocommerce-Price-amount bdi {
-    @include responsive(sm) {
-      font-size: 12px !important;
-    }
-    @include responsive(md) {
-      font-size: 16px !important;
-    }
+    font-size: 16px !important;
+  }
+}
+
+.wishlist_table .product-add-to-cart a {
+  padding: 4px 10px;
+  &:hover {
+    color: $white-text-color;
   }
 }

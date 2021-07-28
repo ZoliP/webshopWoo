@@ -40,7 +40,8 @@ input[type=submit],
 .button,
 .widget a.button,
 .added_to_cart,
-.site-header-cart .widget_shopping_cart a:first-child.button {
+.site-header-cart .widget_shopping_cart a:first-child.button,
+.wishlist_table .product-add-to-cart a {
   background-color: #fc0c05;
   border: none;
   border-radius: 25px;
@@ -55,7 +56,8 @@ input[type=submit],
 .button,
 .widget a.button,
 .added_to_cart,
-.site-header-cart .widget_shopping_cart a:first-child.button {
+.site-header-cart .widget_shopping_cart a:first-child.button,
+.wishlist_table .product-add-to-cart a {
     font-size: 14px;
   }
 }
@@ -468,11 +470,10 @@ ul.products .wc-block-grid__product .price,
 
 /*Site content Product compare link*/
 .site-main ul li .compare {
-  margin: 30px;
+  margin: 40px;
 }
 @media only screen and (max-width: 414px) {
   .site-main ul li .compare {
-    margin: 40px;
     font-size: 14px;
   }
 }
@@ -758,10 +759,12 @@ section.related ul.products li.product a span.price ins span.amount bdi {
   background-color: none;
 }
 
-/*Footer*/
-.site-footer {
-  background-color: #ffffff;
-  padding-top: 55px;
+/*Wieved product after scrolled down, positioned sticky top*/
+.storefront-sticky-add-to-cart .storefront-sticky-add-to-cart__content-product-info .storefront-sticky-add-to-cart__content-price del span.woocommerce-Price-amount {
+  color: #000000;
+  background-color: #fdee1f;
+  border-radius: 7px;
+  padding: 4px;
 }
 
 /*Footer before: Social icons*/
@@ -770,22 +773,24 @@ section.related ul.products li.product a span.price ins span.amount bdi {
   color: #ffffff;
   padding: 10px 0;
 }
-
-/*Footer before: Social icons*/
 .footer-before ul {
   list-style: none;
   margin-bottom: 0;
   display: flex;
   justify-content: flex-end;
 }
-
-/*Footer before: Social icons*/
 .footer-before ul li a {
   color: #ffffff;
   padding: 5px;
 }
 .footer-before ul li a:hover {
   color: #2879fe;
+}
+
+/*Footer*/
+.site-footer {
+  background-color: #ffffff;
+  padding-top: 55px;
 }
 
 /*Footer widgets*/
@@ -851,6 +856,10 @@ section.related ul.products li.product a span.price ins span.amount bdi {
   margin: 0;
 }
 
+.site-info {
+  font-size: 12px;
+}
+
 /* Display width*/
 @media only screen and (min-width: 768px) {
   .site-main .status-publish {
@@ -902,17 +911,17 @@ section.related ul.products li.product a span.price ins span.amount bdi {
 table td,
 table th {
   text-align: center;
+  align-items: center;
 }
 
 /*Desktop mode Delete icon */
-.woocommerce #content table.wishlist_table.cart a.remove:hover::before {
-  top: 1px;
-  left: 1px;
-}
-
 .woocommerce #content table.wishlist_table.cart a.remove:hover {
   background-color: red !important;
   border-radius: 15px;
+}
+.woocommerce #content table.wishlist_table.cart a.remove:hover::before {
+  top: 1px;
+  left: 1px;
 }
 
 /*Product price */
@@ -935,24 +944,24 @@ li .item-details table.item-details-table td.value,
 
 /*Wislist item's price*/
 @media only screen and (max-width: 414px) {
-  .wishlist_table .wishlist-items-wrapper .product-price del .woocommerce-Price-amount bdi {
+  table.wishlist_table tbody.wishlist-items-wrapper tr td.product-price del span.woocommerce-Price-amount bdi {
     font-size: 12px !important;
   }
 }
 @media only screen and (min-width: 768px) {
-  .wishlist_table .wishlist-items-wrapper .product-price del .woocommerce-Price-amount bdi {
+  table.wishlist_table tbody.wishlist-items-wrapper tr td.product-price del span.woocommerce-Price-amount bdi {
     font-size: 12px !important;
   }
 }
-@media only screen and (max-width: 414px) {
-  .wishlist_table .wishlist-items-wrapper .product-price ins .woocommerce-Price-amount bdi {
-    font-size: 12px !important;
-  }
+table.wishlist_table tbody.wishlist-items-wrapper tr td.product-price ins .woocommerce-Price-amount bdi {
+  font-size: 16px !important;
 }
-@media only screen and (min-width: 768px) {
-  .wishlist_table .wishlist-items-wrapper .product-price ins .woocommerce-Price-amount bdi {
-    font-size: 16px !important;
-  }
+
+.wishlist_table .product-add-to-cart a {
+  padding: 4px 10px;
+}
+.wishlist_table .product-add-to-cart a:hover {
+  color: #ffffff;
 }
 
 /*ADD TO CART button*/
@@ -968,6 +977,12 @@ li .item-details table.item-details-table td.value,
 /*CHECKOUT button*/
 .cart_totals .wc-proceed-to-checkout a {
   border-radius: 50px;
+  font-size: 14px !important;
+}
+@media only screen and (min-width: 768px) {
+  .cart_totals .wc-proceed-to-checkout a {
+    font-size: 18px !important;
+  }
 }
 .cart_totals .wc-proceed-to-checkout a:hover {
   color: #ffffff;
@@ -976,6 +991,18 @@ li .item-details table.item-details-table td.value,
 /*Order place button*/
 #place_order {
   border-radius: 50px;
+  font-size: 14px !important;
+}
+@media only screen and (min-width: 768px) {
+  #place_order {
+    font-size: 18px !important;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .place-order .button {
+    font-size: 14px !important;
+  }
 }
 
 /*Menu*/

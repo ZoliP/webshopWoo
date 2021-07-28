@@ -306,3 +306,15 @@ form
 section.related ul.products li.product a span.price ins span.amount bdi {
   background-color: none;
 }
+
+/*Wieved product after scrolled down, positioned sticky top*/
+.storefront-sticky-add-to-cart
+  .storefront-sticky-add-to-cart__content-product-info
+  .storefront-sticky-add-to-cart__content-price
+  del
+  span.woocommerce-Price-amount {
+  color: $black-text-color;
+  background-color: $lightyellow-bg-color;
+  border-radius: 7px;
+  padding: 4px;
+}

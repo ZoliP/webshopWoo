@@ -32,7 +32,8 @@ input[type="submit"],
 .button,
 .widget a.button,
 .added_to_cart,
-.site-header-cart .widget_shopping_cart a:first-child.button {
+.site-header-cart .widget_shopping_cart a:first-child.button,
+.wishlist_table .product-add-to-cart a {
   background-color: $red-bg-color;
   border: none;
   border-radius: 25px;
