@@ -8,12 +8,31 @@
     margin-bottom: 0;
     display: flex;
     justify-content: flex-end;
+    li {
+      /*Facebook social network icon*/
+      &:first-child a i:hover {
+        color: #1877f2;
+      }
+      /*Youtube social network icon*/
+      &:nth-child(2) a i:hover {
+        color: #fe0000;
+      }
+      /*Instagram social network icon*/
+      &:last-child a i:hover {
+        background: radial-gradient(
+          circle at 30% 107%,
+          #fdf497 0%,
+          #fdf497 5%,
+          #fd5949 45%,
+          #d6249f 60%,
+          #285aeb 90%
+        );
+        border-radius: 2px;
+      }
+    }
     li a {
       color: $white-text-color;
       padding: 5px;
-      &:hover {
-        color: $darkblue-text-color;
-      }
     }
   }
 }
