@@ -1961,6 +1961,7 @@ if ( ! function_exists( 'yith_plugin_fw_get_default_post_actions' ) ) {
 						$actions['trash']['confirm_data'] = array(
 							'title'               => __( 'Confirm trash', 'yith-plugin-fw' ),
 							'message'             => $args['confirm-trash-message'],
+							'cancel-button'       => __( 'No', 'yith-plugin-fw' ),
 							'confirm-button'      => _x( 'Yes, move to trash', 'Trash confirmation action', 'yith-plugin-fw' ),
 							'confirm-button-type' => 'delete',
 						);
@@ -1978,7 +1979,8 @@ if ( ! function_exists( 'yith_plugin_fw_get_default_post_actions' ) ) {
 						$actions['delete']['confirm_data'] = array(
 							'title'               => __( 'Confirm delete', 'yith-plugin-fw' ),
 							'message'             => $args['confirm-delete-message'],
-							'confirm-button'      => _x( 'Yes, delete permanently', 'Delete confirmation action', 'yith-plugin-fw' ),
+							'cancel-button'       => __( 'No', 'yith-plugin-fw' ),
+							'confirm-button'      => _x( 'Yes, delete', 'Delete confirmation action', 'yith-plugin-fw' ),
 							'confirm-button-type' => 'delete',
 						);
 					}

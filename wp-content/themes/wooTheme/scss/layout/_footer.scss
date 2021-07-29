@@ -53,33 +53,40 @@
   letter-spacing: 0.64px;
 }
 
+.widget_pages {
+  ul li {
+    padding-left: 0;
+    &::before {
+      display: none;
+    }
+  }
+  span.widget-title {
+    display: none;
+  }
+}
+
 /*Footer AJUTOR section */
 #custom_html-2 .textwidget ul li a,
-#custom_html-3 .textwidget a {
+.widget_pages ul li a {
   text-decoration: none;
   padding: 3px 0;
   font-weight: 600;
   font-size: 14px;
   line-height: 22px;
-}
-
-/*Footer AJUTOR section */
-#custom_html-2 .textwidget ul li a:hover,
-#custom_html-3 .textwidget a:hover {
-  color: $darkblue-text-color;
+  &:hover {
+    color: $darkblue-text-color !important;
+  }
 }
 
 /*Footer DESPRE, CONTACT text */
-.widget .textwidget p {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 300;
-  letter-spacing: -0.032px;
-}
-
-/*Footer widgets*/
 .widget {
   margin: 0;
+  .textwidget p {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 300;
+    letter-spacing: -0.032px;
+  }
 }
 
 /*The weekly programm in CONTACTATI-NE section in Footer */
@@ -87,6 +94,7 @@
   margin: 0;
 }
 
+/* Copyright and site info*/
 .site-info {
   font-size: 12px;
 }

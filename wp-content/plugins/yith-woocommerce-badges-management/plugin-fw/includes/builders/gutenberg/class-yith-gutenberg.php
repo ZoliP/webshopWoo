@@ -324,9 +324,12 @@ if ( ! class_exists( 'YITH_Gutenberg' ) ) {
 			do_action( 'yith_plugin_fw_gutenberg_after_do_shortcode', $shortcode, $current_action );
 
 			$html = ob_get_clean();
-			if ( is_ajax() ) {
-				wp_send_json( array( 'html' => $html ) );
-			}
+
+			wp_send_json(
+				array(
+					'html' => $html,
+				)
+			);
 
 			// phpcs:enable
 		}

@@ -2,10 +2,10 @@
 
 Contributors: yithemes
 Tags: badges, badge, woocommerce, products, themes, yit, e-commerce, shop, yith, badges management, premium, yithemes, product badge, global badge, category badge, woocommerce badge
-Requires at least: 5.3
+Requires at least: 5.6
 Tested up to: 5.8
-Stable tag: 1.4.14
-Requires PHP: 5.6
+Stable tag: 1.4.15
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,12 @@ YITH WooCommerce Badge Management will add:
 8. Admin: General settings
 
 == Changelog ==
+
+= 1.4.15 - Released on 28 July 2021 =
+
+* New: support for WooCommerce 5.6
+* Update: YITH plugin framework
+* Update: language files
 
 = 1.4.14 - Released on 29 June 2021 =
 

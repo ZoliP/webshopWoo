@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: YITH <plugins@yithemes.com>\n"
-"POT-Creation-Date: 2021-06-22 14:49:54+00:00\n"
+"POT-Creation-Date: 2021-07-13 10:11:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,41 +32,47 @@ msgstr ""
 msgid "Are you sure you want to trash the selected items?"
 msgstr ""
 
-#: includes/class-yit-assets.php:149 yit-functions.php:1979
-#: yit-functions.php:2106
+#: includes/class-yit-assets.php:149 includes/class-yit-assets.php:153
+#: templates/sysinfo/tabs/main.php:40 templates/sysinfo/tabs/main.php:48
+#: yit-functions.php:1964 yit-functions.php:1982
+msgid "No"
+msgstr ""
+
+#: includes/class-yit-assets.php:150 yit-functions.php:1980
+#: yit-functions.php:2108
 msgid "Confirm delete"
 msgstr ""
 
-#: includes/class-yit-assets.php:150
+#: includes/class-yit-assets.php:151
 msgid "Are you sure you want to delete the selected items?"
 msgstr ""
 
-#: includes/class-yit-assets.php:150 yit-functions.php:1896
-#: yit-functions.php:2054
+#: includes/class-yit-assets.php:151 yit-functions.php:1896
+#: yit-functions.php:2056
 msgid "This action cannot be undone and you will not be able to recover this data."
 msgstr ""
 
-#: includes/class-yit-assets.php:162
+#: includes/class-yit-assets.php:164
 msgid "Clear"
 msgstr ""
 
-#: includes/class-yit-assets.php:163
+#: includes/class-yit-assets.php:165
 msgid "Clear color"
 msgstr ""
 
-#: includes/class-yit-assets.php:164
+#: includes/class-yit-assets.php:166
 msgid "Default"
 msgstr ""
 
-#: includes/class-yit-assets.php:165
+#: includes/class-yit-assets.php:167
 msgid "Select default color"
 msgstr ""
 
-#: includes/class-yit-assets.php:166
+#: includes/class-yit-assets.php:168
 msgid "Select Color"
 msgstr ""
 
-#: includes/class-yit-assets.php:167
+#: includes/class-yit-assets.php:169
 msgid "Color value"
 msgstr ""
 
@@ -587,10 +593,6 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: templates/sysinfo/tabs/main.php:40 templates/sysinfo/tabs/main.php:48
-msgid "No"
-msgstr ""
-
 #: templates/sysinfo/tabs/main.php:45
 msgid "External object cache"
 msgstr ""
@@ -604,12 +606,12 @@ msgstr ""
 msgid "Are you sure you want to move \"%s\" to trash?"
 msgstr ""
 
-#: yit-functions.php:1896 yit-functions.php:2054
+#: yit-functions.php:1896 yit-functions.php:2056
 #. translators: %s is the title of the post object.
 msgid "Are you sure you want to delete \"%s\"?"
 msgstr ""
 
-#: yit-functions.php:1992 yit-functions.php:2000 yit-functions.php:2117
+#: yit-functions.php:1994 yit-functions.php:2002 yit-functions.php:2119
 msgid "Further actions"
 msgstr ""
 
@@ -627,7 +629,7 @@ msgctxt "Elementor Widget - section title"
 msgid "%s - Options"
 msgstr ""
 
-#: includes/builders/gutenberg/class-yith-gutenberg.php:147
+#: includes/builders/gutenberg/class-yith-gutenberg.php:149
 msgctxt "[gutenberg]: Category Name"
 msgid "YITH"
 msgstr ""
@@ -642,17 +644,13 @@ msgctxt "Button text"
 msgid "Cancel"
 msgstr ""
 
-#: includes/class-yit-assets.php:148 yit-functions.php:1964
+#: includes/class-yit-assets.php:148 yit-functions.php:1965
 msgctxt "Trash confirmation action"
 msgid "Yes, move to trash"
 msgstr ""
 
-#: includes/class-yit-assets.php:151 yit-functions.php:1981
-msgctxt "Delete confirmation action"
-msgid "Yes, delete permanently"
-msgstr ""
-
-#: yit-functions.php:2108
+#: includes/class-yit-assets.php:152 yit-functions.php:1983
+#: yit-functions.php:2110
 msgctxt "Delete confirmation action"
 msgid "Yes, delete"
 msgstr ""
@@ -880,27 +878,27 @@ msgctxt "Post action"
 msgid "Trash"
 msgstr ""
 
-#: yit-functions.php:1972
+#: yit-functions.php:1973
 msgctxt "Post action"
 msgid "Delete Permanently"
 msgstr ""
 
-#: yit-functions.php:2068
+#: yit-functions.php:2070
 msgctxt "Term action"
 msgid "View"
 msgstr ""
 
-#: yit-functions.php:2078
+#: yit-functions.php:2080
 msgctxt "Term action"
 msgid "Edit"
 msgstr ""
 
-#: yit-functions.php:2086
+#: yit-functions.php:2088
 msgctxt "Term action"
 msgid "Duplicate"
 msgstr ""
 
-#: yit-functions.php:2099
+#: yit-functions.php:2101
 msgctxt "Term action"
 msgid "Delete"
 msgstr ""
